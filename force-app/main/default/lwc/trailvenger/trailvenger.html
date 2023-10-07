@@ -1,0 +1,167 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <div class="slds-text-align_center">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">Portfolio</button>
+                </a>
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">Student Tracking</button>
+                </a>
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">Flows Automation</button>
+                </a>
+            </div>
+            <h1 class="slds-var-m-top_large slds-text-align_center">Superhero and Villain Tracking</h1>
+            <section class="slds-var-m-top_large">
+                <p><b>Client</b>: Trailvengers, a Superhero support syndicate</p>
+                <p class="slds-var-m-top_large"><b>Salesforce Professional</b>: Eddy Chan</p>
+                <p class="slds-var-m-top_large"><b>Use Case</b>: The client needs a one&#45;stop shop where they can track Superheroes&mdash;their gear, the Villains they are fighting, and so on</p>
+                <p class="slds-var-m-top_large"><b>Purpose of this Project</b>: To implement a Salesforce instance that can fulfill the Superheroes&#39; needs&mdash;making it easier for them to protect the world from Villains</p>
+            </section>
+            <div class="border-bottom"></div>
+            <div class="container-collapsibleButton">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <section class="slds-var-m-top_large">
+                <h3 class="collapsibleHeading">1. What Has Been Done</h3>
+                <div class="collapsibleContent">
+                    <p class="slds-var-m-top_large">App Development</p>
+                    <ul class="slds-list_dotted">
+                        <li>A custom app for tracking Superheroes&mdash;their gear, the Villains they are fighting, and so on is built</li>
+                        <li><span class="color">Colors</span> and logo for branding are included</li>
+                        <li>Appropriate objects and fields are configured</li>
+                        <div class="container-img">
+                            <img src={imageURL_EntityDiagram} alt="Entity Diagram" class="img-screenshot">
+                            <br>
+                            <img src={imageURL_SchemaBuilder} alt="Schema Builder" class="img-screenshot slds-var-m-top_large">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Security</p>
+                    <ul class="slds-list_dotted">
+                        <li>To ensure the org is secured with the <a href="https://trailhead.salesforce.com/content/learn/modules/credential-security/manage-administrator-credentials" target="_blank" rel="noopener noreferrer">Principle of Least Privilege &#40;PoLP&#41; <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> in mind, the following are implemented </li>
+                        <ul class="slds-list_dotted circle">
+                            <li>Profiles</li>
+                            <div class="container-img">
+                                <img src={imageURL_Profile} alt="Profiles" class="img-screenshot">
+                            </div>
+                            <li>Permission Sets</li>
+                            <div class="container-img">
+                                <img src={imageURL_PermissionSet} alt="Permission Sets" class="img-screenshot">
+                            </div>
+                            <li>Role Hierarchy</li>
+                            <div class="container-img">
+                                <img src={imageURL_Role} alt="Role Hierarchy" class="img-screenshot">
+                            </div>
+                            <li>Sharing Settings</li>
+                            <div class="container-img">
+                                <img src={imageURL_SharingSetting} alt="Sharing Settings" class="img-screenshot">
+                            </div>
+                            <li>Health Check</li>
+                            <div class="container-img">
+                                <img src={imageURL_HealthCheck} alt="Health Check" class="img-screenshot">
+                            </div>
+                        </ul>
+                    </ul>
+                    <p class="slds-var-m-top_large">Superheroes In Training &#40;S.I.T.&#41; Management</p>
+                    <ul class="slds-list_dotted">
+                        <li>A form with <a href="https://salesforce.com/products/guide/lead-gen/web-to-lead" target="_blank" rel="noopener noreferrer">Web&#45;to&#45;Lead <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> functionality is used to capture information about S.I.T.</li>
+                        <div class="container-img">
+                            <img src={imageURL_WTL} alt="Web-to-Lead" class="img-screenshot">
+                        </div>
+                        <li>End&#45;users can convert S.I.T. into Superheroes ready to fight Villains</li>
+                        <div class="container-img">
+                            <img src={imageURL_SITConvert} alt="Convert Superhero In Training" class="img-screenshot">
+                            <img src={imageURL_SITConverted} alt="Superhero In Training Converted" class="img-screenshot slds-var-m-top_large">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Sales Process</p>
+                    <ul class="slds-list_dotted">
+                        <li>End&#45;users can keep track of Superhero opportunities, products, and quotes</li>
+                        <div class="container-img">
+                            <img src={imageURL_Gear} alt="Gear" class="img-screenshot">
+                            <img src={imageURL_Quote} alt="Quote" class="img-screenshot slds-var-m-top_large">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Productivity Features</p>
+                    <ul class="slds-list_dotted">
+                        <li>End&#45;users can keep track of calendar events and chat internally</li>
+                        <div class="container-img">
+                            <img src={imageURL_Event} alt="Event" class="img-screenshot">
+                            <img src={imageURL_Chatter} alt="Chatter" class="img-screenshot slds-var-m-top_large">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Support Process</p>
+                    <ul class="slds-list_dotted">
+                        <li>End&#45;users can Log a Villain and provide Superheroes support using a Screen Flow</li>
+                        <li>The Screen Flow is quickly accessible as an item of the Utility Bar, which is located at the bottom of the page anywhere end&#45;users navigate within the app</li>
+                        <div class="container-img">
+                            <img src={imageURL_VillainToSlay} alt="Log Villain" class="img-screenshot">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Data Visualization</p>
+                    <ul class="slds-list_dotted">
+                        <li>The Home page consists of a Dashboard and other information to help end&#45;users visualize metrics at a glance and make data&#45;driven decisions</li>
+                        <div class="container-img">
+                            <img src={imageURL_Home} alt="Home page" class="img-screenshot">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Documentation</p>
+                    <ul class="slds-list_dotted">
+                        <li>Solutions, development steps, and so on are documented</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">2. Acknowledgments</h3>
+                <div class="collapsibleContent">
+                    <ul class="slds-list_dotted">
+                        <li>This is a fun project to get hands&#45;on experience with the Salesforce platform</li>
+                        <li>Credit for this project idea goes to <a href="https://alexwarneke.com/salesforce" target="_blank" rel="noopener noreferrer">Alex Warneke <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>&mdash;thank you for everything you do to help aspiring Salesforce professionals</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="container-collapsibleButton slds-var-m-top_large">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <div class="slds-text-align_center slds-var-m-top_xx-large">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">Portfolio</button>
+                </a>
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">Student Tracking</button>
+                </a>
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">Flows Automation</button>
+                </a>
+            </div>
+        </div>
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={backToTop}>
+                <label>
+                    &uarr;
+                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,8 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+// https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_emailtemplate.htm
+
+SELECT Id, Body, Description, DeveloperName, FolderId, FolderName, IsActive, Name, OwnerId, Subject, TemplateStyle, TemplateType, LastModifiedDate FROM EmailTemplate WHERE LastModifiedDate < 2023-10-01T00:00:00.000+0000

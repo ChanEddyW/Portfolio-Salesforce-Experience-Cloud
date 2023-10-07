@@ -1,0 +1,233 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <div class="slds-text-align_center">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Portfolio
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Flows Automation
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Superhero and Villain Tracking
+                        </label>
+                    </button>
+                </a>
+            </div>
+            <h1 class="slds-var-m-top_large slds-text-align_center">Student Tracking</h1>
+            <section class="slds-var-m-top_large">
+                <p><b>Client</b>: Talent Stacker, an e&#45;learning provider</p>
+                <p class="slds-var-m-top_large"><b>Salesforce Professionals</b>: Eddy Chan and 2 teammates</p>
+                <p class="slds-var-m-top_large"><b>Use Case</b>: The client is concerned that they will not be able to keep up with their business growth. They need a better way to track their students&#39; progress from enrollment to graduation because they have manual business processes and they lack the means to ensure data integrity, centralize data, and visualize metrics.</p>
+                <p class="slds-var-m-top_large"><b>Purpose of this Project</b>: To conduct business analysis, build solutions for the client to track their students&#39; progress, demo, and provide training</p>
+            </section>
+            <div class="border-bottom"></div>
+            <div class="container-collapsibleButton">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <section class="slds-var-m-top_large">
+                <h3 class="collapsibleHeading">1. What Has Been Done</h3>
+                <div class="collapsibleContent">
+                    <p class="slds-var-m-top_large">Business Analysis</p>
+                    <ul class="slds-list_dotted">
+                        <li>Multiple discovery sessions are held with the client to gather and clarify more than 60 requirements</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">App Development</p>
+                    <ul class="slds-list_dotted">
+                        <li>A custom app for tracking students&#39; progress from enrollment to graduation is built</li>
+                        <li><span class="color">Colors</span> and logo for branding are included</li>
+                        <div class="container-img">
+                            <img src={imageURL_RecordDetailMemberInfo} alt="Record Detail" class="img-screenshot">
+                        </div>
+                        <li>Appropriate objects and fields are configured</li>
+                        <div class="container-img">
+                            <img src={imageURL_EntityDiagram} alt="Entity Diagram" class="img-screenshot">
+                            <br>
+                            <img src={imageURL_SchemaBuilder} alt="Schema Builder" class="img-screenshot slds-var-m-top_large">
+                            <img src={imageURL_PageLayoutMember02} alt="Page Layout Sections" class="img-screenshot slds-var-m-top_large">
+                        </div>
+                    </ul>
+                    <p class="slds-var-m-top_large">Data Integrity</p>
+                    <ul class="slds-list_dotted">
+                        <li>To ensure data are accurate, complete, and consistent, the following are implemented </li>
+                        <ul class="slds-list_dotted circle">
+                            <li>Validation Rules</li>
+                            <div class="container-img">
+                                <img src={imageURL_ValidationStudyGroupOther01} alt="Validation Rule" class="img-screenshot">
+                                <img src={imageURL_ValidationStudyGroupOther02} alt="Validation Rule" class="img-screenshot slds-var-m-top_large">
+                            </div>
+                            <li>Required Fields</li>
+                            <li>Read&#45;Only Fields</li>
+                            <li>State and Country&#47;Territory Picklists</li>
+                            <li>Duplicate Management &#40;e.g., Duplicate Rules, Matching Rules&#41;</li>
+                        </ul>
+                    </ul>
+                    <p class="slds-var-m-top_large">Process Automation</p>
+                    <ul class="slds-list_dotted">
+                        <li>Flows and Formulas are used to create automations including </li>
+                        <ul class="slds-list_dotted circle">
+                            <li>Prefilling date fields</li>
+                            <li>Sending notification emails</li>
+                            <li>Assigning tasks</li>
+                            <li>Creating or updating records</li>
+                        </ul>
+                    </ul>
+                    <p class="slds-var-m-top_large">Lead Management</p>
+                    <ul class="slds-list_dotted">
+                        <li>A form with <a href="https://salesforce.com/products/guide/lead-gen/web-to-lead" target="_blank" rel="noopener noreferrer">Web&#45;to&#45;Lead <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> functionality is used to capture potential students&#39; information&mdash;if the form is submitted successfully, on the backend, </li>
+                        <ul class="slds-list_dotted">
+                            <li>A <a href="https://developer.salesforce.com/docs/atlas.en-us.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Lead.htm" target="_blank" rel="noopener noreferrer">Lead <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> record is created in Salesforce</li>
+                            <li>The Lead Auto&#45;Response Rule sends the guest user&#47;visitor a confirmation email</li>
+                            <li>The Lead Assignment Rule assigns the Lead to a queue</li>
+                            <li>A notification email is sent to the Lead owner</li>
+                        </ul>
+                    </ul>
+                    <p class="slds-var-m-top_large">Case Management</p>
+                    <ul class="slds-list_dotted">
+                        <li>The Email&#45;to&#45;Case feature is implemented</li>
+                        <li>Students are provided a shortened email address they may email to open a <a href="https://developer.salesforce.com/docs/atlas.en-us.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Case.htm" target="_blank" rel="noopener noreferrer">Case <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                    </ul>
+                    <p class="slds-var-m-top_large">AppExchange Solution</p>
+                    <ul class="slds-list_dotted">
+                        <li>The functionality of Salesforce is extended by installing and configuring <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000003HeuPEAS" target="_blank" rel="noopener noreferrer">S&#45;Docs <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>, an AppExchange app, so that end&#45;users may click a button to generate a PDF report about the students&#39; progress</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">Data Visualization</p>
+                    <ul class="slds-list_dotted">
+                        <li>Reports and Dashboards are built and customized to help end&#45;users visualize metrics and make data&#45;driven decisions</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">Documentation</p>
+                    <ul class="slds-list_dotted">
+                        <li>Solutions, development steps, and so on are documented</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">Live Demo</p>
+                    <ul class="slds-list_dotted">
+                        <li>A hands&#45;on, live demo of the app is given to the client</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">End&#45;User Training</p>
+                    <ul class="slds-list_dotted">
+                        <li>An end&#45;user training session is provided to the client</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">2. Presentation Slides&mdash;End&#45;User Training</h3>
+                <div class="collapsibleContent">
+                    <div class="container-iframe">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSfQb_2yXL9uTwKepo5nsuMUowUPIBVmdctzwR1MOxv39I0xPLNi3hHL-L3hgdoR0xchUrL253K3F6P/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">3. Videos</h3>
+                <div class="collapsibleContent">
+                    <!-- <p class="slds-text-align_left">The Pre-Watch: A great place to start</p>
+                    <div class="container-iframe">
+                        <iframe src="https://www.loom.com/embed/e5b8c04bca094dd8a5507925ab887002?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen="true"></iframe>
+                    </div> -->
+                    <p class="slds-text-align_left">App Walkthrough of the Students&#39; Enrollment&#45;to&#45;Graduation Process</p>
+                    <div class="container-iframe">
+                        <iframe src="https://www.loom.com/embed/47af665841e343d0b17a98ab46a50326?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                    <p class="slds-text-align_left slds-var-m-top_large">Why Our Team Made Certain Decisions</p>
+                    <div class="container-iframe">
+                        <iframe src="https://www.loom.com/embed/8d12c59d4dc9496392feb0bbe3270330?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                    <!-- <p class="slds-text-align_left slds-var-m-top_large">Mind Mapping Tool Called WiseMapping</p>
+                    <div class="container-iframe">
+                        <iframe src="https://www.loom.com/embed/abca43b008e2494db0ddd991016f3ad9?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen="true"></iframe>
+                    </div> -->
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">4. What It Is Like To Work With Me In This Team Project</h3>
+                <div class="collapsibleContent">
+                    <p>We were originally a team of 4 Salesforce professionals. At the start of the project, I told everyone to set your expectations&mdash;my only expectation has been to communicate effectively. I have been flexible to make time to attend impromptu meetings, help others figure things out, or do more work individually. I have tried to make everyone feel that they do belong in our team and give everyone opportunities to contribute, share ideas, or take initiative&mdash;to get the most out of this project.</p>
+                    <p class="slds-var-m-top_large">However, one of our teammates have not been communicating effectively nor attending our meetings. After talking to that teammate and trying to help, we eventually learned that our teammate incorrectly assumed that they would have enough time for this project. Since giving someone more than time than they have is out of our control, we decided to move on without waiting for our inactive teammate. So we were really a team of 3 people doing the work of 4.</p>
+                    <p class="slds-var-m-top_large">We got to a point where we did not have much time left to build solutions before giving a live demo to the client. We needed to change our assignments because the prequisite solutions that must be built first were first assigned to our inactive teammate. Since I was the most flexible on time, I agreed to do the work of 2 people on the weekend so that my teammates would not have to wait on the weekdays&mdash;that involved staying awake for more than 30 hours. That gave us enough time to finish building all solutions and prepare a live demo on time.</p>
+                    <div class="container-img">
+                        <img src={imageURL_Slack03} alt="Slack&mdash;Expectation" class="img-screenshot">
+                        <img src={imageURL_Slack14} alt="Slack&mdash;Decision" class="img-screenshot slds-var-m-top_large">
+                    </div>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">5. Lessons Learned</h3>
+                <div class="collapsibleContent">
+                    <ul class="slds-list_dotted">
+                        <li>It may be difficult to get opportunites to talk to the right people who can answer your questions and clarify assumptions&mdash;do not take such opportunities for granted</li>
+                        <li>Try to finish the solution documentation earlier so you can get the green light to start building solutions&mdash;otherwise, you may have a short amount of time until the live demo to build solutions and need to sacrifice sleep</li>
+                        <li>Any teammate can try to demonstrate leadership and take initiative&mdash;that may be better than waiting for someone else to tell you what to do</li>
+                        <li>Being flexible enough to make time for a project may not only help your teammates, but also help you to get the most out of the project</li>
+                        <li>Regardless of how well you and your teammates work together, completing the project and satisfying your client matters</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="container-collapsibleButton slds-var-m-top_large">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <div class="slds-text-align_center slds-var-m-top_xx-large">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Portfolio
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Flows Automation
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Superhero and Villain Tracking
+                        </label>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={backToTop}>
+                <label>
+                    &uarr;
+                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>

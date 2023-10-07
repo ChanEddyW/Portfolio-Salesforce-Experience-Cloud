@@ -1,0 +1,58 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+/* 12. Attributes */
+.snackbar {
+	min-width: 250px;
+	position: fixed;
+	bottom: 2rem;
+	left: 50%;
+	z-index: 9;
+	transform: translateX(-50%);
+	visibility: hidden;
+	border: 1px solid rgba(163, 170, 174);
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+	/* margin-left: -125px; */
+	background-color: rgba(0, 0, 0);
+	color: rgba(255, 255, 255);
+}
+
+.snackbar.show {
+	visibility: visible;
+	animation: fade-in 0.5s, fade-out 0.5s 2.5s;
+}
+
+@keyframes fade-in {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}

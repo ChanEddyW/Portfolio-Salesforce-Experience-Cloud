@@ -1,0 +1,169 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+/* 06. Lists */
+ul, ul li {
+    display: inline-block;
+}
+
+ul li ul {
+    display: none;
+}
+
+li::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 07. Media */
+img {
+    /* border: 1px solid rgba(163, 170, 174); */
+    border-radius: 5px;
+}
+
+img::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 10. Phrasing */
+a::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 12. Attributes */
+.container-outer {
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: rgba(217, 234, 211);
+}
+
+.container {
+    border-bottom: 1px solid rgba(163, 170, 174);
+    margin: 0px auto;
+}
+
+.container-img-photo {
+    box-sizing: border-box;
+    max-height: 70px;
+    max-width: 70px;
+    display: none;
+    margin: 0px 50px 10px 100px;
+}
+
+.img-photo:hover {
+    animation: grow 5s;
+}
+
+.navMenu {
+    margin: 10px 0px 0px;
+}
+
+.navMenu li:not(:first-child) {
+    display: none;
+}
+
+.navMenu a {
+    float: left;
+    text-decoration: none;
+    font: 16px/30px Arial, sans-serif;
+    padding: 10px;
+    margin: 0px 0px 10px;
+    color: rgba(0, 0, 0);
+}
+
+.navMenu a:hover {
+    border: 1px solid rgba(163, 170, 174);
+    border-radius: 5px;
+    background-color: rgba(13, 157, 218, 0.5);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.navMenu a.icon {
+    float: right;
+    display: block;
+}
+
+.navMenu.responsive {
+    position: relative;
+}
+
+.navMenu.responsive ul li, .navMenu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+.navMenu.responsive a.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* 06. Lists */
+    ul li:hover ul {
+        box-sizing: border-box;
+        width: 300px;
+        position: absolute;
+        top: 60px;
+        display: block;
+        border: 1px solid rgba(163, 170, 174);
+        border-radius: 5px;
+        background-color: rgba(217, 234, 211);
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 12. Attributes */
+    .container {
+        box-sizing: border-box;
+        max-width: 1600px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .container-img-photo {
+        display: inline-flex;
+    }
+
+    .navMenu li:not(:first-child) {
+        display: inline-block;
+    }
+
+    .navMenu a {
+        margin: 0px 50px 0px 0px;
+    }
+
+    .navMenu a.icon {
+        display: none;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2) translateY(17px);
+    }
+    50% {
+        transform: scale(2) translateY(17px);
+    }
+    to {
+        transform: scale(1);
+    }
+}

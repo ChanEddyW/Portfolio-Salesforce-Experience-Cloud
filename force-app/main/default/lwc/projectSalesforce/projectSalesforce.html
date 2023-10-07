@@ -1,0 +1,43 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <h1 class="slds-text-align_center">Salesforce Projects</h1>
+            <div class="container-card slds-var-m-top_large">
+                <a href="/project-salesforce/portfolio">
+                    <div class="card slds-text-align_center">
+                        <img src={imageURL_XPCloudBYOLWREnhanced} alt="Portfolio">                        
+                        <h4>Portfolio</h4>
+                    </div>
+                </a>
+                <a href="/project-salesforce/student-tracking">
+                    <div class="card slds-text-align_center">
+                        <img src={imageURL_TalentStacker} alt="Talent Stacker">
+                        <h4>Student Tracking</h4>
+                    </div>
+                </a>
+                <a href="/project-salesforce/sprint-flow">
+                    <div class="card slds-text-align_center">
+                        <img src={imageURL_ClickedCertificateSprintFlow} alt="Flows Automation">
+                        <h4>Flows Automation</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="container-card">
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <div class="card slds-text-align_center">
+                        <img src={imageURL_Trailvenger} alt="Trailvengers">
+                        <h4>Superhero and Villain Tracking</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={backToTop}>
+                <label>
+                    &uarr;
+                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>

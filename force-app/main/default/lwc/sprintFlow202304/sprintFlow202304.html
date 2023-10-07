@@ -1,0 +1,158 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <div class="slds-text-align_center">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Portfolio
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Student Tracking
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Superhero and Villain Tracking
+                        </label>
+                    </button>
+                </a>
+            </div>
+            <h1 class="slds-var-m-top_large slds-text-align_center">Flows Automation</h1>
+            <section class="slds-var-m-top_large">
+                <p><b>Client</b>: Slack Technologies, a software company</p>
+                <p class="slds-var-m-top_large"><b>Salesforce Professional</b>: Eddy Chan and 3 teammates</p>
+                <p class="slds-var-m-top_large"><b>Use Case</b>: Both the client&#39;s B2C and B2B branches have manual business processes they would like to automate. The B2C branch recently implemented Salesforce, but they have not implemented process automation effectively and are experiencing a lack of user adoption. The B2B branch has not started using Salesforce&mdash;they would like to implement Salesforce effectively the first time.</p>
+                <p class="slds-var-m-top_large"><b>Purpose of this Project</b>: To conduct business analysis and build Salesforce solutions effectively</p>
+            </section>
+            <div class="border-bottom"></div>
+            <div class="container-collapsibleButton">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <section class="slds-var-m-top_large">
+                <h3 class="collapsibleHeading">1. What Has Been Done</h3>
+                <div class="collapsibleContent">
+                    <p class="slds-var-m-top_large">Business Analysis</p>
+                    <ul class="slds-list_dotted">
+                        <li>Gap analysis is conducted to understand the current state of the business and to determine what may be changed for improvement</li>
+                        <li><a href="https://www.lucidchart.com/pages" target="_blank" rel="noopener noreferrer">Lucidchart <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> is used to create business process maps of the present and future state of the client&#39;s Lead&#45;to&#45;Revenue business process</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">Process Automation</p>
+                    <ul class="slds-list_dotted">
+                        <li>Flows are used to automate business processes</li>
+                    </ul>
+                    <p class="slds-var-m-top_large">Documentation&mdash;<a href="https://drive.google.com/drive/folders/1ztA57jUaY5KNq7_6Gbx-dYNyZfzlSrd-" target="_blank" rel="noopener noreferrer">Google Drive Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+                    <ul class="slds-list_dotted">
+                        <li>User Interview Notes</li>
+                        <li>Business Process Maps</li>
+                        <li>Flows</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">2. Presentation Slides&mdash;My Completed Work&mdash;Business Process Maps and Flows</h3>
+                <div class="collapsibleContent">
+                    <div class="container-iframe">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQf5-JTL-HNg5c6tVJgLHv2yRatFYT7fL764kEF8_nW-C79h-_xkgDspvCaP9BFQA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">3. What It Is Like To Work With Me In This Team Project</h3>
+                <div class="collapsibleContent">
+                    <p>One of my project teammates called me &quot;Human ChatGPT&quot; because of how I document and share my work quickly on Slack. At that point in time, ChatGPT was not accurate at helping you with Flows since its dataset was outdated as of 2021. So it was better to ask me, a human, for help on Flows than ChatGPT. Documenting the development steps to configure setup and build Flows is helpful because it may &#40;1&#41; save you time and &#40;2&#41; ensure you do not miss any step. For example, if I need to build a Screen Flow that is similar to the one I have already built, I can duplicate a copy of my documentation for the Flow that has already been built and make changes as needed. Then, I can copy and paste what I need from my documentation to the Flow Builder, minimizing human error &#40;e.g., mispellings, forgetting to include a description&#41;.</p>
+                    <div class="container-img">
+                        <img src={imageURL_SlackHumanChatGPT} alt="Slack&mdash;Human ChatGPT" class="img-screenshot">
+                    </div>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">4. Lessons Learned</h3>
+                <div class="collapsibleContent">
+                    <ul class="slds-list_dotted">
+                        <li>Different people may have expectations you are not aware of&mdash;so it may be a good idea to have every teammate explicitly set expectations sooner than later</li>
+                        <li>Business analysis including stakeholder interviews, requirements gathering, gap analysis, and business process mapping are essential for any project</li>
+                        <li>Without understanding the business processes and requirements, it is difficult to do gap analysis and come up with the right solutions, no matter how good you are at building Flows or other Salesforce solutions</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="border-bottom"></div>
+            <section>
+                <h3 class="collapsibleHeading">5. Flow Tips</h3>
+                <div class="collapsibleContent">
+                    <ul class="slds-list_dotted">
+                        <li>Never put a pink inside an orange&mdash;never put a data&#47;DML element inside a loop to avoid hitting governor limits. If you need to update records, one approach is to put 2 assignment elements inside a loop: the first for updating the current item and the second for adding the item to a collection box. Outside the loop, use an update element to update records in the collection box in one go.</li>
+                        <li>Avoid hardcoding IDs as much as possible to avoid <a href="https://admin.salesforce.com/blog/2021/tech-debt-what-it-is-and-why-you-should-care" target="_blank" rel="noopener noreferrer">technical debt <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>. IDs in a sandbox may be different than IDs in a production org. Since IDs may change between orgs, Flows that have hardcoded IDs may fail.</li>
+                        <li>Include descriptions in every Flow element. Several months or years later, the next person to maintain the Flow may be you.</li>
+                        <li>Use consistent prefixes in the API names of your Flow resources including screen components &#40;e.g., API Name = displaytxtStartingScreen, API Name = forOpportunityName&#41;. This helps anyone easily identify resources without needing to open each one.</li>
+                        <li>Reverse engineer a successfully built Flow to learn. Watch how someone else build a Flow and copy everything in your org. Once you have a Flow that works, reverse engineer or study every part of the Flow &#40;e.g., resources, elements&#41;. Try to understand how and why every part makes up the whole.</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="container-collapsibleButton slds-var-m-top_large">
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
+                    <label>
+                        Collapse All
+                    </label>
+                </button>
+                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
+                    <label>
+                        Expand All
+                    </label>
+                </button>
+            </div>
+            <div class="container-img">
+                <img src={imageURL_CertSprintFlow} alt="Clicked Certificate&mdash;Flows Automation Team Sprint" class="img-screenshot">
+            </div>
+            <div class="slds-text-align_center slds-var-m-top_xx-large">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Portfolio
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Student Tracking
+                        </label>
+                    </button>
+                </a>
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>
+                            Superhero and Villain Tracking
+                        </label>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={backToTop}>
+                <label>
+                    &uarr;
+                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>

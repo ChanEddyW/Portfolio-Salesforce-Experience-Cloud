@@ -1,0 +1,93 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+/* 05. Headings */
+h3 {
+    font: 20px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+h3::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 08. Forms */
+/* label, input, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+} */
+
+label {
+    font: 16px/30px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+label::selection, input::selection, textarea::selection, button::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+input, button, textarea {
+    border: 1px solid rgba(163, 170, 174);
+    border-radius: 5px;
+    font: 16px/30px Arial, sans-serif;
+    background-color: rgba(255, 255, 255);
+    color: rgba(0, 0, 0);
+}
+
+input:active, input:focus, input:focus-visible, input:hover, textarea:active, textarea:focus, textarea:focus-visible, textarea:hover {
+    background-color: rgba(255, 255, 255);
+}
+
+input:invalid {
+    border: 3px solid rgba(255, 0, 0);
+    background-color: rgba(255, 255, 255) !important;
+}
+
+button:hover {
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 12. Attributes */
+.contactMe-dialog {
+    box-sizing: border-box;
+    height: 900px;
+    width: 750px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px 0px;
+}
+
+.container-button > * {
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.container-button > *:hover {
+    border: 1px solid rgba(163, 170, 174);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255);
+    color: rgba(0, 0, 0);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.button-launch {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 10px 20px;
+    background-color: rgba(13, 157, 218, 0.5);
+}

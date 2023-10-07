@@ -1,0 +1,80 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+p {
+    font: 16px/30px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+p::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 07. Media */
+img {
+    border-radius: 5px;
+}
+
+img::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 12. Attributes */
+.container-outer {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgba(217, 234, 211);
+}
+
+.container {
+    border-top: 1px solid rgba(163, 170, 174);
+    margin: 0px auto;
+}
+
+.img-footer {
+    box-sizing: border-box;
+    max-height: 100px;
+    max-width: 100px;
+    display: inline-block;
+    margin: 0px 25px 25px 0px;
+}
+
+.img-footer:hover {
+    cursor: pointer;
+    animation: grow 5s;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* 12. Attributes */
+    .container {
+        box-sizing: border-box;
+        max-width: 1600px;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}

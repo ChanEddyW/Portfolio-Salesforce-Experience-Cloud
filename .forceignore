@@ -1,0 +1,86 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+**/applications/**
+**/aura/**
+# **/classes/ChangePasswordController**
+# **/classes/ChangePasswordControllerTest**
+# **/classes/CommunitiesLandingController**
+# **/classes/CommunitiesLandingControllerTest**
+# **/classes/CommunitiesLoginController**
+# **/classes/CommunitiesLoginControllerTest**
+# **/classes/CommunitiesSelfRegConfirmController**
+# **/classes/CommunitiesSelfRegConfirmControllerTest**
+# **/classes/CommunitiesSelfRegController**
+# **/classes/CommunitiesSelfRegControllerTest**
+# **/classes/ForgotPasswordController**
+# **/classes/ForgotPasswordControllerTest**
+# **/classes/LightningForgotPasswordController**
+# **/classes/LightningForgotPasswordControllerTest**
+# **/classes/LightningLoginFormController**
+# **/classes/LightningLoginFormControllerTest**
+# **/classes/LightningSelfRegisterController**
+# **/classes/LightningSelfRegisterControllerTest**
+# **/classes/MicrobatchSelfRegController**
+# **/classes/MicrobatchSelfRegControllerTest**
+# **/classes/MyProfilePageController**
+# **/classes/MyProfilePageControllerTest**
+# **/classes/SiteLoginController**
+# **/classes/SiteLoginControllerTest**
+# **/classes/SiteRegisterController**
+# **/classes/SiteRegisterControllerTest**
+**/contentassets/**
+**/flexipages/**
+**/layouts/**
+**/permissionsets/**
+**/staticresources/SiteSamples**
+**/tabs/**
+**/triggers/**
+
+**/apexEmailNotifications/**
+**/appMenus/**
+**/assignmentRules/**
+**/audience/**
+**/autoResponseRules/**
+**/certs/**
+**/components/**
+**/digitalExperienceConfigs/**
+**/digitalExperiences/**
+**/duplicateRules/**
+**/email/**
+**/entitlementProcesses/**
+**/escalationRules/**
+**/experiences/**
+**/fieldRestrictionRules/**
+**/flowDefinitions/**
+**/flows/**
+**/homePageLayouts/**
+**/installedPackages/**
+**/letterhead/**
+**/managedContentTypes/**
+**/milestoneTypes/**
+**/navigationMenus/**
+**/networkBranding/**
+**/networks/**
+**/notificationTypeConfig/**
+# **/pages/**
+**/profilePasswordPolicies/**
+**/profiles/**
+**/profileSessionSettings/**
+**/queues/**
+**/quickActions/**
+**/reportTypes/**
+**/roles/**
+**/settings/**
+**/sharingRules/**
+**/sites/**

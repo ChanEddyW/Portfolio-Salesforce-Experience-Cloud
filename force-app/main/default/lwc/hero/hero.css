@@ -1,0 +1,454 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+/* 04. Sectioning and Structuring */
+p {
+    font: 16px/30px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+p::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 05. Headings */
+h1 {
+    font: 32px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+h1::selection, h3::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+h3 {
+    font: 20px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+/* 07. Media */
+img {
+    border-radius: 5px;
+}
+
+img::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 08. Forms */
+label::selection, button::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+button {
+    border: 1px solid rgba(163, 170, 174);
+    border-radius: 5px;
+    font: 16px/30px Arial, sans-serif;
+    background-color: rgba(13, 157, 218, 0.5);
+    color: rgba(0, 0, 0);
+}
+
+button:hover {
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 10. Phrasing */
+a::selection, span::selection {
+    background-color: rgba(13, 157, 218, 0.5);
+}
+
+/* 12. Attributes */
+.container-outer {
+    margin: 50px auto 0px;
+    background-color: rgba(217, 234, 211);
+}
+
+.container {
+    margin: 0px auto;
+}
+
+.margin-0px-auto {
+    margin: 0px auto;
+}
+
+.img-badge {
+    box-sizing: border-box;
+    max-height: 100px;
+    max-width: 100px;
+    display: inline-block;
+    margin: 0px 25px 25px 0px;
+}
+
+.img-badge:hover {
+    animation: grow 5s;
+}
+
+.container-img-myTrailmoji {
+    box-sizing: border-box;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+.arrow-down {
+    animation: arrow-down 2s infinite;
+}
+
+.border-bottom {
+    border-bottom: 1px dotted rgba(163, 170, 174);
+    margin: 25px 0px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .back-to-top {
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 9;
+    display: none;
+    font: 32px Arial, sans-serif;
+}
+
+.tooltip .tooltiptext {
+    box-sizing: border-box;
+    width: 100px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    z-index: 1;
+    visibility: hidden;
+    border-radius: 5px;
+    font: 16px Arial, sans-serif;
+    padding: 5px 0;
+    margin-left: -50px;
+    background-color: rgba(13, 157, 218, 0.5);
+    color: rgba(0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(13, 157, 218, 0.5) transparent transparent transparent;
+    content: "";
+    margin-left: -5px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* 12. Attributes */
+    .container-outer {
+        margin: 40px auto 0px;
+    }
+
+    .container {
+        box-sizing: border-box;
+        max-width: 1200px;
+    }
+
+    .animation-01 {
+        animation: fade-in 1s 0.5s backwards;
+    }
+
+    .animation-02 {
+        animation: fade-in 1s 1.5s backwards;
+    }
+
+    .animation-03 {
+        animation: fade-in 1s 2.5s backwards;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes arrow-down {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* @keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+} */
+
+/* @keyframes blinking {
+    0% {
+        border-color: transparent
+    }
+    50% {
+        border-color: rgb(0, 0, 0)
+    }
+    100% {
+        border-color: transparent
+    }
+} */
+
+/* @keyframes open {
+    0% {
+        max-width: 0;
+    }
+    to {
+        max-width: 100%;
+    }
+}
+
+@keyframes close {
+    0% {
+        max-width: 100%;
+    }
+    to {
+        max-width: 0;
+    }
+} */
+
+/* @keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+} */
+
+/* @keyframes slide-in {
+    0% {
+        right: -250px;
+    }
+    to {
+        right: 0;
+    }
+} */
+
+/* @keyframes slide-out {
+    0% {
+        right: 0;
+    }
+    to {
+        right: -250px;
+    }
+} */
+
+/* @keyframes name {
+    0% {
+        opacity: 0;
+        transform: translateY(-75px);
+    }
+    10% {
+        opacity: 0;
+        transform: translateY(-75px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+} */
+
+/* @keyframes line {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    49% {
+        width: 0;
+        opacity: 0;
+    }
+    50% {
+        width: 0;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+} */
+
+/* @keyframes more {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */
+
+/* @keyframes more-arrow {
+    0% {
+        transform: scale(0.5) translate(0);
+    }
+    50% {
+        transform: scale(0.5) translateY(-50px);
+    }
+    to {
+        transform: scale(0.5) translate(0);
+    }
+} */
+
+/* @keyframes glow-in {
+    0% {
+        background: rgba(35, 226, 178, 0.4);
+        box-shadow: 2px 2px 14px 1px rgba(0, 0, 0, 0.4);
+    }
+    to {
+        background: rgb(255, 255, 233);
+        box-shadow: 0 0 10px 1px rgb(100, 255, 143);
+    }
+} */
+
+/* @keyframes glow-out {
+    0% {
+        background: rgb(255, 255, 233);
+        box-shadow: 0 0 10px 1px rgb(100, 255, 143);
+    }
+    to {
+        background: rgba(35, 226, 178, 0.4);
+        box-shadow: 2px 2px 14px 1px rgba(0, 0, 0, 0.4);
+    }
+} */
+
+/* @keyframes spin-in {
+    0% {
+        transform: rotate(0deg) scale(1);
+        color: rgb(0, 255, 204);
+    }
+    to {
+        transform: rotate(1turn) scale(1.5);
+        color: rgb(255, 255, 233);
+    }
+} */
+
+/* @keyframes spin-out {
+    0% {
+        transform: rotate(0deg) scale(1.5);
+        color: rgb(255, 255, 233);
+    }
+    to {
+        transform: rotate(-1turn) scale(1);
+        color: rgb(0, 255, 204);
+    }
+} */
+
+/* @keyframes stretch-in {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.6, 1.8);
+    }
+    50% {
+        transform: scale(1.6, 0.8);
+        color: rgb(126, 255, 229);
+    }
+    75% {
+        transform: scaleY(1.4);
+    }
+    to {
+        transform: scale(1.2);
+    }
+} */
+
+/* @keyframes stretch-out {
+    0% {
+        transform: scale(1.2);
+        color: rgb(255, 255, 233);
+    }
+    25% {
+        transform: scale(0.6, 1.4);
+    }
+    50% {
+        transform: scale(1.6, 0.8);
+        color: rgb(126, 255, 229);
+    }
+    75% {
+        transform: scale(0.6, 1.8);
+    }
+    to {
+        transform: scale(1);
+    }
+} */
+
+/* @keyframes shrink-out {
+    0% {
+        transform: scale(1.5);
+    }
+    40% {
+        transform: scale(0.7);
+    }
+    70% {
+        transform: scale(1.3);
+    }
+    90% {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+} */

@@ -1,0 +1,33 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <section class="slds-text-align_center">
+                <h3 class="margin-0px-auto animation-01">Welcome to</h3>
+                <h1 class="animation-02 slds-var-m-top_large">Eddy Chan&#39;s Portfolio</h1>
+                <h3 class="animation-03 slds-var-m-top_large">Salesforce Certified Professional</h3>
+                <div class="animation-03 slds-var-m-top_large">
+                    <img src={imageURL_badgeCertAdmin} alt="Badge&mdash;Salesforce Certified Administrator" class="img-badge">
+                    <img src={imageURL_badgeTrailheadSuperSetAdmin} alt="Badge&mdash;Super Set&mdash;Admin" class="img-badge">
+                    <img src={imageURL_badgeTrailheadSuperSetAppBuilder} alt="Badge&mdash;Super Set&mdash;App Builder" class="img-badge">
+                    <img src={imageURL_badgeTrailheadRanger} alt="Badge&mdash;Trailhead Ranger" class="img-badge">
+                </div>
+                <c-contact-me class="animation-03"></c-contact-me>
+                <div class="container-img-myTrailmoji animation-03">
+                    <img src={imageURL_myTrailmoji} alt="myTrailmoji">
+                </div>
+                <p class="animation-03">See links at the bottom of the page</p>
+                <div class="animation-03">
+                    <h1 class="arrow-down">&darr;</h1>
+                </div>
+            </section>
+        </div>
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={backToTop}>
+                <label>
+                    &uarr;
+                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>
