@@ -37,6 +37,9 @@ export default class Education extends LightningElement {
     imageURL_badgeTrailheadSuperbadge027 = IMAGES + '/badgeTrailheadSuperbadge027.webp';
     imageURL_badgeTrailheadSuperSetAppBuilder = IMAGES + '/badgeTrailheadSuperSetAppBuilder.webp';
     imageURL_SalesforceAdministratorCert = IMAGES + '/SalesforceAdministrator_Cert.png';
+    imageURL_badgeTrailheadSuperbadge029 = IMAGES + '/badgeTrailheadSuperbadge029.webp';
+    imageURL_badgeTrailheadSuperbadge030 = IMAGES + '/badgeTrailheadSuperbadge030.webp';
+    imageURL_badgeTrailheadSuperbadge031 = IMAGES + '/badgeTrailheadSuperbadge031.webp';
 
     buttonBackToTop;
     collapsibleHeading;
