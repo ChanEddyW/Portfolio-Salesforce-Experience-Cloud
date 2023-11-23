@@ -49,9 +49,9 @@ export default class NavMenu extends LightningElement {
         setInterval(() => this.navMenuLinkHighlight(), 2000);
         // setTimeout(() => this.clearIntervalAll(), 10000);
 
-        this.NavMenuLink1 = this.template.querySelector('.navMenu li:nth-child(1) a');
-        this.NavMenuLink2 = this.template.querySelector('.navMenu li:nth-child(2) a');
-        this.NavMenuLink3 = this.template.querySelector('.navMenu li:nth-child(3) a');
+        this.navMenuLink1 = this.template.querySelector('.navMenu li:nth-child(1) a');
+        this.navMenuLink2 = this.template.querySelector('.navMenu li:nth-child(2) a');
+        this.navMenuLink3 = this.template.querySelector('.navMenu li:nth-child(3) a');
         this.navMenuLinkProject = this.template.querySelector('.navMenu li:nth-child(4) a');
         this.navMenuLinkProject1 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(1) a');
         this.navMenuLinkProject2 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(2) a');
@@ -324,14 +324,14 @@ export default class NavMenu extends LightningElement {
         //     this.navMenuLinkHighlight();
         // });
 
-        this.NavMenuLink1.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.NavMenuLink2.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.NavMenuLink3.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.navMenuLinkProject.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.navMenuLinkProject1.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.navMenuLinkProject2.addEventListener('click', this.navMenuLinkListenerHandler);
-        this.navMenuLinkProject3.addEventListener('click', this.navMenuLinkListenerHandler);
-        // this.navMenuLinkProject4.addEventListener('click', this.navMenuLinkListenerHandler);
+        this.navMenuLink1.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLink2.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLink3.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject1.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject2.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject3.addEventListener('click', this.handleNavMenuLinkListener);
+        // this.navMenuLinkProject4.addEventListener('click', this.handleNavMenuLinkListener);
     }
 
     parent3;
@@ -343,10 +343,10 @@ export default class NavMenu extends LightningElement {
 
     // parent2Prev1;
 
-    navMenuLinkListenerHandler() {
-        // console.log('navMenuLinkListenerHandler this => ' + this);
-        // console.log('navMenuLinkListenerHandler JSON.stringify(this) => ' + JSON.stringify(this));
-        // console.log('navMenuLinkListenerHandler String(this) => ' + String(this));
+    handleNavMenuLinkListener() {
+        // console.log('handleNavMenuLinkListener this => ' + this);
+        // console.log('handleNavMenuLinkListener JSON.stringify(this) => ' + JSON.stringify(this));
+        // console.log('handleNavMenuLinkListener String(this) => ' + String(this));
 
         // const styleNavMenuLinkUnhighlight = `
         //     border-bottom: none;
@@ -461,7 +461,7 @@ export default class NavMenu extends LightningElement {
                 // this.parent2Prev1.style.cssText = styleNavMenuLinkHighlight;
                 break;
             default:
-                console.log('navMenuLinkListenerHandler switch default');
+                console.log('handleNavMenuLinkListener switch default');
                 break;
         }
     }

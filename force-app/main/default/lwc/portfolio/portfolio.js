@@ -42,13 +42,13 @@ export default class Portfolio extends LightningElement {
 
     collapsibleListener() {
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
-            this.collapsibleHeading[i].addEventListener('click', this.collapsibleListenerHandler);
+            this.collapsibleHeading[i].addEventListener('click', this.handleCollapsibleListener);
         }
     }
 
     collapsibleContent;
 
-    collapsibleListenerHandler() {
+    handleCollapsibleListener() {
         // console.log(this);
 
         this.classList.toggle('active');
