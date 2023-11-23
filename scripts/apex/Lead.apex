@@ -5,5 +5,13 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-DELETE[SELECT Id FROM Lead WHERE Id = '<placeholder>'];
-DELETE[SELECT Id FROM Lead WHERE LastModifiedDate < 2023-10-01T00:00:00.000+0000];
+DELETE[
+    SELECT Id 
+    FROM Lead 
+    WHERE Id = '<placeholder>'
+];
+DELETE[
+    SELECT Id 
+    FROM Lead 
+    WHERE SystemModStamp < 2023-10-01T00:00:00.000+0000
+];

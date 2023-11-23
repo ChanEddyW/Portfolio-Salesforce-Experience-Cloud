@@ -5,4 +5,7 @@
 
 // https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm
 
-SELECT Status, LeadSource, OwnerId, Id, Name, Company, Phone, Email, LinkedIn_Profile_URL__c, Message__c, LastModifiedDate FROM Lead WHERE LastModifiedDate < 2023-10-01T00:00:00.000+0000
+SELECT Id, Company, ConvertedAccountId, ConvertedContactId, ConvertedDate, ConvertedOpportunityId, Email, IsConverted, IsDeleted, LeadSource, Name, OwnerId, Phone, Status, LinkedIn_Profile_URL__c, Message__c, SystemModstamp 
+FROM Lead 
+WHERE SystemModStamp < 2023-10-01T00:00:00.000+0000 
+ORDER BY SystemModStamp DESC
