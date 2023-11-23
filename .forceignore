@@ -13,32 +13,32 @@ package.xml
 
 **/applications/**
 **/aura/**
-# **/classes/ChangePasswordController**
-# **/classes/ChangePasswordControllerTest**
-# **/classes/CommunitiesLandingController**
-# **/classes/CommunitiesLandingControllerTest**
-# **/classes/CommunitiesLoginController**
-# **/classes/CommunitiesLoginControllerTest**
-# **/classes/CommunitiesSelfRegConfirmController**
-# **/classes/CommunitiesSelfRegConfirmControllerTest**
-# **/classes/CommunitiesSelfRegController**
-# **/classes/CommunitiesSelfRegControllerTest**
-# **/classes/ForgotPasswordController**
-# **/classes/ForgotPasswordControllerTest**
-# **/classes/LightningForgotPasswordController**
-# **/classes/LightningForgotPasswordControllerTest**
-# **/classes/LightningLoginFormController**
-# **/classes/LightningLoginFormControllerTest**
-# **/classes/LightningSelfRegisterController**
-# **/classes/LightningSelfRegisterControllerTest**
-# **/classes/MicrobatchSelfRegController**
-# **/classes/MicrobatchSelfRegControllerTest**
-# **/classes/MyProfilePageController**
-# **/classes/MyProfilePageControllerTest**
-# **/classes/SiteLoginController**
-# **/classes/SiteLoginControllerTest**
-# **/classes/SiteRegisterController**
-# **/classes/SiteRegisterControllerTest**
+**/classes/ChangePasswordController**
+**/classes/ChangePasswordControllerTest**
+**/classes/CommunitiesLandingController**
+**/classes/CommunitiesLandingControllerTest**
+**/classes/CommunitiesLoginController**
+**/classes/CommunitiesLoginControllerTest**
+**/classes/CommunitiesSelfRegConfirmController**
+**/classes/CommunitiesSelfRegConfirmControllerTest**
+**/classes/CommunitiesSelfRegController**
+**/classes/CommunitiesSelfRegControllerTest**
+**/classes/ForgotPasswordController**
+**/classes/ForgotPasswordControllerTest**
+**/classes/LightningForgotPasswordController**
+**/classes/LightningForgotPasswordControllerTest**
+**/classes/LightningLoginFormController**
+**/classes/LightningLoginFormControllerTest**
+**/classes/LightningSelfRegisterController**
+**/classes/LightningSelfRegisterControllerTest**
+**/classes/MicrobatchSelfRegController**
+**/classes/MicrobatchSelfRegControllerTest**
+**/classes/MyProfilePageController**
+**/classes/MyProfilePageControllerTest**
+**/classes/SiteLoginController**
+**/classes/SiteLoginControllerTest**
+**/classes/SiteRegisterController**
+**/classes/SiteRegisterControllerTest**
 **/contentassets/**
 **/flexipages/**
 **/layouts/**
@@ -73,7 +73,7 @@ package.xml
 **/networkBranding/**
 **/networks/**
 **/notificationTypeConfig/**
-# **/pages/**
+**/pages/**
 **/profilePasswordPolicies/**
 **/profiles/**
 **/profileSessionSettings/**
