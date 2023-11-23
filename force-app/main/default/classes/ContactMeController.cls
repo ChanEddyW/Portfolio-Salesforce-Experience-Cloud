@@ -1,38 +1,50 @@
-global class ContactMeController {
+public with sharing class ContactMeController {
+    // public class ContactMeException extends Exception {}
+
     @AuraEnabled
     public static void createLead(
-        String firstname,
-        String lastname,
-        String company,
-        String phone,
-        String email,
-        String linkedinprofileurl,
+        String firstname, 
+        String lastname, 
+        String company, 
+        String phone, 
+        String email, 
+        String linkedinprofileurl, 
         String message
     ) {
-        // Group groupQueueLead = [SELECT Id FROM Group WHERE Name = 'Queue Lead' AND Type = 'Queue' Limit 1];
-        // User userSysAdmin = [SELECT Id FROM User WHERE Profile.Name = 'System Administrator' Limit 1];
-        
-        // List<Id> LeadIds = New List<Id>();
-        
-        Lead lead = new Lead();
+        // Group groupQueueLead = [
+             // SELECT Id 
+             // FROM Group 
+             // WHERE Type = 'Queue' AND Name = 'Queue Lead' 
+             // LIMIT 1
+         // ];
 
-        lead.Status = 'Open - Not Contacted';
-        lead.LeadSource = 'Web';
-        // lead.OwnerId = groupQueueLead.Id;
-        // lead.OwnerId = userSysAdmin.Id;
-        lead.FirstName = firstname;
-        lead.LastName = lastname;
-        lead.Company = company;
-        lead.Phone = phone;
-        lead.Email = email;
-        lead.LinkedIn_Profile_URL__c = linkedinprofileurl;
-        lead.Message__c = message;
+        // User userSysAdmin = [
+             // SELECT Id 
+             // FROM User 
+             // WHERE Profile.Name = 'System Administrator' 
+             // LIMIT 1
+         // ];
 
-        insert lead;
+        // Id[] leadIds = new List<Id>();
 
-        // LeadIds.add(lead.Id);
+        Lead leadToInsert = new Lead(
+            Status = 'Open - Not Contacted', 
+            LeadSource = 'Web', 
+            // OwnerId = groupQueueLead.Id, 
+            // OwnerId = userSysAdmin.Id, 
+            FirstName = firstname, 
+            LastName = lastname, 
+            Company = company, 
+            Phone = phone, 
+            Email = email, 
+            LinkedIn_Profile_URL__c = linkedinprofileurl, 
+            Message__c = message
+        );
+        insert leadToInsert;
 
-        // TriggerRuleAssignment.leadUpdate(LeadIds);
-        // TriggerRuleAutoResponse.leadUpdate(LeadIds);
+        // leadIds.add(leadToInsert.Id);
+
+        // TriggerRuleAssignment.leadUpdate(leadIds);
+        // TriggerRuleAutoResponse.leadUpdate(leadIds);
     }
 }
