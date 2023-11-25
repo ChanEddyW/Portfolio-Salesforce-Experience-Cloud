@@ -3,7 +3,7 @@ import IMAGES from '@salesforce/resourceUrl/Images';
 
 export default class Hero extends LightningElement {
     imageURL_myTrailmoji = IMAGES + '/myTrailmoji.png';
-    imageURL_badgeTrailheadRanger = IMAGES + '/badgeTrailheadRanger.png';
+    imageURL_badgeTrailheadRanger = IMAGES + '/badgeTrailheadRangerStarDouble.png';
     imageURL_badgeTrailheadSuperSetAdmin = IMAGES + '/badgeTrailheadSuperSetAdmin.webp';
     imageURL_badgeTrailheadSuperSetAppBuilder = IMAGES + '/badgeTrailheadSuperSetAppBuilder.webp';
     imageURL_badgeCertAdmin = IMAGES + '/2021-03_Badge_SF-Certified_Administrator_500x490px.png';

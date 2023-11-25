@@ -5,7 +5,7 @@ import ICONS from '@salesforce/resourceUrl/Icons';
 import IMAGES from '@salesforce/resourceUrl/Images';
 
 export default class NavMenu extends LightningElement {
-	imageURL_photo = IMAGES + '/pfpmaker2022101gRanger.jpeg';
+	imageURL_photo = IMAGES + '/pfpmaker2022101gRangerStarDouble.png';
 
     // Declare the currentPageReference variable in order to track it
     currentPageReference;
