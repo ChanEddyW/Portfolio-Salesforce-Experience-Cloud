@@ -6,6 +6,7 @@ export default class Hero extends LightningElement {
     imageURL_badgeTrailheadRanger = IMAGES + '/badgeTrailheadRangerStarDouble.png';
     imageURL_badgeTrailheadSuperSetAdmin = IMAGES + '/badgeTrailheadSuperSetAdmin.webp';
     imageURL_badgeTrailheadSuperSetAppBuilder = IMAGES + '/badgeTrailheadSuperSetAppBuilder.webp';
+    imageURL_badgeTrailheadSuperSetDeveloper = IMAGES + '/badgeTrailheadSuperSetDeveloper.webp';
     imageURL_badgeCertAdmin = IMAGES + '/2021-03_Badge_SF-Certified_Administrator_500x490px.png';
 
     buttonBackToTop;
