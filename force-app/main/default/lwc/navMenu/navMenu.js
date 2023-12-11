@@ -37,6 +37,7 @@ export default class NavMenu extends LightningElement {
     navMenuLinkProject2;
     navMenuLinkProject3;
     navMenuLinkProject4;
+    navMenuLinkProject5;
 
     renderedCallback() {
         // console.log('renderedCallback');
@@ -57,6 +58,7 @@ export default class NavMenu extends LightningElement {
         this.navMenuLinkProject2 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(2) a');
         this.navMenuLinkProject3 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(3) a');
         this.navMenuLinkProject4 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(4) a');
+        this.navMenuLinkProject5 = this.template.querySelector('.navMenu li:nth-child(4) ul li:nth-child(5) a');
 
         this.navMenuLinkListener();
     }
@@ -146,7 +148,7 @@ export default class NavMenu extends LightningElement {
 
             // To highlight link
             this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
-        } else if (this.pageName.includes('project_salesforce__c') || this.pageName.includes('portfolio__c') || this.pageName.includes('student_tracking__c') || this.pageName.includes('sprint_flow__c') || this.pageName.includes('superhero_villain_tracking__c')) {
+        } else if (this.pageName.includes('project_salesforce__c') || this.pageName.includes('portfolio__c') || this.pageName.includes('student_tracking__c') || this.pageName.includes('sprint_flow__c') || this.pageName.includes('superhero_villain_tracking__c') || this.pageName.includes('customer_tracking__c')) {
             this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
 
             // To unhighlight link
@@ -304,6 +306,23 @@ export default class NavMenu extends LightningElement {
         //         // To highlight link
         //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
         //         break;
+        //     case 'customer_tracking__c':
+        //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
+    
+        //         // To unhighlight link
+        //         // Home
+        //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
+        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         // about-me
+        //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
+        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         // education
+        //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
+        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+    
+        //         // To highlight link
+        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         break;
         //     default:
         //         console.log('navMenuLinkHighlight switch default');
         //         break;
@@ -331,7 +350,8 @@ export default class NavMenu extends LightningElement {
         this.navMenuLinkProject1.addEventListener('click', this.handleNavMenuLinkListener);
         this.navMenuLinkProject2.addEventListener('click', this.handleNavMenuLinkListener);
         this.navMenuLinkProject3.addEventListener('click', this.handleNavMenuLinkListener);
-        // this.navMenuLinkProject4.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject4.addEventListener('click', this.handleNavMenuLinkListener);
+        this.navMenuLinkProject5.addEventListener('click', this.handleNavMenuLinkListener);
     }
 
     parent3;
@@ -359,7 +379,7 @@ export default class NavMenu extends LightningElement {
         // `;
 
         switch (true) {
-            case !(String(this).includes('/about-me') || String(this).includes('/education') || String(this).includes('/project-salesforce') || String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking')):
+            case !(String(this).includes('/about-me') || String(this).includes('/education') || String(this).includes('/project-salesforce') || String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking')):
                 // To remove responsive
                 this.parent3 = this.parentElement.parentElement.parentElement;
                 if (this.parent3.classList.contains('responsive')) {
@@ -422,7 +442,7 @@ export default class NavMenu extends LightningElement {
                 // this.parent1Next1Child1 = this.parentElement.nextElementSibling.firstElementChild;
                 // this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
                 break;
-            case String(this).includes('/project-salesforce') && !(String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking')):
+            case String(this).includes('/project-salesforce') && !(String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking')):
                 // To remove responsive
                 this.parent3 = this.parentElement.parentElement.parentElement;
                 if (this.parent3.classList.contains('responsive')) {
@@ -443,7 +463,7 @@ export default class NavMenu extends LightningElement {
                 // this.parent1Prev1Child1 = this.parentElement.previousElementSibling.firstElementChild;
                 // this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
                 break;
-            case String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking'):
+            case String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking'):
                 // To unhighlight link
                 // Home
                 // this.parent3Prev3Child1 = this.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;

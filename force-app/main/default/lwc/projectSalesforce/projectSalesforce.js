@@ -6,6 +6,7 @@ export default class ProjectSalesforce extends LightningElement {
     imageURL_TalentStacker = IMAGES + '/TalentStacker.png';
     imageURL_ClickedCertificateSprintFlow = IMAGES + '/ClickedCertificateSprintFlow.png';
     imageURL_Trailvenger = IMAGES + '/TrailvengerWeek 2_Branding_Avatar.png';
+    imageURL_AstroshineCleaner = IMAGES + '/AstroshineCleanerAvatar.jpg';
 
     buttonBackToTop;
 
