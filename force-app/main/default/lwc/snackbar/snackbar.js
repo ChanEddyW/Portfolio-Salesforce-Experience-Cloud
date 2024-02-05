@@ -5,15 +5,17 @@ export default class Snackbar extends LightningElement {
 
     @api
     showSnackBar(message) {
+        // console.log('showSnackBar(message)');
+
         // Get the snackbar DIV
-        const snackbar = this.template.querySelector('.snackbar');
+        const SNACKBAR = this.template.querySelector('.snackbar');
 
         this.snackbarMessage = message;
 
         // Add the "show" class to DIV
-        snackbar.classList.add('show');
+        SNACKBAR.classList.add('show');
 
         // After 3 seconds, remove the show class from DIV
-        setTimeout(() => { snackbar.classList.remove('show'); }, 2700);
+        setTimeout(() => { SNACKBAR.classList.remove('show'); }, 2700);
     }
 }

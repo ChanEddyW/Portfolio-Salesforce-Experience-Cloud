@@ -4,30 +4,22 @@ import { loadStyle } from 'lightning/platformResourceLoader';
 import ICONS from '@salesforce/resourceUrl/Icons';
 import IMAGES from '@salesforce/resourceUrl/Images';
 
+const STYLE_NAV_MENU_LINK_UNHIGHLIGHT = `
+    border-bottom: none;
+    font-weight: none;
+    `;
+
+const STYLE_NAV_MENU_LINK_HIGHLIGHT = `
+    border-bottom: 5px solid rgba(13, 157, 218, 0.5);
+    font-weight: bold;
+    `;
+
 export default class NavMenu extends LightningElement {
 	imageURL_photo = IMAGES + '/pfpmaker2022101gRangerStarDouble.png';
 
     // Declare the currentPageReference variable in order to track it
     currentPageReference;
     pageName;
-
-    // Injects the page reference that describes the current page
-    @wire(CurrentPageReference)
-    setCurrentPageReference(currentPageReference) {
-        // console.log(currentPageReference);
-        // console.log(currentPageReference.attributes.name);
-        this.currentPageReference = currentPageReference;
-        this.pageName = this.currentPageReference.attributes.name;
-    }
-
-    // constructor() {
-    //     super();
-    //     console.log('constructor');
-    // }
-
-    // connectedCallback() {
-    //     console.log('connectedCallback');
-    // }
 
     navMenuLink1;
     navMenuLink2;
@@ -39,12 +31,47 @@ export default class NavMenu extends LightningElement {
     navMenuLinkProject4;
     navMenuLinkProject5;
 
+    navMenuLink;
+
+    // Home
+    parent1Next1Child1;
+    parent1Next2Child1;
+    parent1Next3Child1;
+
+    // about-me
+    parent1Prev1Child1;
+
+    // education
+    parent1Prev2Child1;
+
+    // project-salesforce
+    parent1Prev3Child1;
+
+    parent3;
+
+    // portfolio || student-tracking || sprint-flow || superhero-villain-tracking
+    // parent3Prev3Child1;
+    // parent3Prev2Child1;
+    // parent3Prev1Child1;
+
+    // parent2Prev1;
+
+    // constructor() {
+    //     console.log('constructor()');
+
+    //     super();
+    // }
+
+    // connectedCallback() {
+    //     console.log('connectedCallback()');
+    // }
+
     renderedCallback() {
-        // console.log('renderedCallback');
+        // console.log('renderedCallback()');
 
 		loadStyle(this, ICONS + '/style.css');
 
-        // console.log(location.pathname);
+        // console.log('location.pathname => ' + location.pathname);
 
         // this.navMenuLinkHighlight();
         setInterval(() => this.navMenuLinkHighlight(), 2000);
@@ -64,41 +91,29 @@ export default class NavMenu extends LightningElement {
     }
 
     // disconnectedCallback() {
-    //     console.log('disconnectedCallback');
+    //     console.log('disconnectedCallback()');
     // }
+
+    // Injects the page reference that describes the current page
+    @wire(CurrentPageReference)
+    setCurrentPageReference(currentPageReference) {
+        // console.log('setCurrentPageReference(currentPageReference)');
+        // console.log('currentPageReference => ' + currentPageReference);
+        // console.log('currentPageReference.attributes.name => ' + currentPageReference.attributes.name);
+
+        this.currentPageReference = currentPageReference;
+        this.pageName = this.currentPageReference.attributes.name;
+    }
 
 	// Toggle between adding and removing the "responsive" class to navMenu when the user clicks on the icon
 	handleHamburgerClicked() {
-		const navMenu = this.template.querySelector('.navMenu');
-		navMenu.classList.toggle('responsive');
+		const NAV_MENU = this.template.querySelector('.navMenu');
+
+		NAV_MENU.classList.toggle('responsive');
 	}
 
-    navMenuLink;
-
-    // Home
-    parent1Next1Child1;
-    parent1Next2Child1;
-    parent1Next3Child1;
-
-    // about-me
-    parent1Prev1Child1;
-
-    // education
-    parent1Prev2Child1;
-
-    // project-salesforce
-    parent1Prev3Child1;
-
     navMenuLinkHighlight() {
-        const styleNavMenuLinkUnhighlight = `
-            border-bottom: none;
-            font-weight: none;
-        `;
-
-        const styleNavMenuLinkHighlight = `
-            border-bottom: 5px solid rgba(13, 157, 218, 0.5);
-            font-weight: bold;
-        `;
+        // console.log('navMenuLinkHighlight()');
 
         if (this.pageName.includes('Home')) {
             this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(1) a');
@@ -106,240 +121,246 @@ export default class NavMenu extends LightningElement {
             // To unhighlight link
             // about-me
             this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-            this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // education
             this.parent1Next2Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-            this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // project-salesforce
             this.parent1Next3Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild;
-            this.parent1Next3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
 
             // To highlight link
-            this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+            this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         } else if (this.pageName.includes('about_me__c')) {
             this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(2) a');
 
             // To unhighlight link
             // Home
             this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-            this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // education
             this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-            this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // project-salesforce
             this.parent1Next2Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-            this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
 
             // To highlight link
-            this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+            this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         } else if (this.pageName.includes('education__c')) {
             this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(3) a');
 
             // To unhighlight link
             // Home
             this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-            this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // about-me
             this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-            this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // project-salesforce
             this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-            this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
 
             // To highlight link
-            this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+            this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         } else if (this.pageName.includes('project_salesforce__c') || this.pageName.includes('portfolio__c') || this.pageName.includes('student_tracking__c') || this.pageName.includes('sprint_flow__c') || this.pageName.includes('superhero_villain_tracking__c') || this.pageName.includes('customer_tracking__c')) {
             this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
 
             // To unhighlight link
             // Home
             this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-            this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // about-me
             this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-            this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
             // education
             this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-            this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+            this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
 
             // To highlight link
-            this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+            this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         } else {
-            console.log('navMenuLinkHighlight if else');
+            console.log('if else');
         }
-        // console.log('navMenuLinkHighlight if navMenuLink => ' + this.navMenuLink);
+
+        // console.log('navMenuLink => ' + this.navMenuLink);
 
         // switch (this.pageName) {
         //     case 'Home':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(1) a');
-    
+
         //         // To unhighlight link
         //         // about-me
         //         this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-        //         this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Next2Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-        //         this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // project-salesforce
         //         this.parent1Next3Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild;
-        //         this.parent1Next3Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Next3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'about_me__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(2) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-        //         this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // project-salesforce
         //         this.parent1Next2Child1 = this.navMenuLink.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-        //         this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'education__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(3) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // project-salesforce
         //         this.parent1Next1Child1 = this.navMenuLink.parentElement.nextElementSibling.firstElementChild;
-        //         this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'project_salesforce__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'portfolio__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'student_tracking__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'sprint_flow__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'superhero_villain_tracking__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     case 'customer_tracking__c':
         //         this.navMenuLink = this.template.querySelector('.navMenu li:nth-child(4) a');
-    
+
         //         // To unhighlight link
         //         // Home
         //         this.parent1Prev3Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // about-me
         //         this.parent1Prev2Child1 = this.navMenuLink.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-        //         this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+        //         this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
         //         // education
         //         this.parent1Prev1Child1 = this.navMenuLink.parentElement.previousElementSibling.firstElementChild;
-        //         this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
-    
+        //         this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
+
         //         // To highlight link
-        //         this.navMenuLink.style.cssText = styleNavMenuLinkHighlight;
+        //         this.navMenuLink.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
         //         break;
         //     default:
-        //         console.log('navMenuLinkHighlight switch default');
+        //         console.log('switch default');
         //         break;
         // }
-        // console.log('navMenuLinkHighlight switch navMenuLink => ' + this.navMenuLink);
+
+        // console.log('navMenuLink => ' + this.navMenuLink);
     }
 
     // clearIntervalAll() {
+    //     console.log('clearIntervalAll()');
+
     //     for (let i = 1; i < 99999; i++) {
     //         clearInterval(i);
     //     }
-    //     console.log('clearIntervalAll');
     // }
 
     navMenuLinkListener() {
+        // console.log('navMenuLinkListener()');
+
         // window.addEventListener('popstate', () => {
-        //     // console.log('navMenuLinkListener popstate');
+        //     console.log('popstate');
+
         //     this.navMenuLinkHighlight();
         // });
 
@@ -354,29 +375,11 @@ export default class NavMenu extends LightningElement {
         this.navMenuLinkProject5.addEventListener('click', this.handleNavMenuLinkListener);
     }
 
-    parent3;
-
-    // portfolio || student-tracking || sprint-flow || superhero-villain-tracking
-    // parent3Prev3Child1;
-    // parent3Prev2Child1;
-    // parent3Prev1Child1;
-
-    // parent2Prev1;
-
     handleNavMenuLinkListener() {
-        // console.log('handleNavMenuLinkListener this => ' + this);
-        // console.log('handleNavMenuLinkListener JSON.stringify(this) => ' + JSON.stringify(this));
-        // console.log('handleNavMenuLinkListener String(this) => ' + String(this));
-
-        // const styleNavMenuLinkUnhighlight = `
-        //     border-bottom: none;
-        //     font-weight: none;
-        // `;
-
-        // const styleNavMenuLinkHighlight = `
-        //     border-bottom: 5px solid rgba(13, 157, 218, 0.5);
-        //     font-weight: bold;
-        // `;
+        // console.log('handleNavMenuLinkListener()');
+        // console.log('this => ' + this);
+        // console.log('JSON.stringify(this) => ' + JSON.stringify(this));
+        // console.log('String(this) => ' + String(this));
 
         switch (true) {
             case !(String(this).includes('/about-me') || String(this).includes('/education') || String(this).includes('/project-salesforce') || String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking')):
@@ -387,18 +390,18 @@ export default class NavMenu extends LightningElement {
                 }
 
                 // To highlight link
-                // this.style.cssText = styleNavMenuLinkHighlight;
+                // this.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
 
                 // To unhighlight link
                 // about-me
                 // this.parent1Next1Child1 = this.parentElement.nextElementSibling.firstElementChild;
-                // this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // education
                 // this.parent1Next2Child1 = this.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-                // this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // project-salesforce
                 // this.parent1Next3Child1 = this.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild;
-                // this.parent1Next3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 break;
             case String(this).includes('/about-me'):
                 // To remove responsive
@@ -408,18 +411,18 @@ export default class NavMenu extends LightningElement {
                 }
 
                 // To highlight link
-                // this.style.cssText = styleNavMenuLinkHighlight;
+                // this.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
 
                 // To unhighlight link
                 // Home
                 // this.parent1Prev1Child1 = this.parentElement.previousElementSibling.firstElementChild;
-                // this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // education
                 // this.parent1Next1Child1 = this.parentElement.nextElementSibling.firstElementChild;
-                // this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // project-salesforce
                 // this.parent1Next2Child1 = this.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
-                // this.parent1Next2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 break;
             case String(this).includes('/education'):
                 // To remove responsive
@@ -429,18 +432,18 @@ export default class NavMenu extends LightningElement {
                 }
 
                 // To highlight link
-                // this.style.cssText = styleNavMenuLinkHighlight;
+                // this.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
 
                 // To unhighlight link
                 // Home
                 // this.parent1Prev2Child1 = this.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-                // this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // about-me
                 // this.parent1Prev1Child1 = this.parentElement.previousElementSibling.firstElementChild;
-                // this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // project-salesforce
                 // this.parent1Next1Child1 = this.parentElement.nextElementSibling.firstElementChild;
-                // this.parent1Next1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Next1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 break;
             case String(this).includes('/project-salesforce') && !(String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking')):
                 // To remove responsive
@@ -450,38 +453,38 @@ export default class NavMenu extends LightningElement {
                 }
 
                 // To highlight link
-                // this.style.cssText = styleNavMenuLinkHighlight;
+                // this.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
 
                 // To unhighlight link
                 // Home
                 // this.parent1Prev3Child1 = this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-                // this.parent1Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // about-me
                 // this.parent1Prev2Child1 = this.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-                // this.parent1Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // education
                 // this.parent1Prev1Child1 = this.parentElement.previousElementSibling.firstElementChild;
-                // this.parent1Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent1Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 break;
             case String(this).includes('/portfolio') || String(this).includes('/student-tracking') || String(this).includes('/sprint-flow') || String(this).includes('/superhero-villain-tracking') || String(this).includes('/customer-tracking'):
                 // To unhighlight link
                 // Home
                 // this.parent3Prev3Child1 = this.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild;
-                // this.parent3Prev3Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent3Prev3Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // about-me
                 // this.parent3Prev2Child1 = this.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.firstElementChild;
-                // this.parent3Prev2Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent3Prev2Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
                 // education
                 // this.parent3Prev1Child1 = this.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild;
-                // this.parent3Prev1Child1.style.cssText = styleNavMenuLinkUnhighlight;
+                // this.parent3Prev1Child1.style.cssText = STYLE_NAV_MENU_LINK_UNHIGHLIGHT;
 
                 // To highlight link
                 // project-salesforce
                 // this.parent2Prev1 = this.parentElement.parentElement.previousElementSibling;
-                // this.parent2Prev1.style.cssText = styleNavMenuLinkHighlight;
+                // this.parent2Prev1.style.cssText = STYLE_NAV_MENU_LINK_HIGHLIGHT;
                 break;
             default:
-                console.log('handleNavMenuLinkListener switch default');
+                console.log('switch default');
                 break;
         }
     }

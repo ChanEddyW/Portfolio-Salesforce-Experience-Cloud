@@ -8,7 +8,11 @@ export default class Portfolio extends LightningElement {
     buttonBackToTop;
     collapsibleHeading;
 
+    collapsibleContent;
+
     renderedCallback() {
+        // console.log('renderedCallback()');
+
         // Get the button:
         this.buttonBackToTop = this.template.querySelector('.back-to-top');
 
@@ -21,8 +25,10 @@ export default class Portfolio extends LightningElement {
     }
 
     scrollDownToShowButton() {
+        // console.log('scrollDownToShowButton()');
         // console.log('document.body.scrollTop => ' + document.body.scrollTop);
         // console.log('document.documentElement.scrollTop => ' + document.documentElement.scrollTop);
+
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
             this.buttonBackToTop.style.display = 'block';
         } else {
@@ -32,28 +38,32 @@ export default class Portfolio extends LightningElement {
 
     // When the user clicks on the button, scroll to the top of the page
     backToTop() {
-        const scrollOptions = {
+        // console.log('backToTop()');
+
+        const SCROLL_OPTIONS = {
             top: 0,
             left: 0,
             behavior: 'smooth'
         }
-        window.scrollTo(scrollOptions);
+        window.scrollTo(SCROLL_OPTIONS);
     }
 
     collapsibleListener() {
+        // console.log('collapsibleListener()');
+
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].addEventListener('click', this.handleCollapsibleListener);
         }
     }
 
-    collapsibleContent;
-
     handleCollapsibleListener() {
-        // console.log(this);
+        // console.log('handleCollapsibleListener()');
+        // console.log('this => ' + this);
 
         this.classList.toggle('active');
 
-        // console.log(this.nextElementSibling);
+        // console.log('nextElementSibling => ' + this.nextElementSibling);
+
         this.collapsibleContent = this.nextElementSibling;
 
         if (this.collapsibleContent.style.maxHeight) {
@@ -64,18 +74,26 @@ export default class Portfolio extends LightningElement {
     }
 
     collapsibleAllCollapse() {
+        // console.log('collapsibleAllCollapse()');
+
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.remove('active');
-            // console.log(this.collapsibleHeading[i].nextElementSibling);
+
+            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
             this.collapsibleContent.style.maxHeight = null;
         }
     }
 
     collapsibleAllExpand() {
+        // console.log('collapsibleAllExpand()');
+
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.add('active');
-            // console.log(this.collapsibleHeading[i].nextElementSibling);
+
+            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
             this.collapsibleContent.style.maxHeight = this.collapsibleContent.scrollHeight + 'px';
         }

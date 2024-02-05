@@ -19,6 +19,8 @@ export default class ContactMe extends LightningElement {
     snackbar;
 
     renderedCallback() {
+        // console.log('renderedCallback()');
+
         // loadScript(this, jQuery + '/jquery-3.7.1.min.js')
         // .then(() => {
         //     console.log('jQuery loaded');
@@ -43,6 +45,8 @@ export default class ContactMe extends LightningElement {
     }
 
     inputListener() {
+        // console.log('inputListener()');
+
         this.firstname.addEventListener('keydown', this.classRemoveError);
         this.lastname.addEventListener('keydown', this.classRemoveError);
         this.phone.addEventListener('keydown', this.classRemoveError);
@@ -57,18 +61,24 @@ export default class ContactMe extends LightningElement {
     }
 
     classRemoveError() {
+        // console.log('classRemoveError()');
+
         if (this.parentElement.classList.contains('slds-has-error')) {
             this.parentElement.classList.remove('slds-has-error');
         }
     }
 
     classAddError() {
+        // console.log('classAddError()');
+
         if (!this.parentElement.classList.contains('slds-has-error')) {
             this.parentElement.classList.add('slds-has-error');
         }
     }
 
     clearFirstName() {
+        // console.log('clearFirstName()');
+
         this.firstname.value = null;
         if (this.firstname.parentElement.classList.contains('slds-has-error')) {
             this.firstname.parentElement.classList.remove('slds-has-error');
@@ -76,6 +86,8 @@ export default class ContactMe extends LightningElement {
     }
 
     clearLastName() {
+        // console.log('clearLastName()');
+
         this.lastname.value = null;
         if (this.lastname.parentElement.classList.contains('slds-has-error')) {
             this.lastname.parentElement.classList.remove('slds-has-error');
@@ -83,15 +95,21 @@ export default class ContactMe extends LightningElement {
     }
 
     clearCompany() {
+        // console.log('clearCompany()');
+
         this.company.value = null;
     }
 
     // phoneFormat() {
+    //     console.log('phoneFormat()');
+
     //     const num = $(this).val().replace(/\D/g,'');
     //     $(this).val('(' + num.substring(0,3) + ') ' + num.substring(3,6) + '-' + num.substring(6,10));
     // }
 
     clearPhone() {
+        // console.log('clearPhone()');
+
         this.phone.value = null;
         if (this.phone.parentElement.classList.contains('slds-has-error')) {
             this.phone.parentElement.classList.remove('slds-has-error');
@@ -99,6 +117,8 @@ export default class ContactMe extends LightningElement {
     }
 
     clearEmail() {
+        // console.log('clearEmail()');
+
         this.email.value = null;
         if (this.email.parentElement.classList.contains('slds-has-error')) {
             this.email.parentElement.classList.remove('slds-has-error');
@@ -106,6 +126,8 @@ export default class ContactMe extends LightningElement {
     }
 
     clearLinkedInProfileURL() {
+        // console.log('clearLinkedInProfileURL()');
+
         this.linkedinprofileurl.value = null;
         if (this.linkedinprofileurl.parentElement.classList.contains('slds-has-error')) {
             this.linkedinprofileurl.parentElement.classList.remove('slds-has-error');
@@ -113,38 +135,44 @@ export default class ContactMe extends LightningElement {
     }
 
     closeDialog() {
+        // console.log('closeDialog()');
+
         this.dialog.close();
     }
 
     showDialog() {
+        // console.log('showDialog()');
+
         this.dialog.showModal();
     }
 
     handleSubmit(event) {
-        // prevent submit
+        // console.log('handleSubmit()');
+
         event.preventDefault();
 
-        const firstnameValue = this.firstname.value;
-        const lastnameValue = this.lastname.value;
-        const companyValue = this.company.value;
-        const phoneValue = this.phone.value;
-        const emailValue = this.email.value;
-        const linkedinprofileurlValue = this.linkedinprofileurl.value;
-        const messageValue = this.message.value;
+        const FIRST_NAME_VALUE = this.firstname.value;
+        const LAST_NAME_VALUE = this.lastname.value;
+        const COMPANY_VALUE = this.company.value;
+        const PHONE_VALUE = this.phone.value;
+        const EMAIL_VALUE = this.email.value;
+        const LINKEDIN_PROFILE_URL_VALUE = this.linkedinprofileurl.value;
+        const MESSAGE_VALUE = this.message.value;
 
         createLead({
-            firstname: firstnameValue,
-            lastname: lastnameValue,
-            company: companyValue || 'N/A',
-            phone: phoneValue,
-            email: emailValue,
-            linkedinprofileurl: linkedinprofileurlValue,
-            message: messageValue
+            firstname: FIRST_NAME_VALUE,
+            lastname: LAST_NAME_VALUE,
+            company: COMPANY_VALUE || 'N/A',
+            phone: PHONE_VALUE,
+            email: EMAIL_VALUE,
+            linkedinprofileurl: LINKEDIN_PROFILE_URL_VALUE,
+            message: MESSAGE_VALUE
         })
         .then(() => {this.snackbar.showSnackBar('Form submitted! Expect a confirmation email')})
         .catch((error) => {
             this.snackbar.showSnackBar('Form not submitted! Something went wrong');
-            console.log(JSON.stringify(error));
+
+            console.log('JSON.stringify(error) => ' + JSON.stringify(error));
         });
 
         this.closeDialog();

@@ -11,6 +11,8 @@ export default class ProjectSalesforce extends LightningElement {
     buttonBackToTop;
 
     renderedCallback() {
+        // console.log('renderedCallback()');
+
         // Get the button:
         this.buttonBackToTop = this.template.querySelector('.back-to-top');
 
@@ -19,8 +21,10 @@ export default class ProjectSalesforce extends LightningElement {
     }
 
     scrollDownToShowButton() {
+        // console.log('scrollDownToShowButton()');
         // console.log('document.body.scrollTop => ' + document.body.scrollTop);
         // console.log('document.documentElement.scrollTop => ' + document.documentElement.scrollTop);
+
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
             this.buttonBackToTop.style.display = 'block';
         } else {
@@ -30,11 +34,13 @@ export default class ProjectSalesforce extends LightningElement {
 
     // When the user clicks on the button, scroll to the top of the page
     backToTop() {
-        const scrollOptions = {
+        // console.log('backToTop()');
+
+        const SCROLL_OPTIONS = {
             top: 0,
             left: 0,
             behavior: 'smooth'
         }
-        window.scrollTo(scrollOptions);
+        window.scrollTo(SCROLL_OPTIONS);
     }
 }
