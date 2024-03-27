@@ -5,7 +5,16 @@
 
 // https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_user.htm
 
-SELECT Id, FirstName, LastName, ProfileId, Profile.Name, Username, UserRoleId, SystemModstamp 
+SELECT 
+    Id, 
+    FirstName, 
+    LastName, 
+    ProfileId, 
+    Profile.Name, 
+    Username, 
+    UserRoleId, 
+    SystemModstamp 
 FROM User 
 WHERE SystemModStamp < 2023-10-01T00:00:00.000+0000 
+WITH USER_MODE 
 ORDER BY SystemModStamp DESC

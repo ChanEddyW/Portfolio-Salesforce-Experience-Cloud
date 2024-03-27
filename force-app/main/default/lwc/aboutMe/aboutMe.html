@@ -2,77 +2,96 @@
     <div class="container-outer">
         <div class="container">
             <h1 class="slds-text-align_center">About Me</h1>
+
             <section class="slds-var-m-top_large">
-                <p>Hello, I am Eddy Chan, a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> open to job opportunities. My skills include Apex programming, integration, and process automation.</p>
-                <p class="slds-var-m-top_large">Below, I cover things that may not already be on my <a href="https://docs.google.com/document/d/1eBM-QtjH-K5rQd3h28uAOdqPw8H0lcV6Ra4O6LhpCFc" target="_blank" rel="noopener noreferrer">resume <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> or <a href="https://www.linkedin.com/in/ChanEddyW" target="_blank" rel="noopener noreferrer">LinkedIn profile <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+                <p>Hello, I am Eddy Chan, a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> open to job opportunities. My skills include Apex programming, integration, and process automation.</p>
+                <p class="slds-var-m-top_large">Below, I cover things that may not already be on my <a href="https://docs.google.com/document/d/1eBM-QtjH-K5rQd3h28uAOdqPw8H0lcV6Ra4O6LhpCFc" target="_blank" rel="noopener noreferrer">resume <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> or <a href="https://www.linkedin.com/in/ChanEddyW" target="_blank" rel="noopener noreferrer">LinkedIn profile <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
             </section>
+
             <div class="border-bottom"></div>
+
             <div class="container-img">
-                <img src={imageURL_CanvaTimeline} alt="Canva Timeline" class="img-timeline">
+                <img src={imageCanvaTimeline} alt="Canva Timeline" class="img-timeline">
             </div>
+
             <div class="border-bottom"></div>
-            <div class="container-collapsibleButton">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="container-collapsible-button">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
+
             <section class="slds-var-m-top_large">
-                <h3 class="collapsibleHeading">1. What I Have Done So Far In My Salesforce Journey</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">1. What I Have Done So Far In My Salesforce Journey</h3>
+
+                <div class="collapsible-content">
                     <ul class="slds-list_dotted">
-                        <li>Earned <a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">37 Superbadges <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> including 3 Super Sets: Developer, App Builder, Admin</li>
+                        <li>Finished coding and low&#45;code&#47;no&#45;code <a href="/project-salesforce">Salesforce Projects</a></li>
+                        <li>Finished all 100+ Apex Sandbox coding <a href="https://github.com/ChanEddyW/ApexSandbox.io-Solution" target="_blank" rel="noopener noreferrer">problems <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> available as of March 2024</li>
+                        <li>Finished all Camp Apex coding courses and <a href="https://github.com/ChanEddyW/Camp-Apex-Green-Guardian" target="_blank" rel="noopener noreferrer">project <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> available as of March 2024</li>
+                        <li>Earned <a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">37 Superbadges <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> including 3 Super Sets: Developer, App Builder, Admin</li>
                         <li>Performed well on the Salesforce Administrator exam with an overall result of &sim;94&#37; &#40;answered &sim;57&#47;60 scored questions correctly&#41; on my 1st attempt</li>
-                        <li>Worked on <a href="/project-salesforce">Salesforce Projects</a></li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">2. My Next Goals</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">2. My Next Goals</h3>
+
+                <div class="collapsible-content">
                     <ul class="slds-list_dotted">
-                        <li>Pass the Salesforce Platform Developer I exam</li>
-                        <li>Work on more projects to showcase my knowledge and skills</li>
-                        <li>Land a Salesforce job with a great organization</li>
+                        <li>Land a Salesforce Developer job</li>
+                        <li>Pass the Platform Developer I exam</li>
+                        <li>Graduate from the <a href="https://cloudcodeacademy.com" target="_blank" rel="noopener noreferrer">Cloud Code Academy&mdash;Salesforce Developer Kickstart Program <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li>Finish more projects</li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">3. Lessons Learned</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">3. Lessons Learned</h3>
+
+                <div class="collapsible-content">
                     <ul class="slds-list_dotted">
-                        <li>Increasing user adoption involves not only technical skills, but also business analysis skills of understanding what end&#45;users actually need</li>
-                        <li>Like a good doctor, a Salesforce professional tries to understand what is really going on and what the need or problem really is before coming up with solutions</li>
-                        <li>A good Salesforce professional tries to be proactive, follow best practices, and avoid <a href="https://admin.salesforce.com/blog/2021/tech-debt-what-it-is-and-why-you-should-care" target="_blank" rel="noopener noreferrer">technical debt <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                        <li>Do not solve the wrong problem. Understand what is really going on and what the need or problem really is before coming up with solutions.</li>
+                        <li>Do not just get it to work. Be proactive, follow best practices, and avoid <a href="https://admin.salesforce.com/blog/2021/tech-debt-what-it-is-and-why-you-should-care" target="_blank" rel="noopener noreferrer">technical debt <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a>.</li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">4. My Career Journey</h3>
-                <div class="collapsibleContent">
-                    <p class="slds-var-m-top_large">After earning my Master of Science in Management Information Systems, I started my <b>Information Technology</b> journey. I gained experience working with people globally, administering <a href="https://salesforce.com/ap/saas" target="_blank" rel="noopener noreferrer">SaaS products <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>, using <a href="https://learn.microsoft.com/en-us/training/modules/get-started-transact-sql-programming" target="_blank" rel="noopener noreferrer">Transact&#45;SQL <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> and Microsoft Excel macros to automate business processes, and so on. My favorite part of the job was building and improving things to make my clients&#39; life better. When my clients appreciate my work and trust me for future projects, I am motivated to keep going.</p>
+                <h3 class="collapsible-heading">4. My Career Journey</h3>
+
+                <div class="collapsible-content">
+                    <p class="slds-var-m-top_large">After earning my Master of Science in Management Information Systems, I started my <b>Information Technology</b> journey. I gained experience working with people globally, administering <a href="https://salesforce.com/ap/saas" target="_blank" rel="noopener noreferrer">SaaS products <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a>, using <a href="https://learn.microsoft.com/en-us/training/modules/get-started-transact-sql-programming" target="_blank" rel="noopener noreferrer">Transact&#45;SQL <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> and Microsoft Excel macros to automate business processes, and so on. My favorite part of the job was building and improving things to make my clients&#39; life better. When my clients appreciate my work and trust me for future projects, I am motivated to keep going.</p>
                     
                     <p class="slds-var-m-top_large">After my position was eliminated during the COVID&#45;19 pandemic, I wanted to see if physical, skilled labor career was a better fit for me&mdash;so I started my <b>Blue&#45;Collar&#47;Construction</b> journey. I gained experience piping, pulling large cables, installing equipment, and so on. Although the work was physical, it further developed my communication, teamwork, project management, critical thinking, and problem solving skills. My favorite part of the job was seeing what you have built come to life.</p>
 
-                    <p class="slds-var-m-top_large">Once I discovered Salesforce, I was hooked&mdash;the more I learn about <a href="https://youtu.be/xx2sK-QiBjw" target="_blank" rel="noopener noreferrer">Salesforce <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>, the more I have clarity that I want a career in the Salesforce ecosystem. Motivated by autonomy, mastery, and purpose, I want a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> career.</p>
+                    <p class="slds-var-m-top_large">Once I discovered Salesforce, I was hooked&mdash;the more I learn about <a href="https://youtu.be/xx2sK-QiBjw" target="_blank" rel="noopener noreferrer">Salesforce <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a>, the more I have clarity that I want a career in the Salesforce ecosystem. Motivated by autonomy, mastery, and purpose, I want a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> career.</p>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">5. My Personality</h3>
-                <div class="collapsibleContent">
-                    <p>I am introverted and self&#45;deprecating. I am not like someone who tends to seek attention or boast their achievements. I would rather solve problems, make my clients happy, and move on. So self&#45;promotion is not easy for me to do. Having learned the benefits of self&#45;promotion, I have been trying to get better at it.</p>
+                <h3 class="collapsible-heading">5. My Personality</h3>
+
+                <div class="collapsible-content">
+                    <p>I am not like someone who tends to boast their achievements. I would rather solve problems, make my clients happy, and move on. So self&#45;promotion is not easy for me to do. Having learned the benefits of self&#45;promotion, I have been trying to get better at it.</p>
                     <p class="slds-var-m-top_large">&quot;It&#39;s not bragging if it&#39;s based on facts!&quot;</p>
-                    <p class="slds-var-m-top_large"><a href="https://iamremarkable.withgoogle.com" target="_blank" rel="noopener noreferrer">#IAmRemarkable <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> because </p>
+                    <p class="slds-var-m-top_large"><a href="https://iamremarkable.withgoogle.com" target="_blank" rel="noopener noreferrer">#IAmRemarkable <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> because </p>
+
                     <ul class="slds-list_dotted">
                         <li>I have a growth mindset&mdash;I assume there is always room for improvement and there are ideas I have not tried</li>
                         <li>I am not afraid to speak up when something is wrong</li>
@@ -80,56 +99,64 @@
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">6. My Interests</h3>
-                <div class="collapsibleContent">
-                    <p>Outside of my passion for Salesforce, I enjoy </p>
+                <h3 class="collapsible-heading">6. My Interests</h3>
+
+                <div class="collapsible-content">
+                    <p>Outside of my passion for Salesforce and software development, I enjoy </p>
+
                     <ul class="slds-list_dotted">
-                        <li>Hanging out with friends</li>
                         <li>Playing sports including basketball</li>
-                        <li>Barbell strength training using the <a href="https://startingstrength.com/get-started" target="_blank" rel="noopener noreferrer">Starting Strength program <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li>Outdoor activities</li>
+                        <li>Barbell strength training using the <a href="https://startingstrength.com/get-started" target="_blank" rel="noopener noreferrer">Starting Strength program <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                         <li>Playing challenging games</li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <!-- <section>
-                <h3 class="collapsibleHeading">LinkedIn Feed&mdash;Profile Posts</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">LinkedIn Feed&mdash;Profile Posts</h3>
+
+                <div class="collapsible-content">
                     <div class="container-iframe">
                         <iframe src="https://widgets.sociablekit.com/linkedin-profile-posts/iframe/199961" frameborder="0" allowfullscreen="true"></iframe>
                     </div>
                 </div>
             </section>
+
             <div class="border-bottom"></div> -->
+
             <section>
-                <h3 class="collapsibleHeading">7. LinkedIn Feed&mdash;Recommendations</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">7. LinkedIn Feed&mdash;Recommendations</h3>
+
+                <div class="collapsible-content">
                     <div class="container-iframe">
                         <iframe src="https://widgets.sociablekit.com/linkedin-recommendations/iframe/199973" frameborder="0" allowfullscreen="true"></iframe>
                     </div>
                 </div>
             </section>
-            <div class="container-collapsibleButton slds-var-m-top_large">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="container-collapsible-button slds-var-m-top_large">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
         </div>
+
         <div class="tooltip">
-            <button type="button" class="back-to-top" onclick={backToTop}>
+            <button type="button" class="back-to-top" onclick={scrollBackToTop}>
                 <label>
                     &uarr;
-                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+
+                    <span class="tooltip-text slds-text-align_center">Back To Top</span>
                 </label>
             </button>
         </div>

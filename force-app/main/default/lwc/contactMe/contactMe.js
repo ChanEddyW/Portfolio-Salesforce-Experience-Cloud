@@ -6,70 +6,80 @@ import ICONS from '@salesforce/resourceUrl/Icons';
 
 export default class ContactMe extends LightningElement {
     // https://icomoon.io/app/#/select
-    iconURL_clear = ICONS + '/clear_60.png';
+    iconClear = ICONS + '/clear_60.png';
 
     dialog;
-    firstname;
-    lastname;
-    company;
+    firstName;
+    lastName;
     phone;
     email;
-    linkedinprofileurl;
-    message;
+    linkedInProfileURL;
+    company;
+    msg;
     snackbar;
 
     renderedCallback() {
-        // console.log('renderedCallback()');
+        // console.log('renderedCallback');
 
         // loadScript(this, jQuery + '/jquery-3.7.1.min.js')
         // .then(() => {
         //     console.log('jQuery loaded');
         // })
-        // .catch(error => {
-        //     console.log('jQuery not loaded: ' + error);
+        // .catch(e => {
+        //     console.log('jQuery not loaded | JSON.stringify(e) = ' + JSON.stringify(e));
         // });
 
-        this.dialog = this.template.querySelector('.contactMe-dialog');
-        this.firstname = this.template.querySelector('.firstname');
-        this.lastname = this.template.querySelector('.lastname');
-        this.company = this.template.querySelector('.company');
+        this.dialog = this.template.querySelector('.contact-me-dialog');
+        this.firstName = this.template.querySelector('.first-name');
+        this.lastName = this.template.querySelector('.last-name');
         this.phone = this.template.querySelector('.phone');
         this.email = this.template.querySelector('.email');
-        this.linkedinprofileurl = this.template.querySelector('.linkedinprofileurl');
-        this.message = this.template.querySelector('.message');
-        this.snackbar = this.template.querySelector('c-snackbar');
+        this.linkedInProfileURL = this.template.querySelector('.linkedin-profile-url');
 
         this.inputListener();
 
-        // this.template.querySelector(`input[type='tel']`).addEventListener('keyup', this.phoneFormat);
+        this.company = this.template.querySelector('.company');
+        this.msg = this.template.querySelector('.msg');
+        this.snackbar = this.template.querySelector('c-snackbar');
+    }
+
+    showDialog() {
+        // console.log('showDialog');
+
+        this.dialog.showModal();
     }
 
     inputListener() {
-        // console.log('inputListener()');
+        // console.log('inputListener');
 
-        this.firstname.addEventListener('keydown', this.classRemoveError);
-        this.lastname.addEventListener('keydown', this.classRemoveError);
-        this.phone.addEventListener('keydown', this.classRemoveError);
-        this.email.addEventListener('keydown', this.classRemoveError);
-        this.linkedinprofileurl.addEventListener('keydown', this.classRemoveError);
+        this.firstName.addEventListener('keydown', this.removeErrorClass);
+        this.firstName.addEventListener('invalid', this.addErrorClass);
 
-        this.firstname.addEventListener('invalid', this.classAddError);
-        this.lastname.addEventListener('invalid', this.classAddError);
-        this.phone.addEventListener('invalid', this.classAddError);
-        this.email.addEventListener('invalid', this.classAddError);
-        this.linkedinprofileurl.addEventListener('invalid', this.classAddError);
+        this.lastName.addEventListener('keydown', this.removeErrorClass);
+        this.lastName.addEventListener('invalid', this.addErrorClass);
+
+        this.phone.addEventListener('keydown', this.removeErrorClass);
+        // this.template.querySelector(`input[type='tel']`).addEventListener('keyup', this.formatPhone);
+        this.phone.addEventListener('invalid', this.addErrorClass);
+
+        this.email.addEventListener('keydown', this.removeErrorClass);
+        this.email.addEventListener('invalid', this.addErrorClass);
+
+        this.linkedInProfileURL.addEventListener('keydown', this.removeErrorClass);
+        this.linkedInProfileURL.addEventListener('invalid', this.addErrorClass);
+
     }
 
-    classRemoveError() {
-        // console.log('classRemoveError()');
+    removeErrorClass() {
+        // console.log('removeErrorClass');
 
         if (this.parentElement.classList.contains('slds-has-error')) {
             this.parentElement.classList.remove('slds-has-error');
         }
     }
 
-    classAddError() {
-        // console.log('classAddError()');
+    addErrorClass() {
+        // console.log('addErrorClass');
 
         if (!this.parentElement.classList.contains('slds-has-error')) {
             this.parentElement.classList.add('slds-has-error');
@@ -77,104 +87,98 @@ export default class ContactMe extends LightningElement {
     }
 
     clearFirstName() {
-        // console.log('clearFirstName()');
+        // console.log('clearFirstName');
 
-        this.firstname.value = null;
-        if (this.firstname.parentElement.classList.contains('slds-has-error')) {
-            this.firstname.parentElement.classList.remove('slds-has-error');
+        this.firstName.value = null;
+
+        if (this.firstName.parentElement.classList.contains('slds-has-error')) {
+            this.firstName.parentElement.classList.remove('slds-has-error');
         }
     }
 
     clearLastName() {
-        // console.log('clearLastName()');
+        // console.log('clearLastName');
 
-        this.lastname.value = null;
-        if (this.lastname.parentElement.classList.contains('slds-has-error')) {
-            this.lastname.parentElement.classList.remove('slds-has-error');
+        this.lastName.value = null;
+
+        if (this.lastName.parentElement.classList.contains('slds-has-error')) {
+            this.lastName.parentElement.classList.remove('slds-has-error');
         }
     }
 
     clearCompany() {
-        // console.log('clearCompany()');
+        // console.log('clearCompany');
 
         this.company.value = null;
     }
 
-    // phoneFormat() {
-    //     console.log('phoneFormat()');
+    // formatPhone() {
+    //     console.log('formatPhone');
 
-    //     const num = $(this).val().replace(/\D/g,'');
-    //     $(this).val('(' + num.substring(0,3) + ') ' + num.substring(3,6) + '-' + num.substring(6,10));
+    //     const NUM = $(this).val().replace(/\D/g,'');
+
+    //     $(this).val('(' + NUM.substring(0,3) + ') ' + NUM.substring(3,6) + '-' + NUM.substring(6,10));
     // }
 
     clearPhone() {
-        // console.log('clearPhone()');
+        // console.log('clearPhone');
 
         this.phone.value = null;
+
         if (this.phone.parentElement.classList.contains('slds-has-error')) {
             this.phone.parentElement.classList.remove('slds-has-error');
         }
     }
 
     clearEmail() {
-        // console.log('clearEmail()');
+        // console.log('clearEmail');
 
         this.email.value = null;
+
         if (this.email.parentElement.classList.contains('slds-has-error')) {
             this.email.parentElement.classList.remove('slds-has-error');
         }
     }
 
     clearLinkedInProfileURL() {
-        // console.log('clearLinkedInProfileURL()');
+        // console.log('clearLinkedInProfileURL');
 
-        this.linkedinprofileurl.value = null;
-        if (this.linkedinprofileurl.parentElement.classList.contains('slds-has-error')) {
-            this.linkedinprofileurl.parentElement.classList.remove('slds-has-error');
+        this.linkedInProfileURL.value = null;
+
+        if (this.linkedInProfileURL.parentElement.classList.contains('slds-has-error')) {
+            this.linkedInProfileURL.parentElement.classList.remove('slds-has-error');
         }
     }
 
-    closeDialog() {
-        // console.log('closeDialog()');
-
-        this.dialog.close();
-    }
-
-    showDialog() {
-        // console.log('showDialog()');
-
-        this.dialog.showModal();
-    }
-
     handleSubmit(event) {
-        // console.log('handleSubmit()');
+        // console.log('handleSubmit');
 
         event.preventDefault();
 
-        const FIRST_NAME_VALUE = this.firstname.value;
-        const LAST_NAME_VALUE = this.lastname.value;
-        const COMPANY_VALUE = this.company.value;
-        const PHONE_VALUE = this.phone.value;
-        const EMAIL_VALUE = this.email.value;
-        const LINKEDIN_PROFILE_URL_VALUE = this.linkedinprofileurl.value;
-        const MESSAGE_VALUE = this.message.value;
-
         createLead({
-            firstname: FIRST_NAME_VALUE,
-            lastname: LAST_NAME_VALUE,
-            company: COMPANY_VALUE || 'N/A',
-            phone: PHONE_VALUE,
-            email: EMAIL_VALUE,
-            linkedinprofileurl: LINKEDIN_PROFILE_URL_VALUE,
-            message: MESSAGE_VALUE
+            firstName: this.firstName.value,
+            lastName: this.lastName.value,
+            company: this.company.value || 'N/A',
+            phone: this.phone.value,
+            email: this.email.value,
+            linkedInProfileURL: this.linkedInProfileURL.value,
+            msg: this.msg.value
         })
-        .then(() => {this.snackbar.showSnackBar('Form submitted! Expect a confirmation email')})
-        .catch((error) => {
-            this.snackbar.showSnackBar('Form not submitted! Something went wrong');
+        .then(() => {
+            this.snackbar.showSnackBar('Form submitted! Expect a confirmation email.')
+        })
+        .catch((e) => {
+            console.log('JSON.stringify(e) = ' + JSON.stringify(e));
 
-            console.log('JSON.stringify(error) => ' + JSON.stringify(error));
+            this.snackbar.showSnackBar('Form not submitted! Something went wrong.');
         });
 
         this.closeDialog();
+    }
+
+    closeDialog() {
+        // console.log('closeDialog');
+
+        this.dialog.close();
     }
 }

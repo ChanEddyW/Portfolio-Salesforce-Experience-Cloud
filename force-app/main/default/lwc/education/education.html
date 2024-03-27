@@ -2,123 +2,177 @@
     <div class="container-outer">
         <div class="container">
             <h1 class="slds-text-align_center">Education</h1>
-            <div class="container-collapsibleButton slds-var-m-top_large">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="container-collapsible-button slds-var-m-top_large">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
+
             <section class="slds-var-m-top_large">
-                <h3 class="collapsibleHeading">1. Salesforce Certified</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">1. Salesforce Certified</h3>
+
+                <div class="collapsible-content">
                     <a href="https://trailhead.salesforce.com/en/credentials/certification-detail-print/?searchString=ojE48jcISFlVKq3T4eR0/T410rKLn3qHf0DXADXKfyGt4EP0wmq1orDm+0S88iVv" target="_blank" rel="noopener noreferrer">
                         <div class="container-img">
-                            <img src={imageURL_SalesforceAdministratorCert} alt="Salesforce Administrator&mdash;Certfication" class="img-SalesforceCert">
+                            <img src={imageAdminCert} alt="Salesforce Administrator Certification" class="img-screenshot img-link">
                         </div>
                     </a>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">2. Superbadges&mdash;37</h3>
-                <div class="collapsibleContent">
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Developer Super Set&mdash;2 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+                <h3 class="collapsible-heading">2. Superbadges&mdash;37</h3>
+
+                <div class="collapsible-content">
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Developer Super Set&mdash;2 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperSetDeveloper} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge035} alt="Superbadge" class="img-badge">
+                        <img src={imageDeveloperSuperSet} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge035} alt="Superbadge" class="img-badge">
                     </div>
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Developer&#47;App Builder Super Set&mdash;11 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Developer&#47;App Builder Super Set&mdash;11 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge026} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge025} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge024} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge023} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge022} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge021} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge026} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge025} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge024} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge023} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge022} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge021} alt="Superbadge" class="img-badge">
                     </div>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge020} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge019} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge018} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge017} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge016} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge020} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge019} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge018} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge017} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge016} alt="Superbadge" class="img-badge">
                     </div>
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">App Builder Super Set&mdash;2 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">App Builder Super Set&mdash;2 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperSetAppBuilder} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge027} alt="Superbadge" class="img-badge">
+                        <img src={imageAppBuilderSuperSet} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge027} alt="Superbadge" class="img-badge">
                     </div>
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">App Builder&#47;Admin Super Set&mdash;12 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">App Builder&#47;Admin Super Set&mdash;12 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge012} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge011} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge010} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge009} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge008} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge007} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge012} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge011} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge010} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge009} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge008} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge007} alt="Superbadge" class="img-badge">
                     </div>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge006} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge005} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge004} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge003} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge002} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge001} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge006} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge005} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge004} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge003} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge002} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge001} alt="Superbadge" class="img-badge">
                     </div>
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Admin Super Set&mdash;3 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Admin Super Set&mdash;3 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperSetAdmin} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge014} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge013} alt="Superbadge" class="img-badge">
+                        <img src={imageAdminSuperSet} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge014} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge013} alt="Superbadge" class="img-badge">
                     </div>
-                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Other Superbadges&mdash;7 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+
+                    <p class="slds-text-align_left"><a href="https://salesforce.com/trailblazer/ChanEddyW" target="_blank" rel="noopener noreferrer">Other Superbadges&mdash;7 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge037} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge034} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge033} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge032} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge031} alt="Superbadge" class="img-badge">
-                        <img src={imageURL_badgeTrailheadSuperbadge030} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge037} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge034} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge033} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge032} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge031} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge030} alt="Superbadge" class="img-badge">
                     </div>
+
                     <div class="container-img">
-                        <img src={imageURL_badgeTrailheadSuperbadge029} alt="Superbadge" class="img-badge">
+                        <img src={imageSuperbadge029} alt="Superbadge" class="img-badge">
                     </div>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">3. Diploma</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">3. Apex Sandbox</h3>
+
+                <div class="collapsible-content">
+                    <a href="https://github.com/ChanEddyW/ApexSandbox.io-Solution" target="_blank" rel="noopener noreferrer">
+                        <div class="container-img">
+                            <img src={imageApexSandbox} alt="Apex Sandbox" class="img-screenshot img-link">
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="border-bottom"></div>
+
+            <section>
+                <h3 class="collapsible-heading">4. Camp Apex</h3>
+
+                <div class="collapsible-content">
+                    <a href="https://github.com/ChanEddyW/Camp-Apex-Green-Guardian" target="_blank" rel="noopener noreferrer">
+                        <div class="container-img">
+                            <img src={imageCampApexProjectGreenGuardian} alt="Camp Apex" class="img-screenshot img-link">
+                        </div>
+                    </a>
+
                     <div class="container-img">
-                        <img src={imageURL_diploma2016} alt="Diploma&mdash;Master of Science" class="img-screenshot">
-                        <img src={imageURL_diploma2015} alt="Diploma&mdash;Bachelor of Science" class="img-screenshot slds-var-m-top_large">
+                        <img src={imageCampApexApexFundamental} alt="Camp Apex" class="img-screenshot">
+                        <img src={imageCampApexOOP} alt="Camp Apex" class="img-screenshot slds-var-m-top_large">
+                        <img src={imageCampApexSOQL} alt="Camp Apex" class="img-screenshot slds-var-m-top_large">
                     </div>
                 </div>
             </section>
-            <div class="container-collapsibleButton slds-var-m-top_large">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="border-bottom"></div>
+
+            <section>
+                <h3 class="collapsible-heading">5. Diploma</h3>
+
+                <div class="collapsible-content">
+                    <div class="container-img">
+                        <img src={imageDiploma2016} alt="Master of Science Diploma" class="img-screenshot">
+                        <img src={imageDiploma2015} alt="Bachelor of Science Diploma" class="img-screenshot slds-var-m-top_large">
+                    </div>
+                </div>
+            </section>
+
+            <div class="container-collapsible-button slds-var-m-top_large">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
         </div>
+
         <div class="tooltip">
-            <button type="button" class="back-to-top" onclick={backToTop}>
+            <button type="button" class="back-to-top" onclick={scrollBackToTop}>
                 <label>
                     &uarr;
-                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+
+                    <span class="tooltip-text slds-text-align_center">Back To Top</span>
                 </label>
             </button>
         </div>

@@ -45,7 +45,6 @@ package.xml
 **/permissionsets/**
 **/staticresources/SiteSamples**
 **/tabs/**
-**/triggers/**
 
 **/apexEmailNotifications/**
 **/appMenus/**

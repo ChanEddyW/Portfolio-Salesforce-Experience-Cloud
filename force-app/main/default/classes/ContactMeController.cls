@@ -3,48 +3,75 @@ public with sharing class ContactMeController {
 
     @AuraEnabled
     public static void createLead(
-        String firstname, 
-        String lastname, 
+        String firstName, 
+        String lastName, 
         String company, 
         String phone, 
         String email, 
-        String linkedinprofileurl, 
-        String message
+        String linkedInProfileURL, 
+        String msg
     ) {
-        // Group groupQueueLead = [
-             // SELECT Id 
-             // FROM Group 
-             // WHERE Type = 'Queue' AND Name = 'Queue Lead' 
-             // LIMIT 1
-         // ];
+        // List<Group> groups = [
+        //     SELECT 
+        //         Id, 
+        //         Name 
+        //     FROM Group 
+        //     WHERE Name = 'Queue Lead' 
+        //         AND Type = 'Queue' 
+        //     WITH USER_MODE 
+        //     LIMIT 1
+        // ];
 
-        // User userSysAdmin = [
-             // SELECT Id 
-             // FROM User 
-             // WHERE Profile.Name = 'System Administrator' 
-             // LIMIT 1
-         // ];
+        // Id queueLeadId;
 
-        // Id[] leadIds = new List<Id>();
+        // for (Group grp : groups) {
+        //     if (grp.Name == 'Queue Lead') {
+        //         queueLeadId = grp.Id;
+
+        //         break;
+        //     }
+        // }
+
+        // List<User> users = [
+        //     SELECT 
+        //         Id, 
+        //         Profile.Name 
+        //     FROM User 
+        //     WHERE Profile.Name = 'System Administrator' 
+        //     WITH USER_MODE 
+        //     LIMIT 1
+        // ];
+
+        // Id sysAdminId;
+
+        // for (User user : users) {
+        //     if (user.Profile.Name == 'System Administrator') {
+        //         sysAdminId = user.Id;
+
+        //         break;
+        //     }
+        // }
 
         Lead leadToInsert = new Lead(
-            Status = 'Open - Not Contacted', 
-            LeadSource = 'Web', 
-            // OwnerId = groupQueueLead.Id, 
-            // OwnerId = userSysAdmin.Id, 
-            FirstName = firstname, 
-            LastName = lastname, 
+            FirstName = firstName, 
+            LastName = lastName, 
             Company = company, 
             Phone = phone, 
             Email = email, 
-            LinkedIn_Profile_URL__c = linkedinprofileurl, 
-            Message__c = message
+            Status = 'Open - Not Contacted', 
+            LeadSource = 'Web', 
+            // OwnerId = queueLeadId, 
+            // OwnerId = sysAdminId, 
+            LinkedIn_Profile_URL__c = linkedInProfileURL, 
+            Message__c = msg
         );
-        insert leadToInsert;
 
-        // leadIds.add(leadToInsert.Id);
+        insert as system leadToInsert;
 
-        // TriggerRuleAssignment.leadUpdate(leadIds);
-        // TriggerRuleAutoResponse.leadUpdate(leadIds);
+        // if (Schema.sObjectType.Lead.isCreateable()) {
+        //     insert as user leadToInsert;
+        // }
+
+        System.debug('leadToInsert = ' + leadToInsert);
     }
 }

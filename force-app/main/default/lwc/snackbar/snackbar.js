@@ -1,21 +1,18 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Snackbar extends LightningElement {
-    snackbarMessage;
+    snackbarMsg;
 
     @api
-    showSnackBar(message) {
-        // console.log('showSnackBar(message)');
+    showSnackBar(msg) {
+        // console.log('showSnackBar');
 
-        // Get the snackbar DIV
         const SNACKBAR = this.template.querySelector('.snackbar');
 
-        this.snackbarMessage = message;
+        this.snackbarMsg = msg;
 
-        // Add the "show" class to DIV
         SNACKBAR.classList.add('show');
 
-        // After 3 seconds, remove the show class from DIV
         setTimeout(() => { SNACKBAR.classList.remove('show'); }, 2700);
     }
 }

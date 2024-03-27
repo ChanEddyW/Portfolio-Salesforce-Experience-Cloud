@@ -4,83 +4,81 @@ import IMAGES from '@salesforce/resourceUrl/Images';
 
 export default class Trailvenger extends LightningElement {
     // https://icons8.com/icons/set/external-link
-	iconURL_URLExternal = ICONS + '/icons8-external-link-16.png';
+    iconExternalURL = ICONS + '/icons8-external-link-16.png';
+    
+    imageEntityDiagram = IMAGES + '/TrailvengerEntityDiagram.png';
+    imageSchemaBuilder = IMAGES + '/TrailvengerSchemaBuilder.jpeg';
+    imageProfile = IMAGES + '/TrailvengerProfile.jpeg';
+    imagePermissionSet = IMAGES + '/TrailvengerPermissionSet.jpeg';
+    imageRole = IMAGES + '/TrailvengerRole.jpeg';
+    imageSharingSetting = IMAGES + '/TrailvengerSharingSetting.jpeg';
+    imageHealthCheck = IMAGES + '/TrailvengerHealthCheck.jpeg';
+    imageWTL = IMAGES + '/TrailvengerWTL.png';
+    imageConvertSIT = IMAGES + '/TrailvengerSITConvert.jpeg';
+    imageConvertedSIT = IMAGES + '/TrailvengerSITConverted.jpeg';
+    imageGear = IMAGES + '/TrailvengerGear.jpeg';
+    imageQuote = IMAGES + '/TrailvengerQuote.jpeg';
+    imageEvent = IMAGES + '/TrailvengerEvent.jpeg';
+    imageChatter = IMAGES + '/TrailvengerChatter.jpeg';
+    imageVillainToSlay = IMAGES + '/TrailvengerVillainToSlay.png';
+    imageHome = IMAGES + '/TrailvengerHome.jpeg';
 
-    imageURL_EntityDiagram = IMAGES + '/TrailvengerEntityDiagram.png';
-    imageURL_SchemaBuilder = IMAGES + '/TrailvengerSchemaBuilder.jpeg';
-    imageURL_Profile = IMAGES + '/TrailvengerProfile.jpeg';
-    imageURL_PermissionSet = IMAGES + '/TrailvengerPermissionSet.jpeg';
-    imageURL_Role = IMAGES + '/TrailvengerRole.jpeg';
-    imageURL_SharingSetting = IMAGES + '/TrailvengerSharingSetting.jpeg';
-    imageURL_HealthCheck = IMAGES + '/TrailvengerHealthCheck.jpeg';
-    imageURL_WTL = IMAGES + '/TrailvengerWTL.png';
-    imageURL_SITConvert = IMAGES + '/TrailvengerSITConvert.jpeg';
-    imageURL_SITConverted = IMAGES + '/TrailvengerSITConverted.jpeg';
-    imageURL_Gear = IMAGES + '/TrailvengerGear.jpeg';
-    imageURL_Quote = IMAGES + '/TrailvengerQuote.jpeg';
-    imageURL_Event = IMAGES + '/TrailvengerEvent.jpeg';
-    imageURL_Chatter = IMAGES + '/TrailvengerChatter.jpeg';
-    imageURL_VillainToSlay = IMAGES + '/TrailvengerVillainToSlay.png';
-    imageURL_Home = IMAGES + '/TrailvengerHome.jpeg';
-
-    buttonBackToTop;
+    scrollBackToTopButton;
     collapsibleHeading;
 
-    collapsibleContent;
-
     renderedCallback() {
-        // console.log('renderedCallback()');
+        // console.log('renderedCallback');
 
-        // Get the button:
-        this.buttonBackToTop = this.template.querySelector('.back-to-top');
+        this.scrollBackToTopButton = this.template.querySelector('.back-to-top');
 
-        // When the user scrolls down 600px from the top of the page, show the button
-        window.onscroll = () => {this.scrollDownToShowButton()};
+        window.onscroll = () => {this.showOrHideButton()};
 
-        this.collapsibleHeading = this.template.querySelectorAll('.collapsibleHeading');
+        this.collapsibleHeading = this.template.querySelectorAll('.collapsible-heading');
 
         this.collapsibleListener();
     }
 
-    scrollDownToShowButton() {
-        // console.log('scrollDownToShowButton()');
-        // console.log('document.body.scrollTop => ' + document.body.scrollTop);
-        // console.log('document.documentElement.scrollTop => ' + document.documentElement.scrollTop);
+    showOrHideButton() {
+        // console.log('showOrHideButton');
+        // console.log('document.body.scrollTop = ' + document.body.scrollTop);
+        // console.log('document.documentElement.scrollTop = ' + document.documentElement.scrollTop);
 
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-            this.buttonBackToTop.style.display = 'block';
+            this.scrollBackToTopButton.style.display = 'block';
         } else {
-            this.buttonBackToTop.style.display = 'none';
+            this.scrollBackToTopButton.style.display = 'none';
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the page
-    backToTop() {
-        // console.log('backToTop()');
+    scrollBackToTop() {
+        // console.log('scrollBackToTop');
 
         const SCROLL_OPTIONS = {
             top: 0,
             left: 0,
             behavior: 'smooth'
         }
+
         window.scrollTo(SCROLL_OPTIONS);
     }
 
     collapsibleListener() {
-        // console.log('collapsibleListener()');
+        // console.log('collapsibleListener');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].addEventListener('click', this.handleCollapsibleListener);
         }
     }
 
+    collapsibleContent;
+
     handleCollapsibleListener() {
-        // console.log('handleCollapsibleListener()');
-        // console.log('this => ' + this);
+        // console.log('handleCollapsibleListener');
+        // console.log('this = ' + this);
 
         this.classList.toggle('active');
 
-        // console.log('nextElementSibling => ' + this.nextElementSibling);
+        // console.log('nextElementSibling = ' + this.nextElementSibling);
 
         this.collapsibleContent = this.nextElementSibling;
 
@@ -91,28 +89,30 @@ export default class Trailvenger extends LightningElement {
         }
     }
 
-    collapsibleAllCollapse() {
-        // console.log('collapsibleAllCollapse()');
+    collapseAll() {
+        // console.log('collapseAll');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.remove('active');
 
-            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+            // console.log('collapsibleHeading[i].nextElementSibling = ' + this.collapsibleHeading[i].nextElementSibling);
 
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = null;
         }
     }
 
-    collapsibleAllExpand() {
-        // console.log('collapsibleAllExpand()');
+    expandAll() {
+        // console.log('expandAll');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.add('active');
 
-            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+            // console.log('collapsibleHeading[i].nextElementSibling = ' + this.collapsibleHeading[i].nextElementSibling);
 
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = this.collapsibleContent.scrollHeight + 'px';
         }
     }

@@ -2,15 +2,17 @@
     <div class="container-outer">
         <div class="container">
             <div class="container-img-photo">
-                <img src={imageURL_photo} alt="photo" class="img-photo">
+                <img src={imagePhoto} alt="photo" class="img-photo">
             </div>
-            <nav class="navMenu">
+
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about-me">About Me</a></li>
                     <li><a href="/education">Education</a></li>
                     <li>
                         <a href="/project-salesforce">Salesforce Projects</a>
+
                         <ul>
                             <li><a href="/project-salesforce/portfolio">Portfolio</a></li>
                             <li><a href="/project-salesforce/student-tracking">Student Tracking</a></li>
@@ -20,6 +22,7 @@
                         </ul>
                     </li>
                 </ul>
+
                 <a class="icon" onclick={handleHamburgerClicked}>
                     <i class="icon-menu"></i>
                 </a>

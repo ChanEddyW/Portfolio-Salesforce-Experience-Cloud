@@ -4,107 +4,122 @@ import IMAGES from '@salesforce/resourceUrl/Images';
 
 export default class Education extends LightningElement {
     // https://icons8.com/icons/set/external-link
-	iconURL_URLExternal = ICONS + '/icons8-external-link-16.png';
+    iconExternalURL = ICONS + '/icons8-external-link-16.png';
 
-    imageURL_diploma2015 = IMAGES + '/diploma2015.jpeg';
-    imageURL_diploma2016 = IMAGES + '/diploma2016.jpeg';
-    imageURL_badgeTrailheadSuperbadge001 = IMAGES + '/badgeTrailheadSuperbadge001.webp';
-    imageURL_badgeTrailheadSuperbadge002 = IMAGES + '/badgeTrailheadSuperbadge002.webp';
-    imageURL_badgeTrailheadSuperbadge003 = IMAGES + '/badgeTrailheadSuperbadge003.webp';
-    imageURL_badgeTrailheadSuperbadge004 = IMAGES + '/badgeTrailheadSuperbadge004.webp';
-    imageURL_badgeTrailheadSuperbadge005 = IMAGES + '/badgeTrailheadSuperbadge005.webp';
-    imageURL_badgeTrailheadSuperbadge006 = IMAGES + '/badgeTrailheadSuperbadge006.webp';
-    imageURL_badgeTrailheadSuperbadge007 = IMAGES + '/badgeTrailheadSuperbadge007.webp';
-    imageURL_badgeTrailheadSuperbadge008 = IMAGES + '/badgeTrailheadSuperbadge008.webp';
-    imageURL_badgeTrailheadSuperbadge009 = IMAGES + '/badgeTrailheadSuperbadge009.webp';
-    imageURL_badgeTrailheadSuperbadge010 = IMAGES + '/badgeTrailheadSuperbadge010.webp';
-    imageURL_badgeTrailheadSuperbadge011 = IMAGES + '/badgeTrailheadSuperbadge011.webp';
-    imageURL_badgeTrailheadSuperbadge012 = IMAGES + '/badgeTrailheadSuperbadge012.webp';
-    imageURL_badgeTrailheadSuperbadge013 = IMAGES + '/badgeTrailheadSuperbadge013.webp';
-    imageURL_badgeTrailheadSuperbadge014 = IMAGES + '/badgeTrailheadSuperbadge014.webp';
-    imageURL_badgeTrailheadSuperSetAdmin = IMAGES + '/badgeTrailheadSuperSetAdmin.webp';
-    imageURL_badgeTrailheadSuperbadge016 = IMAGES + '/badgeTrailheadSuperbadge016.webp';
-    imageURL_badgeTrailheadSuperbadge017 = IMAGES + '/badgeTrailheadSuperbadge017.webp';
-    imageURL_badgeTrailheadSuperbadge018 = IMAGES + '/badgeTrailheadSuperbadge018.webp';
-    imageURL_badgeTrailheadSuperbadge019 = IMAGES + '/badgeTrailheadSuperbadge019.webp';
-    imageURL_badgeTrailheadSuperbadge020 = IMAGES + '/badgeTrailheadSuperbadge020.webp';
-    imageURL_badgeTrailheadSuperbadge021 = IMAGES + '/badgeTrailheadSuperbadge021.webp';
-    imageURL_badgeTrailheadSuperbadge022 = IMAGES + '/badgeTrailheadSuperbadge022.webp';
-    imageURL_badgeTrailheadSuperbadge023 = IMAGES + '/badgeTrailheadSuperbadge023.webp';
-    imageURL_badgeTrailheadSuperbadge024 = IMAGES + '/badgeTrailheadSuperbadge024.webp';
-    imageURL_badgeTrailheadSuperbadge025 = IMAGES + '/badgeTrailheadSuperbadge025.webp';
-    imageURL_badgeTrailheadSuperbadge026 = IMAGES + '/badgeTrailheadSuperbadge026.webp';
-    imageURL_badgeTrailheadSuperbadge027 = IMAGES + '/badgeTrailheadSuperbadge027.webp';
-    imageURL_badgeTrailheadSuperSetAppBuilder = IMAGES + '/badgeTrailheadSuperSetAppBuilder.webp';
-    imageURL_SalesforceAdministratorCert = IMAGES + '/SalesforceAdministrator_Cert.png';
-    imageURL_badgeTrailheadSuperbadge029 = IMAGES + '/badgeTrailheadSuperbadge029.webp';
-    imageURL_badgeTrailheadSuperbadge030 = IMAGES + '/badgeTrailheadSuperbadge030.webp';
-    imageURL_badgeTrailheadSuperbadge031 = IMAGES + '/badgeTrailheadSuperbadge031.webp';
-    imageURL_badgeTrailheadSuperbadge032 = IMAGES + '/badgeTrailheadSuperbadge032.webp';
-    imageURL_badgeTrailheadSuperbadge033 = IMAGES + '/badgeTrailheadSuperbadge033.webp';
-    imageURL_badgeTrailheadSuperbadge034 = IMAGES + '/badgeTrailheadSuperbadge034.webp';
-    imageURL_badgeTrailheadSuperbadge035 = IMAGES + '/badgeTrailheadSuperbadge035.webp';
-    imageURL_badgeTrailheadSuperSetDeveloper = IMAGES + '/badgeTrailheadSuperSetDeveloper.webp';
-    imageURL_badgeTrailheadSuperbadge037 = IMAGES + '/badgeTrailheadSuperbadge037.webp';
+    imageAdminCert = IMAGES + '/certSalesforceAdmin.png';
 
-    buttonBackToTop;
+    imageDeveloperSuperSet = IMAGES + '/badgeSuperSetDeveloper.webp';
+    imageSuperbadge035 = IMAGES + '/badgeSuperbadge035.webp';
+
+    imageSuperbadge026 = IMAGES + '/badgeSuperbadge026.webp';
+    imageSuperbadge025 = IMAGES + '/badgeSuperbadge025.webp';
+    imageSuperbadge024 = IMAGES + '/badgeSuperbadge024.webp';
+    imageSuperbadge023 = IMAGES + '/badgeSuperbadge023.webp';
+    imageSuperbadge022 = IMAGES + '/badgeSuperbadge022.webp';
+    imageSuperbadge021 = IMAGES + '/badgeSuperbadge021.webp';
+
+    imageSuperbadge020 = IMAGES + '/badgeSuperbadge020.webp';
+    imageSuperbadge019 = IMAGES + '/badgeSuperbadge019.webp';
+    imageSuperbadge018 = IMAGES + '/badgeSuperbadge018.webp';
+    imageSuperbadge017 = IMAGES + '/badgeSuperbadge017.webp';
+    imageSuperbadge016 = IMAGES + '/badgeSuperbadge016.webp';
+
+    imageAppBuilderSuperSet = IMAGES + '/badgeSuperSetAppBuilder.webp';
+    imageSuperbadge027 = IMAGES + '/badgeSuperbadge027.webp';
+
+    imageSuperbadge012 = IMAGES + '/badgeSuperbadge012.webp';
+    imageSuperbadge011 = IMAGES + '/badgeSuperbadge011.webp';
+    imageSuperbadge010 = IMAGES + '/badgeSuperbadge010.webp';
+    imageSuperbadge009 = IMAGES + '/badgeSuperbadge009.webp';
+    imageSuperbadge008 = IMAGES + '/badgeSuperbadge008.webp';
+    imageSuperbadge007 = IMAGES + '/badgeSuperbadge007.webp';
+
+    imageSuperbadge006 = IMAGES + '/badgeSuperbadge006.webp';
+    imageSuperbadge005 = IMAGES + '/badgeSuperbadge005.webp';
+    imageSuperbadge004 = IMAGES + '/badgeSuperbadge004.webp';
+    imageSuperbadge003 = IMAGES + '/badgeSuperbadge003.webp';
+    imageSuperbadge002 = IMAGES + '/badgeSuperbadge002.webp';
+    imageSuperbadge001 = IMAGES + '/badgeSuperbadge001.webp';
+
+    imageAdminSuperSet = IMAGES + '/badgeSuperSetAdmin.webp';
+    imageSuperbadge014 = IMAGES + '/badgeSuperbadge014.webp';
+    imageSuperbadge013 = IMAGES + '/badgeSuperbadge013.webp';
+
+    imageSuperbadge037 = IMAGES + '/badgeSuperbadge037.webp';
+    imageSuperbadge034 = IMAGES + '/badgeSuperbadge034.webp';
+    imageSuperbadge033 = IMAGES + '/badgeSuperbadge033.webp';
+    imageSuperbadge032 = IMAGES + '/badgeSuperbadge032.webp';
+    imageSuperbadge031 = IMAGES + '/badgeSuperbadge031.webp';
+    imageSuperbadge030 = IMAGES + '/badgeSuperbadge030.webp';
+
+    imageSuperbadge029 = IMAGES + '/badgeSuperbadge029.webp';
+
+    imageApexSandbox = IMAGES + '/ApexSandbox.png';
+
+    imageCampApexProjectGreenGuardian = IMAGES + '/CampApex_Project_GreenGuardian.png';
+    imageCampApexApexFundamental = IMAGES + '/CampApex_ApexFundamentals.png';
+    imageCampApexOOP = IMAGES + '/CampApex_OOP.png';
+    imageCampApexSOQL = IMAGES + '/CampApex_SOQL.png';
+
+    imageDiploma2016 = IMAGES + '/diploma2016.jpeg';
+    imageDiploma2015 = IMAGES + '/diploma2015.jpeg';
+
+    scrollBackToTopButton;
     collapsibleHeading;
 
-    collapsibleContent;
-
     renderedCallback() {
-        // console.log('renderedCallback()');
+        // console.log('renderedCallback');
 
-        // Get the button:
-        this.buttonBackToTop = this.template.querySelector('.back-to-top');
+        this.scrollBackToTopButton = this.template.querySelector('.back-to-top');
 
-        // When the user scrolls down 600px from the top of the page, show the button
-        window.onscroll = () => {this.scrollDownToShowButton()};
+        window.onscroll = () => {this.showOrHideButton()};
 
-        this.collapsibleHeading = this.template.querySelectorAll('.collapsibleHeading');
+        this.collapsibleHeading = this.template.querySelectorAll('.collapsible-heading');
 
         this.collapsibleListener();
     }
 
-    scrollDownToShowButton() {
-        // console.log('scrollDownToShowButton()');
-        // console.log('document.body.scrollTop => ' + document.body.scrollTop);
-        // console.log('document.documentElement.scrollTop => ' + document.documentElement.scrollTop);
+    showOrHideButton() {
+        // console.log('showOrHideButton');
+        // console.log('document.body.scrollTop = ' + document.body.scrollTop);
+        // console.log('document.documentElement.scrollTop = ' + document.documentElement.scrollTop);
 
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-            this.buttonBackToTop.style.display = 'block';
+            this.scrollBackToTopButton.style.display = 'block';
         } else {
-            this.buttonBackToTop.style.display = 'none';
+            this.scrollBackToTopButton.style.display = 'none';
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the page
-    backToTop() {
-        // console.log('backToTop()');
+    scrollBackToTop() {
+        // console.log('scrollBackToTop');
 
         const SCROLL_OPTIONS = {
             top: 0,
             left: 0,
             behavior: 'smooth'
         }
+
         window.scrollTo(SCROLL_OPTIONS);
     }
 
     collapsibleListener() {
-        // console.log('collapsibleListener()');
+        // console.log('collapsibleListener');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].addEventListener('click', this.handleCollapsibleListener);
         }
     }
 
+    collapsibleContent;
+
     handleCollapsibleListener() {
-        // console.log('handleCollapsibleListener()');
-        // console.log('this => ' + this);
+        // console.log('handleCollapsibleListener');
+        // console.log('this = ' + this);
 
         this.classList.toggle('not-active');
 
-        // console.log('nextElementSibling => ' + this.nextElementSibling);
+        // console.log('nextElementSibling = ' + this.nextElementSibling);
 
         this.collapsibleContent = this.nextElementSibling;
 
@@ -115,28 +130,30 @@ export default class Education extends LightningElement {
         }
     }
 
-    collapsibleAllCollapse() {
-        // console.log('collapsibleAllCollapse()');
+    collapseAll() {
+        // console.log('collapseAll');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.add('not-active');
 
-            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+            // console.log('collapsibleHeading[i].nextElementSibling = ' + this.collapsibleHeading[i].nextElementSibling);
 
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = '0px';
         }
     }
 
-    collapsibleAllExpand() {
-        // console.log('collapsibleAllExpand()');
+    expandAll() {
+        // console.log('expandAll');
 
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.remove('not-active');
 
-            // console.log('collapsibleHeading[i].nextElementSibling => ' + this.collapsibleHeading[i].nextElementSibling);
+            // console.log('collapsibleHeading[i].nextElementSibling = ' + this.collapsibleHeading[i].nextElementSibling);
 
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = this.collapsibleContent.scrollHeight + 'px';
         }
     }
