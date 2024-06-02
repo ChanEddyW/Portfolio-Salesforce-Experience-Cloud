@@ -78,25 +78,25 @@ a::selection, span::selection {
     margin: 0px auto;
 }
 
-.container-collapsibleButton {
+.container-collapsible-button {
     display: flex;
     justify-content: right;
 }
 
-.collapsibleButton {
+.collapsible-button {
     margin: 0px 10px 0px 0px;
 }
 
-.collapsibleHeading {
+.collapsible-heading {
     cursor: pointer;
     background-color: rgba(13, 157, 218, 0.5);
 }
 
-.collapsibleHeading:hover {
+.collapsible-heading:hover {
     background-color: rgba(13, 157, 218, 0.5);
 }
 
-.collapsibleHeading::after {
+.collapsible-heading::after {
     float: right;
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
@@ -109,7 +109,7 @@ a::selection, span::selection {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
 }
 
-.collapsibleContent {
+.collapsible-content {
     overflow: hidden;
     margin: 10px 0px;
     transition: max-height 0.3s ease-out;
@@ -120,11 +120,11 @@ a::selection, span::selection {
     margin: 25px auto;
 }
 
-.img-SalesforceCert {
+.img-screenshot {
     border: 1px solid rgba(163, 170, 174);
 }
 
-.img-SalesforceCert:hover {
+.img-link:hover {
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -145,10 +145,6 @@ a::selection, span::selection {
     animation: grow 5s;
 }
 
-.img-screenshot {
-    border: 1px solid rgba(163, 170, 174);
-}
-
 .tooltip {
     position: relative;
     display: inline-block;
@@ -166,7 +162,7 @@ a::selection, span::selection {
     font: 32px Arial, sans-serif;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
     box-sizing: border-box;
     width: 100px;
     position: absolute;
@@ -184,7 +180,7 @@ a::selection, span::selection {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -195,7 +191,7 @@ a::selection, span::selection {
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
@@ -210,12 +206,6 @@ a::selection, span::selection {
     .container {
         box-sizing: border-box;
         max-width: 1200px;
-    }
-
-    .img-SalesforceCert {
-        box-sizing: border-box;
-        max-height: 950px;
-        max-width: 950px;
     }
 
     .img-screenshot {

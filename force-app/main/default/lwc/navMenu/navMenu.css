@@ -68,15 +68,15 @@ a::selection {
     animation: grow 5s;
 }
 
-.navMenu {
+.nav-menu {
     margin: 10px 0px 0px;
 }
 
-.navMenu li:not(:first-child) {
+.nav-menu li:not(:first-child) {
     display: none;
 }
 
-.navMenu a {
+.nav-menu a {
     float: left;
     text-decoration: none;
     font: 16px/30px Arial, sans-serif;
@@ -85,29 +85,29 @@ a::selection {
     color: rgba(0, 0, 0);
 }
 
-.navMenu a:hover {
+.nav-menu a:hover {
     border: 1px solid rgba(163, 170, 174);
     border-radius: 5px;
     background-color: rgba(13, 157, 218, 0.5);
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
-.navMenu a.icon {
+.nav-menu a.icon {
     float: right;
     display: block;
 }
 
-.navMenu.responsive {
+.nav-menu.responsive {
     position: relative;
 }
 
-.navMenu.responsive ul li, .navMenu.responsive a {
+.nav-menu.responsive ul li, .nav-menu.responsive a {
     float: none;
     display: block;
     text-align: left;
 }
 
-.navMenu.responsive a.icon {
+.nav-menu.responsive a.icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -140,15 +140,15 @@ a::selection {
         display: inline-flex;
     }
 
-    .navMenu li:not(:first-child) {
+    .nav-menu li:not(:first-child) {
         display: inline-block;
     }
 
-    .navMenu a {
+    .nav-menu a {
         margin: 0px 50px 0px 0px;
     }
 
-    .navMenu a.icon {
+    .nav-menu a.icon {
         display: none;
     }
 }

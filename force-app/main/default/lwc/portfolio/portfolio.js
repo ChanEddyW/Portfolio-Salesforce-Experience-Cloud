@@ -1,59 +1,54 @@
 import { LightningElement } from 'lwc';
+
 import ICONS from '@salesforce/resourceUrl/Icons';
 
 export default class Portfolio extends LightningElement {
     // https://icons8.com/icons/set/external-link
-	iconURL_URLExternal = ICONS + '/icons8-external-link-16.png';
+    iconExternalURL = ICONS + '/icons8-external-link-16.png';
 
-    buttonBackToTop;
+    scrollBackToTopButton;
+
     collapsibleHeading;
 
+    collapsibleContent;
+
     renderedCallback() {
-        // Get the button:
-        this.buttonBackToTop = this.template.querySelector('.back-to-top');
+        this.scrollBackToTopButton = this.template.querySelector('.back-to-top');
 
-        // When the user scrolls down 600px from the top of the page, show the button
-        window.onscroll = () => {this.scrollDownToShowButton()};
+        this.collapsibleHeading = this.template.querySelectorAll('.collapsible-heading');
 
-        this.collapsibleHeading = this.template.querySelectorAll('.collapsibleHeading');
+        window.onscroll = () => {this.showOrHideButton()};
 
         this.collapsibleListener();
     }
 
-    scrollDownToShowButton() {
-        // console.log('document.body.scrollTop => ' + document.body.scrollTop);
-        // console.log('document.documentElement.scrollTop => ' + document.documentElement.scrollTop);
+    showOrHideButton() {
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-            this.buttonBackToTop.style.display = 'block';
+            this.scrollBackToTopButton.style.display = 'block';
         } else {
-            this.buttonBackToTop.style.display = 'none';
+            this.scrollBackToTopButton.style.display = 'none';
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the page
-    backToTop() {
-        const scrollOptions = {
+    scrollBackToTop() {
+        const SCROLL_OPTIONS = {
             top: 0,
             left: 0,
             behavior: 'smooth'
         }
-        window.scrollTo(scrollOptions);
+
+        window.scrollTo(SCROLL_OPTIONS);
     }
 
     collapsibleListener() {
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
-            this.collapsibleHeading[i].addEventListener('click', this.collapsibleListenerHandler);
+            this.collapsibleHeading[i].addEventListener('click', this.handleCollapsibleListener);
         }
     }
 
-    collapsibleContent;
-
-    collapsibleListenerHandler() {
-        // console.log(this);
-
+    handleCollapsibleListener() {
         this.classList.toggle('active');
 
-        // console.log(this.nextElementSibling);
         this.collapsibleContent = this.nextElementSibling;
 
         if (this.collapsibleContent.style.maxHeight) {
@@ -63,20 +58,22 @@ export default class Portfolio extends LightningElement {
         }
     }
 
-    collapsibleAllCollapse() {
+    collapseAll() {
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.remove('active');
-            // console.log(this.collapsibleHeading[i].nextElementSibling);
+
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = null;
         }
     }
 
-    collapsibleAllExpand() {
+    expandAll() {
         for (let i = 0; i < this.collapsibleHeading.length; i++) {
             this.collapsibleHeading[i].classList.add('active');
-            // console.log(this.collapsibleHeading[i].nextElementSibling);
+
             this.collapsibleContent = this.collapsibleHeading[i].nextElementSibling;
+
             this.collapsibleContent.style.maxHeight = this.collapsibleContent.scrollHeight + 'px';
         }
     }

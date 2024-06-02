@@ -100,24 +100,24 @@ a::selection, b::selection, span::selection {
     margin: 25px 0px;
 }
 
-.container-collapsibleButton {
+.container-collapsible-button {
     display: flex;
     justify-content: right;
 }
 
-.collapsibleButton {
+.collapsible-button {
     margin: 0px 10px 0px 0px;
 }
 
-.collapsibleHeading {
+.collapsible-heading {
     cursor: pointer;
 }
 
-.collapsibleHeading:hover {
+.collapsible-heading:hover {
     background-color: rgba(13, 157, 218, 0.5);
 }
 
-.collapsibleHeading::after {
+.collapsible-heading::after {
     float: right;
     content: '\02795'; /* Unicode character for "plus" sign (+) */
 }
@@ -130,7 +130,7 @@ a::selection, b::selection, span::selection {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-.collapsibleContent {
+.collapsible-content {
     box-sizing: border-box;
     max-height: 0;
     overflow: hidden;
@@ -163,7 +163,7 @@ a::selection, b::selection, span::selection {
     font: 32px Arial, sans-serif;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
     box-sizing: border-box;
     width: 100px;
     position: absolute;
@@ -181,7 +181,7 @@ a::selection, b::selection, span::selection {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -192,7 +192,7 @@ a::selection, b::selection, span::selection {
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
