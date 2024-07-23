@@ -94,7 +94,7 @@ a::selection, span::selection {
     animation: grow 5s;
 }
 
-.container-img-myTrailmoji {
+.container-img-my-trailmoji {
     box-sizing: border-box;
     max-width: 400px;
     margin: 25px auto;
@@ -126,7 +126,7 @@ a::selection, span::selection {
     font: 32px Arial, sans-serif;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
     box-sizing: border-box;
     width: 100px;
     position: absolute;
@@ -144,7 +144,7 @@ a::selection, span::selection {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -155,7 +155,7 @@ a::selection, span::selection {
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }

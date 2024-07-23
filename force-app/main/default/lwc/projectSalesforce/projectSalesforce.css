@@ -18,8 +18,13 @@ h1 {
     color: rgba(0, 0, 0);
 }
 
-h1::selection, h4::selection {
+h1::selection, h3::selection, h4::selection {
     background-color: rgba(13, 157, 218, 0.5);
+}
+
+h3 {
+    font: 20px Arial, sans-serif;
+    color: rgba(0, 0, 0);
 }
 
 h4 {
@@ -118,7 +123,7 @@ a::selection, span::selection {
     font: 32px Arial, sans-serif;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
     box-sizing: border-box;
     width: 100px;
     position: absolute;
@@ -136,7 +141,7 @@ a::selection, span::selection {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -147,7 +152,7 @@ a::selection, span::selection {
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
