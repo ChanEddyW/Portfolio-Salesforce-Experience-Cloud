@@ -12,47 +12,57 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-gray-color: rgba(163, 170, 174);
+    --default-border-solid: 1px solid var(--default-gray-color);
+}
+
 /* 12. Attributes */
 .snackbar {
-	min-width: 250px;
-	position: fixed;
-	bottom: 2rem;
-	left: 50%;
-	z-index: 9;
-	transform: translateX(-50%);
-	visibility: hidden;
-	border: 1px solid rgba(163, 170, 174);
-	border-radius: 5px;
-	text-align: center;
-	padding: 10px;
-	/* margin-left: -125px; */
-	background-color: rgba(0, 0, 0);
-	color: rgba(255, 255, 255);
+    min-width: 250px;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    z-index: 9;
+    transform: translateX(-50%);
+    visibility: hidden;
+    border: var(--default-border-solid);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    /* margin-left: -125px; */
+    background-color: rgba(0, 0, 0);
+    color: rgba(255, 255, 255);
 }
 
 .snackbar.show {
-	visibility: visible;
-	animation: fade-in 0.5s, fade-out 0.5s 2.5s;
+    visibility: visible;
+    animation: fade-in 0.5s, fade-out 0.5s 2.5s;
 }
 
 @keyframes fade-in {
-	from {
-		bottom: 0;
-		opacity: 0;
-	}
-	to {
-		bottom: 30px;
-		opacity: 1;
-	}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @keyframes fade-out {
-	from {
-		bottom: 30px;
-		opacity: 1;
-	}
-	to {
-		bottom: 0;
-		opacity: 0;
-	}
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }

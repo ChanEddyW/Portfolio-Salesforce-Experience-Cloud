@@ -12,46 +12,68 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-box-shadow-color: rgba(0, 0, 0, 0.5);
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-gray-color: rgba(163, 170, 174);
+    --default-green-color: rgba(217, 234, 211);
+    --default-box-shadow: 5px 5px 5px 1px var(--default-box-shadow-color);
+    --default-border-solid: 1px solid var(--default-gray-color);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
 /* 05. Headings */
 h1 {
-    font: 32px Arial, sans-serif;
+    font: 32px / var(--default-line-height) var(--default-font-family);
     color: rgba(0, 0, 0);
 }
 
-h1::selection, h4::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+h1::selection, h3::selection, h4::selection {
+    background-color: var(--default-blue-color);
+}
+
+h3 {
+    font: 20px / var(--default-line-height) var(--default-font-family);
+    color: rgba(0, 0, 0);
 }
 
 h4 {
-    font: bold 16px/30px Arial, sans-serif;
+    font: bold var(--default-font);
     color: rgba(0, 0, 0);
 }
 
 /* 07. Media */
-/* https://imageresizer.com */
 img {
     border-radius: 5px;
 }
 
 img::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 08. Forms */
 label::selection, button::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 button {
-    border: 1px solid rgba(163, 170, 174);
+    border: var(--default-border-solid);
     border-radius: 5px;
-    font: 16px/30px Arial, sans-serif;
-    background-color: rgba(13, 157, 218, 0.5);
+    font: var(--default-font);
+    background-color: var(--default-blue-color);
     color: rgba(0, 0, 0);
 }
 
 button:hover {
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--default-box-shadow);
 }
 
 /* 10. Phrasing */
@@ -60,13 +82,13 @@ a:link, a:visited, a:hover, a:active {
 }
 
 a::selection, span::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 12. Attributes */
 .container-outer {
     margin: 50px auto 0px;
-    background-color: rgba(217, 234, 211);
+    background-color: var(--default-green-color);
 }
 
 .container {
@@ -78,13 +100,12 @@ a::selection, span::selection {
 }
 
 .card {
-    box-sizing: border-box;
     height: 250px;
     width: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid rgba(163, 170, 174);
+    border: var(--default-border-solid);
     border-radius: 5px;
     margin: 0px auto 25px;
     background-color: rgba(163, 170, 174, 0.5);
@@ -94,7 +115,7 @@ a::selection, span::selection {
 
 .card:hover {
     animation: grow 5s;
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5); /* On mouse-over, add deeper shadow */
+    box-shadow: var(--default-box-shadow); /* On mouse-over, add deeper shadow */
 }
 
 .card h4 {
@@ -107,7 +128,6 @@ a::selection, span::selection {
 }
 
 .tooltip .back-to-top {
-    box-sizing: border-box;
     height: 50px;
     width: 50px;
     position: fixed;
@@ -115,11 +135,10 @@ a::selection, span::selection {
     bottom: 2rem;
     z-index: 9;
     display: none;
-    font: 32px Arial, sans-serif;
+    font: 32px / var(--default-line-height) var(--default-font-family);
 }
 
-.tooltip .tooltiptext {
-    box-sizing: border-box;
+.tooltip .tooltip-text {
     width: 100px;
     position: absolute;
     bottom: 125%;
@@ -127,27 +146,27 @@ a::selection, span::selection {
     z-index: 1;
     visibility: hidden;
     border-radius: 5px;
-    font: 16px Arial, sans-serif;
+    font: var(--default-font);
     padding: 5px 0;
     margin-left: -50px;
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
     color: rgba(0, 0, 0);
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
     border-width: 5px;
     border-style: solid;
-    border-color: rgba(13, 157, 218, 0.5) transparent transparent transparent;
+    border-color: var(--default-blue-color) transparent transparent transparent;
     content: "";
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
@@ -160,7 +179,6 @@ a::selection, span::selection {
     }
 
     .container {
-        box-sizing: border-box;
         max-width: 1200px;
     }
 
@@ -170,7 +188,6 @@ a::selection, span::selection {
     }
 
     .card {
-        box-sizing: border-box;
         height: 325px;
         width: 300px;
     }

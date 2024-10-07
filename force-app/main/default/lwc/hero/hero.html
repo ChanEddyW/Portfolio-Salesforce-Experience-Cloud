@@ -4,28 +4,38 @@
             <section class="slds-text-align_center">
                 <h3 class="margin-0px-auto animation-01">Welcome to</h3>
                 <h1 class="animation-02 slds-var-m-top_large">Eddy Chan&#39;s Portfolio</h1>
-                <h3 class="animation-03 slds-var-m-top_large">Salesforce Certified Professional</h3>
+                <h3 class="animation-03 slds-var-m-top_large">Salesforce Developer</h3>
+
                 <div class="animation-03 slds-var-m-top_large">
-                    <img src={imageURL_badgeCertAdmin} alt="Badge&mdash;Salesforce Certified Administrator" class="img-badge">
-                    <img src={imageURL_badgeTrailheadSuperSetAdmin} alt="Badge&mdash;Super Set&mdash;Admin" class="img-badge">
-                    <img src={imageURL_badgeTrailheadSuperSetAppBuilder} alt="Badge&mdash;Super Set&mdash;App Builder" class="img-badge">
-                    <img src={imageURL_badgeTrailheadRanger} alt="Badge&mdash;Trailhead Ranger" class="img-badge">
+                    <img src={imagePlatformDeveloperICertBadge} alt="Salesforce Certified Platform Developer I Badge" class="img-badge">
+                    <img src={imagePlatformAppBuilderCertBadge} alt="Salesforce Certified Platform App Builder Badge" class="img-badge">
+                    <img src={imageAdminCertBadge} alt="Salesforce Certified Administrator Badge" class="img-badge">
+                    <img src={imageDeveloperSuperSet} alt="Developer Super Set Badge" class="img-badge">
+                    <img src={imageAppBuilderSuperSet} alt="App Builder Super Set Badge" class="img-badge">
+                    <img src={imageAdminSuperSet} alt="Admin Super Set Badge" class="img-badge">
+                    <img src={imageDoubleStarRanger} alt="Trailhead Double Star Ranger Badge" class="img-badge">
                 </div>
+
                 <c-contact-me class="animation-03"></c-contact-me>
-                <div class="container-img-myTrailmoji animation-03">
-                    <img src={imageURL_myTrailmoji} alt="myTrailmoji">
+
+                <div class="container-img-my-trailmoji animation-03">
+                    <img src={imageMyTrailmoji} alt="mytrailmoji">
                 </div>
+
                 <p class="animation-03">See links at the bottom of the page</p>
+
                 <div class="animation-03">
                     <h1 class="arrow-down">&darr;</h1>
                 </div>
             </section>
         </div>
+
         <div class="tooltip">
-            <button type="button" class="back-to-top" onclick={backToTop}>
+            <button type="button" class="back-to-top" onclick={scrollBackToTop}>
                 <label>
                     &uarr;
-                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+
+                    <span class="tooltip-text slds-text-align_center">Back To Top</span>
                 </label>
             </button>
         </div>

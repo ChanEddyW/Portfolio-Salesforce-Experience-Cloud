@@ -1,0 +1,254 @@
+/* https://meiert.com/en/blog/how-to-order-css-selectors */
+/* 01. Universal */
+/* 02. Document */
+/* 03. Metadata */
+/* 04. Sectioning and Structuring */
+/* 05. Headings */
+/* 06. Lists */
+/* 07. Media */
+/* 08. Forms */
+/* 09. Tables */
+/* 10. Phrasing */
+/* 11. Misc */
+/* 12. Attributes */
+
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-box-shadow-color: rgba(0, 0, 0, 0.5);
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-gray-color: rgba(163, 170, 174);
+    --default-green-color: rgba(217, 234, 211);
+    --default-box-shadow: 5px 5px 5px 1px var(--default-box-shadow-color);
+    --default-border-dotted: 1px dotted var(--default-gray-color);
+    --default-border-solid: 1px solid var(--default-gray-color);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
+/* 04. Sectioning and Structuring */
+p {
+    font: var(--default-font);
+    color: rgba(0, 0, 0);
+}
+
+p::selection {
+    background-color: var(--default-blue-color);
+}
+
+/* 05. Headings */
+h1 {
+    font: 32px / var(--default-line-height) var(--default-font-family);
+    color: rgba(0, 0, 0);
+}
+
+h1::selection, h3::selection {
+    background-color: var(--default-blue-color);
+}
+
+h3 {
+    font: 20px Arial, sans-serif;
+    color: rgba(0, 0, 0);
+}
+
+/* 06. Lists */
+ul li {
+    font: var(--default-font);
+    color: rgba(0, 0, 0);
+}
+
+li::selection {
+    background-color: var(--default-blue-color);
+}
+
+/* 07. Media */
+img {
+    border-radius: 5px;
+}
+
+img::selection {
+    background-color: var(--default-blue-color);
+}
+
+/* 08. Forms */
+label::selection, button::selection {
+    background-color: var(--default-blue-color);
+}
+
+button {
+    border: var(--default-border-solid);
+    border-radius: 5px;
+    font: var(--default-font);
+    background-color: var(--default-blue-color);
+    color: rgba(0, 0, 0);
+}
+
+button:hover {
+    box-shadow: var(--default-box-shadow);
+}
+
+/* 10. Phrasing */
+a::selection, b::selection, span::selection {
+    background-color: var(--default-blue-color);
+}
+
+/* 12. Attributes */
+.container-outer {
+    margin: 50px auto 0px;
+    background-color: var(--default-green-color);
+}
+
+.container {
+    margin: 0px auto;
+}
+
+.nav-project {
+    display: inline-block;
+    font: var(--default-font);
+    padding: 10px;
+    margin: 0px 10px 10px 0px;
+}
+
+.border-bottom {
+    border-bottom: var(--default-border-dotted);
+    margin: 25px 0px;
+}
+
+.container-collapsible-button {
+    display: flex;
+    justify-content: right;
+}
+
+.collapsible-button {
+    margin: 0px 10px 0px 0px;
+}
+
+.collapsible-heading {
+    cursor: pointer;
+}
+
+.collapsible-heading:hover {
+    background-color: var(--default-blue-color);
+}
+
+.collapsible-heading::after {
+    float: right;
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+}
+
+.active {
+    background-color: var(--default-blue-color);
+}
+
+.active::after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    margin: 10px 0px;
+    transition: max-height 0.3s ease-out;
+}
+
+.color {
+    animation: color 5s infinite;
+}
+
+.container-img {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.img-screenshot {
+    border: var(--default-border-solid);
+}
+
+.circle {
+    list-style: circle;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .back-to-top {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 9;
+    display: none;
+    font: 32px / var(--default-line-height) var(--default-font-family);
+}
+
+.tooltip .tooltip-text {
+    width: 100px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    z-index: 1;
+    visibility: hidden;
+    border-radius: 5px;
+    font: var(--default-font);
+    padding: 5px 0;
+    margin-left: -50px;
+    background-color: var(--default-blue-color);
+    color: rgba(0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--default-blue-color) transparent transparent transparent;
+    content: "";
+    margin-left: -5px;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* 12. Attributes */
+    .container-outer {
+        margin: 40px auto 0px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .img-screenshot {
+        border: var(--default-border-solid);
+    }
+}
+
+@keyframes color {
+    0% {
+        color: rgba(0, 0, 0);
+    }
+    25% {
+        color: rgba(255, 0, 0);
+    }
+    50% {
+        color: rgba(0, 255, 0);
+    }
+    to {
+        color: rgba(0, 0, 255);
+    }
+}

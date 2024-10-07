@@ -12,36 +12,52 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-box-shadow-color: rgba(0, 0, 0, 0.5);
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-gray-color: rgba(163, 170, 174);
+    --default-box-shadow: 5px 5px 5px 1px var(--default-box-shadow-color);
+    --default-border-solid: 1px solid var(--default-gray-color);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
 /* 05. Headings */
 h3 {
-    font: 20px Arial, sans-serif;
+    font: 20px / var(--default-line-height) var(--default-font-family);
     color: rgba(0, 0, 0);
 }
 
 h3::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 08. Forms */
 /* label, input, textarea {
-    box-sizing: border-box;
     width: 100%;
     display: block;
 } */
 
 label {
-    font: 16px/30px Arial, sans-serif;
+    font: var(--default-font);
     color: rgba(0, 0, 0);
 }
 
 label::selection, input::selection, textarea::selection, button::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 input, button, textarea {
-    border: 1px solid rgba(163, 170, 174);
+    border: var(--default-border-solid);
     border-radius: 5px;
-    font: 16px/30px Arial, sans-serif;
+    font: var(--default-font);
     background-color: rgba(255, 255, 255);
     color: rgba(0, 0, 0);
 }
@@ -56,12 +72,11 @@ input:invalid {
 }
 
 button:hover {
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--default-box-shadow);
 }
 
 /* 12. Attributes */
-.contactMe-dialog {
-    box-sizing: border-box;
+.contact-me-dialog {
     height: 900px;
     width: 750px;
 }
@@ -73,21 +88,19 @@ button:hover {
 }
 
 .container-button > * {
-    box-sizing: border-box;
     width: 50%;
 }
 
 .container-button > *:hover {
-    border: 1px solid rgba(163, 170, 174);
+    border: var(--default-border-solid);
     border-radius: 5px;
     background-color: rgba(255, 255, 255);
     color: rgba(0, 0, 0);
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--default-box-shadow);
 }
 
 .button-launch {
-    box-sizing: border-box;
     width: 300px;
     padding: 10px 20px;
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }

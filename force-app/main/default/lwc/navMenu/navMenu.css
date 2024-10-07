@@ -12,6 +12,24 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-box-shadow-color: rgba(0, 0, 0, 0.5);
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-gray-color: rgba(163, 170, 174);
+    --default-green-color: rgba(217, 234, 211);
+    --default-box-shadow: 5px 5px 5px 1px var(--default-box-shadow-color);
+    --default-border-solid: 1px solid var(--default-gray-color);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
 /* 06. Lists */
 ul, ul li {
     display: inline-block;
@@ -22,42 +40,39 @@ ul li ul {
 }
 
 li::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 07. Media */
 img {
-    /* border: 1px solid rgba(163, 170, 174); */
     border-radius: 5px;
 }
 
 img::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 10. Phrasing */
 a::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 12. Attributes */
 .container-outer {
-    box-sizing: border-box;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
-    background-color: rgba(217, 234, 211);
+    background-color: var(--default-green-color);
 }
 
 .container {
-    border-bottom: 1px solid rgba(163, 170, 174);
+    border-bottom: var(--default-border-solid);
     margin: 0px auto;
 }
 
 .container-img-photo {
-    box-sizing: border-box;
     max-height: 70px;
     max-width: 70px;
     display: none;
@@ -68,46 +83,46 @@ a::selection {
     animation: grow 5s;
 }
 
-.navMenu {
+.nav-menu {
     margin: 10px 0px 0px;
 }
 
-.navMenu li:not(:first-child) {
+.nav-menu li:not(:first-child) {
     display: none;
 }
 
-.navMenu a {
+.nav-menu a {
     float: left;
     text-decoration: none;
-    font: 16px/30px Arial, sans-serif;
+    font: var(--default-font);
     padding: 10px;
     margin: 0px 0px 10px;
     color: rgba(0, 0, 0);
 }
 
-.navMenu a:hover {
-    border: 1px solid rgba(163, 170, 174);
+.nav-menu a:hover {
+    border: var(--default-border-solid);
     border-radius: 5px;
-    background-color: rgba(13, 157, 218, 0.5);
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    background-color: var(--default-blue-color);
+    box-shadow: var(--default-box-shadow);
 }
 
-.navMenu a.icon {
+.nav-menu a.icon {
     float: right;
     display: block;
 }
 
-.navMenu.responsive {
+.nav-menu.responsive {
     position: relative;
 }
 
-.navMenu.responsive ul li, .navMenu.responsive a {
+.nav-menu.responsive ul li, .nav-menu.responsive a {
     float: none;
     display: block;
     text-align: left;
 }
 
-.navMenu.responsive a.icon {
+.nav-menu.responsive a.icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -117,20 +132,18 @@ a::selection {
 @media only screen and (min-width: 992px) {
     /* 06. Lists */
     ul li:hover ul {
-        box-sizing: border-box;
         width: 300px;
         position: absolute;
         top: 60px;
         display: block;
-        border: 1px solid rgba(163, 170, 174);
+        border: var(--default-border-solid);
         border-radius: 5px;
-        background-color: rgba(217, 234, 211);
-        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+        background-color: var(--default-green-color);
+        box-shadow: var(--default-box-shadow);
     }
 
     /* 12. Attributes */
     .container {
-        box-sizing: border-box;
         max-width: 1600px;
         display: flex;
         justify-content: flex-start;
@@ -140,15 +153,15 @@ a::selection {
         display: inline-flex;
     }
 
-    .navMenu li:not(:first-child) {
+    .nav-menu li:not(:first-child) {
         display: inline-block;
     }
 
-    .navMenu a {
+    .nav-menu a {
         margin: 0px 50px 0px 0px;
     }
 
-    .navMenu a.icon {
+    .nav-menu a.icon {
         display: none;
     }
 }

@@ -1,19 +1,32 @@
 <template>
-    <dialog class="contactMe-dialog">
+    <dialog class="contact-me-dialog">
         <form onsubmit={handleSubmit}>
             <h3 class="slds-text-align_center">Contact Me</h3>
 
             <div class="slds-form slds-var-m-top_large">
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="firstname" class="slds-form-element__label">
+                    <label for="firstName" class="slds-form-element__label">
                         <abbr class="slds-required" title="required">* </abbr>
+
                         First Name
                     </label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="text" name="firstname" class="firstname slds-input" id="firstname" required placeholder="Alex" title="Alex" pattern="^([\s\S]{1,99})$">
+                        <input 
+                            type="text" 
+                            name="firstName" 
+                            class="first-name slds-input" 
+                            id="firstName" 
+                            required 
+                            placeholder="Alex" 
+                            title="Alex" 
+                            pattern="^([\s\S]{1,99})$"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearFirstName} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -21,15 +34,28 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="lastname" class="slds-form-element__label">
+                    <label for="lastName" class="slds-form-element__label">
                         <abbr class="slds-required" title="required">* </abbr>
+
                         Last Name
                     </label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="text" name="lastname" class="lastname slds-input" id="lastname" required placeholder="Doe" title="Doe" pattern="^([\s\S]{1,99})$">
+                        <input 
+                            type="text" 
+                            name="lastName" 
+                            class="last-name slds-input" 
+                            id="lastName" 
+                            required 
+                            placeholder="Doe" 
+                            title="Doe" 
+                            pattern="^([\s\S]{1,99})$"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearLastName} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -37,14 +63,21 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="company" class="slds-form-element__label">
-                        Company or Organization
-                    </label>
+                    <label for="company" class="slds-form-element__label">Company or Organization</label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="text" name="company" class="company slds-input" id="company" placeholder="Salesforce">
+                        <input 
+                            type="text" 
+                            name="company" 
+                            class="company slds-input" 
+                            id="company" 
+                            placeholder="Salesforce"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearCompany} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -52,14 +85,23 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="phone" class="slds-form-element__label">
-                        Phone Number
-                    </label>
+                    <label for="phone" class="slds-form-element__label">Phone Number</label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="tel" name="phone" class="phone slds-input" id="phone" placeholder="111 222 3333" title="111 222 3333" pattern="^[\+]?[\d]?[' '\-\.]?[\(]?[\d]{3}[\)]?[' '\-\.]?[\d]{3}[' '\-\.]?[\d]{4}$">
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            class="phone slds-input" 
+                            id="phone" 
+                            placeholder="111 222 3333" 
+                            title="111 222 3333" 
+                            pattern="^[\+]?[\d]?[' '\-\.]?[\(]?[\d]{3}[\)]?[' '\-\.]?[\d]{3}[' '\-\.]?[\d]{4}$"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearPhone} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -67,14 +109,23 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="email" class="slds-form-element__label">
-                        Email
-                    </label>
+                    <label for="email" class="slds-form-element__label">Email</label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="email" name="email" class="email slds-input" id="email" placeholder="adoe&#64;example.com" title="adoe&#64;example.com" pattern="^([\S]{1,99}[@][\w\-]{1,99}[\.][a-zA-Z]{1,9})([\.][a-zA-Z]{1,9})?$">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            class="email slds-input" 
+                            id="email" 
+                            placeholder="adoe&#64;example.com" 
+                            title="adoe&#64;example.com" 
+                            pattern="^([\S]{1,99}[@][\w\-]{1,99}[\.][a-zA-Z]{1,9})([\.][a-zA-Z]{1,9})?$"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearEmail} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -82,14 +133,23 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="linkedinprofileurl" class="slds-form-element__label">
-                        LinkedIn Profile URL
-                    </label>
+                    <label for="linkedInProfileURL" class="slds-form-element__label">LinkedIn Profile URL</label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <input type="text" name="linkedinprofileurl" class="linkedinprofileurl slds-input" id="linkedinprofileurl" placeholder="linkedin.com&#47;in&#47;adoe" title="linkedin.com&#47;in&#47;adoe" pattern="^([hH][tT]{2}[pP][sS]?[:][\/]{2})?([a-zA-Z]{1,9}[\.])?([lL][iI][nN][kK][eE][dD][iI][nN][\.][cC][oO][mM][\/])([\w\-\/]{1,99})$">
+                        <input 
+                            type="text" 
+                            name="linkedInProfileURL" 
+                            class="linkedin-profile-url slds-input" 
+                            id="linkedInProfileURL" 
+                            placeholder="linkedin.com&#47;in&#47;adoe" 
+                            title="linkedin.com&#47;in&#47;adoe" 
+                            pattern="^([hH][tT]{2}[pP][sS]?[:][\/]{2})?([a-zA-Z]{1,9}[\.])?([lL][iI][nN][kK][eE][dD][iI][nN][\.][cC][oO][mM][\/])([\w\-\/]{1,99})$"
+                        >
+
                         <button type="button" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearLinkedInProfileURL} title="Clear">
                             <label>
-                                <img src={iconURL_clear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <img src={iconClear} alt="clear" class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+
                                 <span class="slds-assistive-text">Clear</span>
                             </label>
                         </button>
@@ -97,30 +157,33 @@
                 </div>
 
                 <div class="slds-form-element slds-form-element_horizontal slds-text-align_left">
-                    <label for="message" class="slds-form-element__label">
-                        Message
-                    </label>
+                    <label for="msg" class="slds-form-element__label">Message</label>
+
                     <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                        <textarea name="message" class="message slds-textarea" id="message" cols="100" rows="14" placeholder="Have questions or feedback? &NewLine;&NewLine;Interested in hiring me? &NewLine;&NewLine;Please send me a message. &NewLine;&NewLine;I will follow up within 72 business hours."></textarea>
+                        <textarea 
+                            name="msg" 
+                            class="msg slds-textarea" 
+                            id="msg" 
+                            cols="100" 
+                            rows="14" 
+                            placeholder="Have questions or feedback? &NewLine;&NewLine;Interested in hiring me? &NewLine;&NewLine;Please send me a message. &NewLine;&NewLine;I will follow up within 72 business hours."
+                        ></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container-button">
                 <input type="submit" name="submit" value="Submit">
+
                 <button type="button" onclick={closeDialog}>
-                    <label>
-                        Cancel
-                    </label>
+                    <label>Cancel</label>
                 </button>
             </div>
         </form>
     </dialog>
 
     <button type="button" class="button-launch" onclick={showDialog}>
-        <label>
-            Contact Me
-        </label>
+        <label>Contact Me</label>
     </button>
 
     <c-snackbar></c-snackbar>

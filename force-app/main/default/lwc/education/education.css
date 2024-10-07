@@ -12,28 +12,47 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-box-shadow-color: rgba(0, 0, 0, 0.5);
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-gray-color: rgba(163, 170, 174);
+    --default-green-color: rgba(217, 234, 211);
+    --default-box-shadow: 5px 5px 5px 1px var(--default-box-shadow-color);
+    --default-border-dotted: 1px dotted var(--default-gray-color);
+    --default-border-solid: 1px solid var(--default-gray-color);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
 /* 04. Sectioning and Structuring */
 p {
-    font: 16px/30px Arial, sans-serif;
+    font: var(--default-font);
     color: rgba(0, 0, 0);
 }
 
 p::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 05. Headings */
 h1 {
-    font: 32px Arial, sans-serif;
+    font: 32px / var(--default-line-height) var(--default-font-family);
     color: rgba(0, 0, 0);
 }
 
 h1::selection, h3::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 h3 {
-    font: 20px Arial, sans-serif;
+    font: 20px / var(--default-line-height) var(--default-font-family);
     color: rgba(0, 0, 0);
 }
 
@@ -43,73 +62,73 @@ img {
 }
 
 img::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 08. Forms */
 label::selection, button::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 button {
-    border: 1px solid rgba(163, 170, 174);
+    border: var(--default-border-solid);
     border-radius: 5px;
-    font: 16px/30px Arial, sans-serif;
-    background-color: rgba(13, 157, 218, 0.5);
+    font: var(--default-font);
+    background-color: var(--default-blue-color);
     color: rgba(0, 0, 0);
 }
 
 button:hover {
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--default-box-shadow);
 }
 
 /* 10. Phrasing */
 a::selection, span::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 12. Attributes */
 .container-outer {
     margin: 50px auto 0px;
-    background-color: rgba(217, 234, 211);
+    background-color: var(--default-green-color);
 }
 
 .container {
     margin: 0px auto;
 }
 
-.container-collapsibleButton {
+.container-collapsible-button {
     display: flex;
     justify-content: right;
 }
 
-.collapsibleButton {
+.collapsible-button {
     margin: 0px 10px 0px 0px;
 }
 
-.collapsibleHeading {
+.collapsible-heading {
     cursor: pointer;
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
-.collapsibleHeading:hover {
-    background-color: rgba(13, 157, 218, 0.5);
+.collapsible-heading:hover {
+    background-color: var(--default-blue-color);
 }
 
-.collapsibleHeading::after {
+.collapsible-heading::after {
     float: right;
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 .not-active {
-    background-color: rgba(217, 234, 211);
+    background-color: var(--default-green-color);
 }
 
 .not-active::after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
 }
 
-.collapsibleContent {
+.collapsible-content {
     overflow: hidden;
     margin: 10px 0px;
     transition: max-height 0.3s ease-out;
@@ -120,21 +139,20 @@ a::selection, span::selection {
     margin: 25px auto;
 }
 
-.img-SalesforceCert {
-    border: 1px solid rgba(163, 170, 174);
+.img-screenshot {
+    border: var(--default-border-solid);
 }
 
-.img-SalesforceCert:hover {
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+.img-link:hover {
+    box-shadow: var(--default-box-shadow);
 }
 
 .border-bottom {
-    border-bottom: 1px dotted rgba(163, 170, 174);
+    border-bottom: var(--default-border-dotted);
     margin: 25px 0px;
 }
 
 .img-badge {
-    box-sizing: border-box;
     max-height: 100px;
     max-width: 100px;
     display: inline-block;
@@ -145,17 +163,12 @@ a::selection, span::selection {
     animation: grow 5s;
 }
 
-.img-screenshot {
-    border: 1px solid rgba(163, 170, 174);
-}
-
 .tooltip {
     position: relative;
     display: inline-block;
 }
 
 .tooltip .back-to-top {
-    box-sizing: border-box;
     height: 50px;
     width: 50px;
     position: fixed;
@@ -163,11 +176,10 @@ a::selection, span::selection {
     bottom: 2rem;
     z-index: 9;
     display: none;
-    font: 32px Arial, sans-serif;
+    font: 32px / var(--default-line-height) var(--default-font-family);
 }
 
-.tooltip .tooltiptext {
-    box-sizing: border-box;
+.tooltip .tooltip-text {
     width: 100px;
     position: absolute;
     bottom: 125%;
@@ -175,27 +187,27 @@ a::selection, span::selection {
     z-index: 1;
     visibility: hidden;
     border-radius: 5px;
-    font: 16px Arial, sans-serif;
+    font: var(--default-font);
     padding: 5px 0;
     margin-left: -50px;
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
     color: rgba(0, 0, 0);
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
     position: absolute;
     top: 100%;
     left: 50%;
     border-width: 5px;
     border-style: solid;
-    border-color: rgba(13, 157, 218, 0.5) transparent transparent transparent;
+    border-color: var(--default-blue-color) transparent transparent transparent;
     content: "";
     margin-left: -5px;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
@@ -208,18 +220,10 @@ a::selection, span::selection {
     }
 
     .container {
-        box-sizing: border-box;
         max-width: 1200px;
     }
 
-    .img-SalesforceCert {
-        box-sizing: border-box;
-        max-height: 950px;
-        max-width: 950px;
-    }
-
     .img-screenshot {
-        box-sizing: border-box;
         max-height: 950px;
         max-width: 950px;
     }

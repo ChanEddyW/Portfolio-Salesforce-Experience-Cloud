@@ -2,52 +2,64 @@
     <div class="container-outer">
         <div class="container">
             <div class="slds-text-align_center">
+                <a href="/project-salesforce/job-application-tracker">
+                    <button type="button" class="nav-project">
+                        <label>Job Application Tracker</label>
+                    </button>
+                </a>
+
                 <a href="/project-salesforce/student-tracking">
                     <button type="button" class="nav-project">
-                        <label>
-                            Student Tracking
-                        </label>
+                        <label>Student Tracking</label>
                     </button>
                 </a>
+
                 <a href="/project-salesforce/sprint-flow">
                     <button type="button" class="nav-project">
-                        <label>
-                            Flows Automation
-                        </label>
+                        <label>Flows Automation</label>
                     </button>
                 </a>
+
                 <a href="/project-salesforce/superhero-villain-tracking">
                     <button type="button" class="nav-project">
-                        <label>
-                            Superhero and Villain Tracking
-                        </label>
+                        <label>Superhero and Villain Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/customer-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Customer Tracking</label>
                     </button>
                 </a>
             </div>
-            <h1 class="slds-var-m-top_large slds-text-align_center">Portfolio</h1>
+
+            <h1 class="slds-var-m-top_large slds-text-align_center">Portfolio &#40;Coding Project&#41;</h1>
+
             <section class="slds-var-m-top_large">
-                <p><b>Client</b>: Eddy Chan</p>
-                <p class="slds-var-m-top_large"><b>Salesforce Professional</b>: Eddy Chan</p>
-                <p class="slds-var-m-top_large"><b>Use Case</b>: I want a portfolio that stands out and shows employers that I can build something in Salesforce by writing code and using no&#45;code tools</p>
-                <p class="slds-var-m-top_large"><b>Purpose of this Project</b>: To build a portfolio using Salesforce &rarr; Experience Cloud &rarr; <a href="https://help.salesforce.com/s/articleView?id=sf.exp_cloud_enhanced.htm&type=5" target="_blank" rel="noopener noreferrer">Enhanced LWR Site <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></p>
+                <p><b>Contributor</b>&#58; Eddy Chan</p>
+                <p class="slds-var-m-top_large"><b>Use Case</b>&#58; I want a portfolio that stands out and shows that I can build something in Salesforce by coding</p>
+                <p class="slds-var-m-top_large"><b>Purpose</b>&#58; To build a portfolio using Salesforce &rarr; Experience Cloud &rarr; <a href="https://help.salesforce.com/s/articleView?id=sf.exp_cloud_enhanced.htm&type=5" target="_blank" rel="noopener noreferrer">Enhanced LWR Site <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+                <p class="slds-var-m-top_large"><b>GitHub Repo</b>&#58; <a href="https://github.com/ChanEddyW/Portfolio-Salesforce-Experience-Cloud" target="_blank" rel="noopener noreferrer">https://github.com/ChanEddyW/Portfolio-Salesforce-Experience-Cloud <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
             </section>
+
             <div class="border-bottom"></div>
-            <div class="container-collapsibleButton">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="container-collapsible-button">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
+
             <section class="slds-var-m-top_large">
-                <h3 class="collapsibleHeading">1. What Has Been Done</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">1. What Has Been Done</h3>
+
+                <div class="collapsible-content">
                     <p>Web Development</p>
+
                     <ul class="slds-list_dotted">
                         <li>This portfolio is built programmatically by writing code for Apex Classes and Lightning Web Components &#40;LWC&#41;</li>
                         <li>Languages used include </li>
@@ -59,57 +71,72 @@
                         </ul>
                         <li>Tools used include </li>
                         <ul class="slds-list_dotted circle">
-                            <li><a href="https://developer.salesforce.com/tools/salesforcecli" target="_blank" rel="noopener noreferrer">Salesforce CLI <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">Visual Studio Code <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <!-- <li><a href="https://jquery.com" target="_blank" rel="noopener noreferrer">jQuery <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li> -->
-                            <li><a href="https://regex101.com" target="_blank" rel="noopener noreferrer">regex101 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://sociablekit.com" target="_blank" rel="noopener noreferrer">SociableKIT <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://superqbit.com/app/?id=SalesforceHeaderCreator" target="_blank" rel="noopener noreferrer">SuperQbit <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/abhimanyud3dx" target="_blank" rel="noopener noreferrer">Abhimanyu Tanwar <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://mytrailmoji.com/mytrailmoji" target="_blank" rel="noopener noreferrer">myTrailmoji <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://favicon.io/favicon-generator" target="_blank" rel="noopener noreferrer">Favicon Generator <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li><a href="https://canva.com" target="_blank" rel="noopener noreferrer">Canva <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://developer.salesforce.com/tools/salesforcecli" target="_blank" rel="noopener noreferrer">Salesforce CLI <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">Visual Studio Code <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <!-- <li><a href="https://jquery.com" target="_blank" rel="noopener noreferrer">jQuery <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li> -->
+                            <li><a href="https://regex101.com" target="_blank" rel="noopener noreferrer">regex101 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://sociablekit.com" target="_blank" rel="noopener noreferrer">SociableKIT <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://superqbit.com/app/?id=SalesforceHeaderCreator" target="_blank" rel="noopener noreferrer">SuperQbit <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/abhimanyud3dx" target="_blank" rel="noopener noreferrer">Abhimanyu Tanwar <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://mytrailmoji.com/mytrailmoji" target="_blank" rel="noopener noreferrer">myTrailmoji <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://favicon.io/favicon-generator" target="_blank" rel="noopener noreferrer">Favicon Generator <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li><a href="https://canva.com" target="_blank" rel="noopener noreferrer">Canva <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                         </ul>
-                        <li>Code for this project is on <a href="https://github.com/ChanEddyW/Portfolio-Salesforce-Experience-Cloud" target="_blank" rel="noopener noreferrer">GitHub <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Security</p>
+
                     <ul class="slds-list_dotted">
-                        <li>Changes to security settings are made with the <a href="https://trailhead.salesforce.com/content/learn/modules/credential-security/manage-administrator-credentials" target="_blank" rel="noopener noreferrer">Principle of Least Privilege &#40;PoLP&#41; <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> in mind</li>
+                        <li>Changes to security settings are made with the <a href="https://trailhead.salesforce.com/content/learn/modules/credential-security/manage-administrator-credentials" target="_blank" rel="noopener noreferrer">Principle of Least Privilege &#40;PoLP&#41; <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> in mind</li>
                         <li>Guest users&#47;visitors can visit this portfolio and do stuff without needing to log in</li>
                         <li>Reverse Tabnabbing, a phishing attack, is prevented</li>
                         <li>Embed social media feed, videos, and presentation slides can work</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">User Experience &#40;UX&#41;</p>
+
                     <ul class="slds-list_dotted">
-                        <li>With a <a href="https://admin.salesforce.com/blog/2022/develop-a-designers-mindset-skills-for-success" target="_blank" rel="noopener noreferrer">designer&#39;s mindset <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>, consistency, minimalism, and simplicity are considered when building this portfolio</li>
+                        <li>With a <a href="https://admin.salesforce.com/blog/2022/develop-a-designers-mindset-skills-for-success" target="_blank" rel="noopener noreferrer">designer&#39;s mindset <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a>, consistency, minimalism, and simplicity are considered when building this portfolio</li>
                         <li>Responsive Web Design&mdash;this portfolio is tested to be desktop and mobile friendly</li>
                         <li>Readability and higher contrast <span class="color">colors</span> &#40;e.g., lighter background and darker text&#41; are considered</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Animations</p>
+
                     <ul class="slds-list_dotted">
                         <li>Animations &#40;e.g., fade, grow&#41; are included</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">&quot;Back To Top&quot; Button</p>
+
                     <ul class="slds-list_dotted">
                         <li>If you scroll down 600px, a &quot;Back To Top&quot; button appears on the bottom right of the page</li>
                         <li>If you hover your mouse cursor over the button, a tooltip appears</li>
                         <li>Clicking&#47;tapping the button scrolls to the top of the page</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Top Navigation</p>
+
                     <ul class="slds-list_dotted">
                         <li>The main menu link of the current page you are viewing is highlighted</li>
                         <li>&#40;Desktop Only&#41; If you hover your mouse cursor over &quot;Salesforce Projects&quot;, a dropdown menu appears</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Navigation Buttons</p>
+
                     <ul class="slds-list_dotted">
                         <li>On the top and bottom of certain pages, there are navigation buttons</li>
                         <li>Clicking&#47;tapping a navigation button opens a different page in the same tab&#47;window</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Collapsible Sections</p>
+
                     <ul class="slds-list_dotted">
                         <li>Buttons for collapsing&#47;expanding all content are included</li>
                         <li>Clicking&#47;tapping a heading collapses&#47;expands content</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">&quot;Contact Me&quot; Form</p>
+
                     <ul class="slds-list_dotted">
                         <li>Clicking&#47;tapping the &quot;Contact Me&quot; button on the <a href="/">Home</a> page launches a form</li>
                         <li>On the right of every input field, there is a clear button for clearing the input field</li>
@@ -119,15 +146,17 @@
                             <li>Regular Expression &#40;RegEx&#41; to validate form input</li>
                             <!-- <li>auto-formatting for the &quot;Phone Number&quot; input</li> -->
                         </ul>
-                        <li>The form has <a href="https://salesforce.com/products/guide/lead-gen/web-to-lead" target="_blank" rel="noopener noreferrer">Web&#45;to&#45;Lead <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> functionality&mdash;if the form is submitted successfully, on the backend, </li>
+                        <li>The form has <a href="https://salesforce.com/products/guide/lead-gen/web-to-lead" target="_blank" rel="noopener noreferrer">Web&#45;to&#45;Lead <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> functionality&mdash;if the form is submitted successfully, on the backend, </li>
                         <ul class="slds-list_dotted">
-                            <li>A <a href="https://developer.salesforce.com/docs/atlas.en-us.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Lead.htm" target="_blank" rel="noopener noreferrer">Lead <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> record is created in Salesforce</li>
-                            <li>The Lead Auto&#45;Response Rule sends the guest user&#47;visitor a confirmation email</li>
+                            <li>A <a href="https://developer.salesforce.com/docs/atlas.en-us.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Lead.htm" target="_blank" rel="noopener noreferrer">Lead <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> record is created in Salesforce</li>
                             <li>The Lead Assignment Rule assigns the Lead to a queue</li>
+                            <li>The Lead Auto&#45;Response Rule sends the guest user&#47;visitor a confirmation email</li>
                             <li>A notification email is sent to the Lead owner</li>
                         </ul>
                     </ul>
+
                     <p class="slds-var-m-top_large">Snackbar</p>
+
                     <ul class="slds-list_dotted">
                         <li>A snackbar message appears on the bottom of the page if you submit the &quot;Contact Me&quot; form</li>
                         <ul class="slds-list_dotted circle">
@@ -135,135 +164,148 @@
                             <li>Unsuccessfully because &#40;1&#41; a duplicate&#47;similar Lead record already exists or &#40;2&#41; something may be wrong on the backend</li>
                         </ul>
                     </ul>
+
                     <p class="slds-var-m-top_large">Embed Content</p>
+
                     <ul class="slds-list_dotted">
                         <li>A LinkedIn feed is on the bottom of the <a href="/about-me">About Me</a> page</li>
                         <li>Loom videos and Google presentation slides are on certain pages</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Google Analytics 4 &#40;GA4&#41;</p>
+
                     <ul class="slds-list_dotted">
-                        <li><a href="https://help.salesforce.com/s/articleView?id=sf.networks_google_analytics_4.htm&type=5" target="_blank" rel="noopener noreferrer">GA4 <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> is added to track user engagement</li>
-                        <li>To avoid GA4, use <a href="https://mozilla.org/en-US/firefox/new" target="_blank" rel="noopener noreferrer">Firefox <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> browser, which blocks tracking content by default</li>
+                        <li><a href="https://help.salesforce.com/s/articleView?id=sf.networks_google_analytics_4.htm&type=5" target="_blank" rel="noopener noreferrer">GA4 <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> is added to track user engagement</li>
+                        <li>To avoid GA4, use <a href="https://mozilla.org/en-US/firefox/new" target="_blank" rel="noopener noreferrer">Firefox <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> browser, which blocks tracking content by default</li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Documentation</p>
+
                     <ul class="slds-list_dotted">
                         <li>Development steps, <span class="color">color</span> codes, URLs, and so on are documented</li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">2. Questions and Answers</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">2. Questions and Answers</h3>
+
+                <div class="collapsible-content">
                     <p>Why are you using an Enhanced LWR Site rather than an Aura Site?</p>
+
                     <ul class="slds-list_dotted">
-                        <li>After playing around with both sites, I prefer an <a href="https://help.salesforce.com/s/articleView?id=sf.exp_cloud_enhanced.htm&type=5" target="_blank" rel="noopener noreferrer">Enhanced LWR Site <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> because it </li>
+                        <li>After playing around with both sites, I prefer an <a href="https://help.salesforce.com/s/articleView?id=sf.exp_cloud_enhanced.htm&type=5" target="_blank" rel="noopener noreferrer">Enhanced LWR Site <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> because it </li>
                         <ul class="slds-list_dotted circle">
-                            <li><a href="https://trailhead.salesforce.com/content/learn/modules/lightning-web-runtime-for-experience-cloud/get-started-with-lightning-web-runtime" target="_blank" rel="noopener noreferrer">Is faster and more developer-friendly <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li>Does not have <a href="https://developer.salesforce.com/docs/atlas.en-us.exp_cloud_lwr.meta/exp_cloud_lwr/intro_overview.htm" target="_blank" rel="noopener noreferrer">&#47;s cluttering up the site&#39;s URL <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                            <li>Challenges me to write code and build components from scratch</li>
+                            <li><a href="https://trailhead.salesforce.com/content/learn/modules/lightning-web-runtime-for-experience-cloud/get-started-with-lightning-web-runtime" target="_blank" rel="noopener noreferrer">Is faster and more developer-friendly <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li>Does not have <a href="https://developer.salesforce.com/docs/atlas.en-us.exp_cloud_lwr.meta/exp_cloud_lwr/intro_overview.htm" target="_blank" rel="noopener noreferrer">&#47;s cluttering up the site&#39;s URL <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                            <li>Challenges me to build components from scratch</li>
                             <li>Gives me the capability and freedom to do what I want</li>
                         </ul>
                     </ul>
+
                     <p class="slds-var-m-top_large">Would it be easier to build your portfolio with little to no coding?</p>
+
                     <ul class="slds-list_dotted">
                         <li>Not necessarily&mdash;it depends on &#40;1&#41; the
-                            requirements, &#40;2&#41; how user&#45;friendly Salesforce&#39;s no&#45;code tools are to you, and &#40;3&#41; your willingness to
+                            requirements, &#40;2&#41; how user&#45;friendly Salesforce&#39;s no&#45;code and low&#45;code tools are to you, and &#40;3&#41; your willingness to
                             learn &#40;things the hard way&#41;</li>
-                        <ul class="slds-list_dotted circle">
-                            <li>If your requirements can be fulfilled without coding and Salesforce&#39;s no&#45;code tools are user&#45;friendly to you, then it may be easier to build your portfolio with little to no coding</li>
-                            <li>I want to do many things for my portfolio that would not be feasible without coding</li>
-                        </ul>
-                        <li>I want to become a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a>&mdash;so even if it is not easier, I want hands-on experience with coding</li>
+                        <li>Even if it is not easier, I want to practice coding to improve as a <a href="https://salesforce.com/blog/what-is-a-salesforce-developer" target="_blank" rel="noopener noreferrer">Salesforce Developer <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Is this portfolio done?</p>
+
                     <ul class="slds-list_dotted">
                         <li>Never because there is always room for improvement</li>
                         <li>I am going to update this portfolio over time</li>
                     </ul>
                 </div>
             </section>
+
             <div class="border-bottom"></div>
+
             <section>
-                <h3 class="collapsibleHeading">3. Resources</h3>
-                <div class="collapsibleContent">
+                <h3 class="collapsible-heading">3. Resources</h3>
+
+                <div class="collapsible-content">
                     <p>Salesforce &rarr; Experience Cloud</p>
+
                     <ul class="slds-list_dotted">
-                        <li><a href="https://trailhead.salesforce.com/content/learn/projects/build-your-personal-portfolio-on-salesforce" target="_blank" rel="noopener noreferrer">&quot;Build Your Personal Portfolio&quot; Trailhead project <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://youtu.be/xvZj5ZNLTJ4" target="_blank" rel="noopener noreferrer">&quot;Workshop: Build Your Portfolio&quot; YouTube video <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/lory-salesforce" target="_blank" rel="noopener noreferrer">Lory Tibbetts <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://youtube.com/playlist?list=PLDJYYHNCfeDzdk67jLYep658UbYIQ4NyV" target="_blank" rel="noopener noreferrer">&quot;LWC&#47;LWR Portfolio Site Tutorial&quot; YouTube videos <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/mitchroutt" target="_blank" rel="noopener noreferrer">Mitch Routt <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://youtu.be/xvZj5ZNLTJ4" target="_blank" rel="noopener noreferrer">&quot;Workshop&#58; Build Your Portfolio&quot; YouTube video <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/lory-salesforce" target="_blank" rel="noopener noreferrer">Lory Tibbetts <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://youtube.com/playlist?list=PLDJYYHNCfeDzdk67jLYep658UbYIQ4NyV" target="_blank" rel="noopener noreferrer">&quot;LWC&#47;LWR Portfolio Site Tutorial&quot; YouTube videos <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/mitchroutt" target="_blank" rel="noopener noreferrer">Mitch Routt <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                     </ul>
+
                     <p class="slds-var-m-top_large">Salesforce Development</p>
+
                     <ul class="slds-list_dotted">
-                        <li><a href="https://developer.salesforce.com/docs" target="_blank" rel="noopener noreferrer">Salesforce Developer Documentation <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://lwc.dev/guide/introduction" target="_blank" rel="noopener noreferrer">Lightning Web Components Dev Guide <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://lightningdesignsystem.com/components/overview" target="_blank" rel="noopener noreferrer">Lightning Design System <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://automationchampion.com" target="_blank" rel="noopener noreferrer">Automation Champion <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> by <a href="https://linkedin.com/in/rakeshistom" target="_blank" rel="noopener noreferrer">Rakesh Gupta <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://niksdeveloper.com/salesforce" target="_blank" rel="noopener noreferrer">Niks Developer <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://salesforce.stackexchange.com/questions" target="_blank" rel="noopener noreferrer">Salesforce Stack Exchange <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://searchtheforce.com" target="_blank" rel="noopener noreferrer">Search The Force <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a> search engine by <a href="https://linkedin.com/in/danappleman" target="_blank" rel="noopener noreferrer">Dan Appleman <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://developer.salesforce.com/docs" target="_blank" rel="noopener noreferrer">Salesforce Developer Documentation <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://lwc.dev/guide/introduction" target="_blank" rel="noopener noreferrer">Lightning Web Components Dev Guide <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://lightningdesignsystem.com/components/overview" target="_blank" rel="noopener noreferrer">Lightning Design System <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://salesforce.stackexchange.com/questions" target="_blank" rel="noopener noreferrer">Salesforce Stack Exchange <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                     </ul>
-                    <p class="slds-var-m-top_large">Coding&mdash;JavaScript, CSS, HTML</p>
+
+                    <p class="slds-var-m-top_large">Coding &mdash; JavaScript, CSS, HTML</p>
+
                     <ul class="slds-list_dotted">
-                        <li><a href="https://cssreference.io" target="_blank" rel="noopener noreferrer">CSS Reference <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://developer.mozilla.org/en-US/docs/Web#web_technology_references" target="_blank" rel="noopener noreferrer">MDN Web technology references <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://javascript.info" target="_blank" rel="noopener noreferrer">The Modern JavaScript Tutorial <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools Online Web Tutorials <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://stackoverflow.com/questions" target="_blank" rel="noopener noreferrer">Stack Overflow <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                    </ul>
-                    <p class="slds-var-m-top_large">Portfolios that motivate and give me ideas</p>
-                    <ul class="slds-list_dotted">
-                        <li><a href="https://christina-gardner-portfolio-dev-ed.develop.my.site.com/portfolio" target="_blank" rel="noopener noreferrer">Christina Gardner&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://igallardo-dev-ed.develop.my.site.com" target="_blank" rel="noopener noreferrer">Ivy Gallardo&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://tibbettsconsultingllc-dev-ed.develop.my.site.com/ltibbettsportfolio" target="_blank" rel="noopener noreferrer">Lory Tibbetts&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://mina-sf-dev-ed.develop.my.site.com" target="_blank" rel="noopener noreferrer">Mina Tsankova&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://gastonportfolio-dev-ed.develop.my.site.com/GastonPortfolio" target="_blank" rel="noopener noreferrer">Steven Gaston&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://tknoblockpersonal-dev-ed.develop.my.site.com/portfolio" target="_blank" rel="noopener noreferrer">Todd Knoblock&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
-                        <li><a href="https://weschildressportfolio-dev-ed.develop.my.site.com/WesChildressPortfolio" target="_blank" rel="noopener noreferrer">Wes Childress&#39;s Portfolio <img src={iconURL_URLExternal} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://cssreference.io" target="_blank" rel="noopener noreferrer">CSS Reference <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web#web_technology_references" target="_blank" rel="noopener noreferrer">MDN Web technology references <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://javascript.info" target="_blank" rel="noopener noreferrer">The Modern JavaScript Tutorial <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools Online Web Tutorials <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
+                        <li><a href="https://stackoverflow.com/questions" target="_blank" rel="noopener noreferrer">Stack Overflow <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></li>
                     </ul>
                 </div>
             </section>
-            <div class="container-collapsibleButton slds-var-m-top_large">
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllCollapse}>
-                    <label>
-                        Collapse All
-                    </label>
+
+            <div class="container-collapsible-button slds-var-m-top_large">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
                 </button>
-                <button type="button" class="collapsibleButton" onclick={collapsibleAllExpand}>
-                    <label>
-                        Expand All
-                    </label>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
                 </button>
             </div>
+
             <div class="slds-var-m-top_xx-large slds-text-align_center">
+                <a href="/project-salesforce/job-application-tracker">
+                    <button type="button" class="nav-project">
+                        <label>Job Application Tracker</label>
+                    </button>
+                </a>
+
                 <a href="/project-salesforce/student-tracking">
                     <button type="button" class="nav-project">
-                        <label>
-                            Student Tracking
-                        </label>
+                        <label>Student Tracking</label>
                     </button>
                 </a>
+
                 <a href="/project-salesforce/sprint-flow">
                     <button type="button" class="nav-project">
-                        <label>
-                            Flows Automation
-                        </label>
+                        <label>Flows Automation</label>
                     </button>
                 </a>
+
                 <a href="/project-salesforce/superhero-villain-tracking">
                     <button type="button" class="nav-project">
-                        <label>
-                            Superhero and Villain Tracking
-                        </label>
+                        <label>Superhero and Villain Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/customer-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Customer Tracking</label>
                     </button>
                 </a>
             </div>
         </div>
+
         <div class="tooltip">
-            <button type="button" class="back-to-top" onclick={backToTop}>
+            <button type="button" class="back-to-top" onclick={scrollBackToTop}>
                 <label>
                     &uarr;
-                    <span class="tooltiptext slds-text-align_center">Back To Top</span>
+
+                    <span class="tooltip-text slds-text-align_center">Back To Top</span>
                 </label>
             </button>
         </div>

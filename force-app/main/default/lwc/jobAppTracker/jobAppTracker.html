@@ -1,0 +1,230 @@
+<template>
+    <div class="container-outer">
+        <div class="container">
+            <div class="slds-text-align_center">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>Portfolio</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Student Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">
+                        <label>Flows Automation</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Superhero and Villain Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/customer-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Customer Tracking</label>
+                    </button>
+                </a>
+            </div>
+
+            <h1 class="slds-var-m-top_large slds-text-align_center">Job Application Tracker &#40;Coding Project&#41;</h1>
+
+            <section class="slds-var-m-top_large">
+                <p class="slds-var-m-top_large"><b>Contributors</b>&#58; Eddy Chan and 1 teammate</p>
+                <p class="slds-var-m-top_large"><b>Use Case</b>&#58; Capstone Project for the Cloud Code Academy &mdash; Salesforce Developer Kickstart program</p>
+                <p class="slds-var-m-top_large"><b>Purpose</b>&#58; To build a user-friendly job application tracker that integrates with an external system</p>
+                <p class="slds-var-m-top_large"><b>GitHub Repo</b>&#58; <a href="https://github.com/ChanEddyW/Job-Application-Tracker" target="_blank" rel="noopener noreferrer">https://github.com/ChanEddyW/Job-Application-Tracker <img src={iconExternalURL} alt="External Link" aria-hidden="true"></a></p>
+            </section>
+
+            <div class="border-bottom"></div>
+
+            <div class="container-collapsible-button">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
+                </button>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
+                </button>
+            </div>
+
+            <section class="slds-var-m-top_large">
+                <h3 class="collapsible-heading">1. What Has Been Done</h3>
+
+                <div class="collapsible-content">
+                    <p>Job Search Functionality</p>
+
+                    <ul class="slds-list_dotted">
+                        <li>Search for jobs from an external job board using the Lightning Web Components on the Home page</li>
+                        <li>See the results of your job search in a table</li>
+                        <li>Use the sort functionality to make it easier for you to identify jobs</li>
+                        <li>Choose jobs to save as job applications</li>
+                    </ul>
+
+                    <div class="container-img">
+                        <img src={gifJobSearch} alt="Job Search" class="img-screenshot">
+                    </div>
+
+                    <p class="slds-var-m-top_large">Job Application Management</p>
+
+                    <ul class="slds-list_dotted">
+                        <li>See all job applications at a glance using the list view</li>
+                        <li>Update job applications over time easily</li>
+                        <li>Associate contacts, schedule interviews, create tasks, and send emails without needing to leave the record page</li>
+                    </ul>
+
+                    <div class="container-img">
+                        <img src={gifJobApplication} alt="Job Application" class="img-screenshot">
+                    </div>
+
+                    <p class="slds-var-m-top_large">Take Home Salary Calculator</p>
+
+                    <ul class="slds-list_dotted">
+                        <li>Pull out this calculator conveniently accessible from the utility bar at the bottom of any page you are at</li>
+                        <li>Use it to calculate taxes to help you make financial decisions</li>
+                    </ul>
+
+                    <div class="container-img">
+                        <img src={gifCalculator} alt="Calculator" class="img-screenshot">
+                    </div>
+
+                    <p class="slds-var-m-top_large">Validations</p>
+
+                    <ul class="slds-list_dotted">
+                        <li>When searching for jobs, </li>
+                        <ul class="slds-list_dotted circle">
+                            <li>the keywords and location fields cannot both be blank</li>
+                            <li>the date when the job was posted cannot be in the future</li>
+                            <li>no job can be saved if no job is selected</li>
+                        </ul>
+                        <li>When scheduling an interview, the interview cannot </li>
+                        <ul class="slds-list_dotted circle">
+                            <li>fall on the weekend</li>
+                            <li>overlap with another scheduled interview</li>
+                        </ul>
+                    </ul>
+
+                    <p class="slds-var-m-top_large">Functionalities Automated or Scheduled</p>
+
+                    <ul class="slds-list_dotted">
+                        <li>Set the job application field values using information available from the jobs saved</li>
+                        <li>Set the primary contact</li>
+                        <li>Create tasks based on the job application status</li>
+                        <li>Send email reminders for upcoming interviews</li>
+                        <li>Clean up stale job applications</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="border-bottom"></div>
+
+            <section>
+                <h3 class="collapsible-heading">2. Data Model</h3>
+
+                <div class="collapsible-content">
+                    <div class="container-img">
+                        <img src={imageEntityDiagram} alt="Entity Diagram" class="img-screenshot">
+                    </div>
+                </div>
+            </section>
+
+            <div class="border-bottom"></div>
+
+            <section>
+                <h3 class="collapsible-heading">3. Video</h3>
+
+                <div class="collapsible-content">
+
+                    <p class="slds-text-align_left">Demo and Code Review &#40;35&#58;52&#41;</p>
+
+                    <div class="container-iframe">
+                        <iframe src="https://youtube.com/embed/9z-fKUY5lPQ" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <div class="border-bottom"></div>
+
+            <section>
+                <h3 class="collapsible-heading">4. Things Learned and Applied</h3>
+
+                <div class="collapsible-content">
+                    <ul class="slds-list_dotted">
+                        <li>Coding Best Practices</li>
+                        <li>Data Manipulation Language &#40;DML&#41; Operations</li>
+                        <li>Salesforce Object Query Language &#40;SOQL&#41;</li>
+                        <li>Apex Triggers</li>
+                        <li>Asynchronous Apex</li>
+                        <li>Application Programming Interface &#40;API&#41; Integrations</li>
+                        <li>Lightning Web Components &#40;LWC&#41;</li>
+                        <li>Positive and Negative Unit Testing including Mocking</li>
+                        <li>Retrieving and Deploying Metadata via Salesforce Developer Experience &#40;DX&#41; Tools</li>
+                        <li>Version Control via Git and GitHub</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="container-collapsible-button slds-var-m-top_large">
+                <button type="button" class="collapsible-button" onclick={collapseAll}>
+                    <label>Collapse All</label>
+                </button>
+
+                <button type="button" class="collapsible-button" onclick={expandAll}>
+                    <label>Expand All</label>
+                </button>
+            </div>
+
+            <div class="container-img">
+                <img src={imageCloudCodeAcademyCert} alt="Flows Automation Team Sprint Cert" class="img-screenshot">
+            </div>
+
+            <div class="slds-text-align_center slds-var-m-top_xx-large">
+                <a href="/project-salesforce/portfolio">
+                    <button type="button" class="nav-project">
+                        <label>Portfolio</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/student-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Student Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/sprint-flow">
+                    <button type="button" class="nav-project">
+                        <label>Flows Automation</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/superhero-villain-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Superhero and Villain Tracking</label>
+                    </button>
+                </a>
+
+                <a href="/project-salesforce/customer-tracking">
+                    <button type="button" class="nav-project">
+                        <label>Customer Tracking</label>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="tooltip">
+            <button type="button" class="back-to-top" onclick={scrollBackToTop}>
+                <label>
+                    &uarr;
+
+                    <span class="tooltip-text slds-text-align_center">Back To Top</span>
+                </label>
+            </button>
+        </div>
+    </div>
+</template>

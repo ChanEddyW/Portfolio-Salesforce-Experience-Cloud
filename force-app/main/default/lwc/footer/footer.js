@@ -1,10 +1,12 @@
 import { LightningElement } from 'lwc';
-import IMAGES from '@salesforce/resourceUrl/Images';
+
+import ICONS from '@salesforce/resourceUrl/Icons';
 
 export default class Footer extends LightningElement {
-    imageURL_footerResume = IMAGES + '/footerResume.png';
-    imageURL_footerEmail = IMAGES + '/footerEmail.png';
-    imageURL_footerLinkedIn = IMAGES + '/footerLinkedIn.png';
-    imageURL_footerGitHub = IMAGES + '/footerGitHub.png';
-    imageURL_footerTrailhead = IMAGES + '/footerTrailhead.png';
+    iconResume = ICONS + '/footerResume.png';
+    iconCalendly = ICONS + '/footerCalendly.png';
+    iconEmail = ICONS + '/footerEmail.png';
+    iconLinkedIn = ICONS + '/footerLinkedIn.png';
+    iconGitHub = ICONS + '/footerGitHub.png';
+    iconTrailhead = ICONS + '/footerTrailhead.png';
 }

@@ -12,13 +12,27 @@
 /* 11. Misc */
 /* 12. Attributes */
 
+/* 01. Universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:host {
+    --default-blue-color: rgba(13, 157, 218, 0.5);
+    --default-green-color: rgba(217, 234, 211);
+    --default-font-size: 16px;
+    --default-line-height: 30px;
+    --default-font-family: 'Arial', sans-serif;
+    --default-font: var(--default-font-size) / var(--default-line-height) var(--default-font-family);
+}
+
 p {
-    font: 16px/30px Arial, sans-serif;
+    font: var(--default-font);
     color: rgba(0, 0, 0);
 }
 
 p::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 07. Media */
@@ -27,23 +41,21 @@ img {
 }
 
 img::selection {
-    background-color: rgba(13, 157, 218, 0.5);
+    background-color: var(--default-blue-color);
 }
 
 /* 12. Attributes */
 .container-outer {
-    box-sizing: border-box;
     width: 100%;
-    background-color: rgba(217, 234, 211);
+    background-color: var(--default-green-color);
 }
 
 .container {
-    border-top: 1px solid rgba(163, 170, 174);
+    border-top: var(--default-border-solid);
     margin: 0px auto;
 }
 
 .img-footer {
-    box-sizing: border-box;
     max-height: 100px;
     max-width: 100px;
     display: inline-block;
@@ -59,7 +71,6 @@ img::selection {
 @media only screen and (min-width: 992px) {
     /* 12. Attributes */
     .container {
-        box-sizing: border-box;
         max-width: 1600px;
     }
 }
